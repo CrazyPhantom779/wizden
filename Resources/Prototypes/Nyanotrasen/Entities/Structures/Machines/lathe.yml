@@ -1,0 +1,205 @@
+- type: entity
+  parent: BaseLathe
+  id: ScienceTechFab
+  name: epistemics techfab
+  description: Prints equipment for use by the epistemics department.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: sci
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ScienceTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    dynamicRecipes:
+      - AnomalyLocator
+      - AnomalyScanner
+      - BluespaceBeaker
+      - CartridgeAnomalousParticleDelta
+      - CartridgeAnomalousParticleEpsilon
+      - CartridgeAnomalousParticleZeta
+      - ChemicalPayload
+      - ClothingBackpackDuffelHolding
+      - ClothingBackpackHolding
+      - ClothingBackpackSatchelHolding
+      - CoreSilver
+      - CryostasisBeaker
+      - Decloner
+      - HandTeleporter
+      - InsulativeHeadcage
+      - NodeScanner
+      - QSI
+      - ShockCollar
+      - WeaponForceGun
+      - WeaponGrapplingGun
+      - WeaponPistolCHIMP
+      - WeaponTetherGun
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+
+- type: entity
+  parent: BaseLathe
+  id: ServiceTechFab
+  name: service techfab
+  description: Prints equipment for service staff.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: service
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ServiceTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - AppraisalTool
+      - Bucket
+      - ButchCleaver
+      - Clippers
+      - DrinkGlass
+      - DrinkMug
+      - DrinkMugMetal
+      - FireExtinguisher # TODO: needs empty version
+      - FlashlightLantern
+      - HydroponicsToolHatchet
+      - HydroponicsToolScythe
+      - KitchenKnife
+      - LightBulb
+      - LightTube
+      - Matchbox
+      - MiniHoe
+      - MopBucket
+      - Plunger
+      - Shovel
+      - Spade
+      - SprayBottle
+      - WetFloorSign
+    dynamicRecipes:
+      - AdvMopItem
+      - ClothingBackpackWaterTank
+      - Holoprojector
+      - LightReplacer
+      - MegaSprayBottle
+      - MopItem
+      - Mousetrap
+      - Shovel
+      - Spade
+      - SynthesizerInstrument
+      - TrashBag
+      - TrashBagHolding
+      - WeaponSprayNozzle
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+
+- type: entity
+  parent: BaseLathe
+  id: EngineeringTechFab
+  name: engineering techfab
+  description: Prints equipment for engineers.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: eng
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: EngineeringTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - AirlockPainter
+      - CableHVStack
+      - CableMVStack
+      - CableStack
+      - ConveyorBeltAssembly
+      - Crowbar
+      - Flare
+      - GasAnalyzer
+      - HandheldGPSBasic
+      - Multitool
+      - NetworkConfigurator
+      - Pickaxe
+      - PowerCellSmall
+      - Screwdriver
+      - TRayScanner
+      - UtilityBelt
+      - Welder # TODO: needs empty version
+      - Wirecutter
+      - Wrench
+      # BEGIN: machine parts
+      - CapacitorStockPart
+      - MatterBinStockPart
+      - MicroManipulatorStockPart
+      # END: machine parts
+    dynamicRecipes:
+      - ClothingEyesHudDiagnostic
+      - ClothingShoesBootsMag
+      - Drone
+      - HolofanProjector
+      - JawsOfLife
+      - MiningDrill
+      - PowerCellHigh
+      - PowerCellMedium
+      - PowerDrill
+      - RCD
+      - RCDAmmo
+      - RPED
+      - WeaponCrusher
+      - WeaponCrusherDagger
+      - WeaponProtoKineticAccelerator
+      - WelderIndustrialAdvanced
+      # BEGIN: machine parts
+      - AdvancedCapacitorStockPart
+      - AdvancedMatterBinStockPart
+      - BluespaceMatterBinStockPart
+      - FemtoManipulatorStockPart
+      - NanoManipulatorStockPart
+      - PicoManipulatorStockPart
+      - QuadraticCapacitorStockPart
+      - SuperCapacitorStockPart
+      - SuperMatterBinStockPart
+      # END: machine parts
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot

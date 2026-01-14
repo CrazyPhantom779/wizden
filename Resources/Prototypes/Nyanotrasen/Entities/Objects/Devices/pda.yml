@@ -1,0 +1,135 @@
+- type: entity
+  parent: BasePDA
+  id: MailCarrierPDA
+  name: mail carrier PDA
+  description: Hope this doesn't have any... JUNK MAIL.
+  components:
+  - type: Pda
+    id: MailCarrierIDCard
+    state: pda-mailcarrier
+  - type: Icon
+    state: pda-mailcarrier
+
+- type: entity
+  parent: EngineerPDA
+  id: SalvageTechPDA
+  components:
+  - type: Pda
+    id: SalvageTechIDCard
+
+- type: entity
+  parent: BasePDA
+  id: ForensicMantisPDA
+  name: forensic mantis PDA
+  description: Smells like tobacco, and justice.
+  components:
+  - type: Pda
+    id: ForensicMantisIDCard
+    state: pda-detective
+  - type: Icon
+    state: pda-detective
+  - type: CartridgeLoader
+    preinstalled:
+      - NotekeeperCartridge
+      - GlimmerMonitorCartridge
+
+- type: entity
+  parent: BasePDA
+  id: EpistemicsPDA
+  name: acolyte PDA
+  description: Preinstalled with plenty of brain teasers and religious conversion booklets.
+  components:
+  - type: Pda
+    id: EpistemicsIDCard
+    state: pda-science
+  - type: Icon
+    state: pda-science
+  - type: CartridgeLoader
+    preinstalled:
+      - NotekeeperCartridge
+      - GlimmerMonitorCartridge
+
+- type: entity
+  parent: BasePDA
+  id: MystaPDA
+  name: mystagogue PDA
+  description: Practically radiating psychic energies... They actually have the Pope on speed dial!
+  components:
+  - type: Pda
+    id: MystaIDCard
+    state: pda-rd
+  - type: Icon
+    state: pda-rd
+  - type: CartridgeLoader
+    preinstalled:
+      - NotekeeperCartridge
+      - GlimmerMonitorCartridge
+
+- type: entity
+  parent: BasePDA
+  id: PrisonerPDA
+  name: prisoner PDA
+  description: Clear, so you can make sure there's nothing being smuggled inside.
+  components:
+  - type: Pda
+    id: PrisonerIDCard
+    state: pda-clear
+  - type: Icon
+    state: pda-clear
+
+- type: entity
+  parent: PrisonerPDA
+  id: GladiatorPDA
+  name: gladiator PDA
+  components:
+  - type: Pda
+    id: GladiatorIDCard
+
+- type: entity
+  parent: BasePDA
+  id: ValetPDA
+  name: valet PDA
+  description: Why isn't it gray?
+  components:
+  - type: Pda
+    id: ValetIDCard
+    state: pda-internservice
+  - type: Icon
+    state: pda-internservice
+
+- type: entity
+  parent: BasePDA
+  id: CataloguerPDA
+  name: cataloguer PDA
+  description: Probably the person most likely to use an antiquated note taking device. Placeholder sprite.
+  components:
+  - type: Pda
+    id: CataloguerIDCard
+    state: pda-library
+  - type: Icon
+    state: pda-library
+  - type: CartridgeLoader
+    preinstalled:
+      - NotekeeperCartridge
+      - GlimmerMonitorCartridge
+
+- type: entity
+  parent: BasePDA
+  id: GuardPDA
+  name: guard PDA
+  description: Red to hide the stains of prisoner blood.
+  components:
+  - type: Pda
+    id: GuardIDCard
+    state: pda-security
+  - type: Icon
+    state: pda-guard
+
+- type: entity
+  parent: BoxerPDA
+  id: MartialArtistPDA
+  name: martial artist PDA
+  components:
+  - type: Pda
+    id: MartialArtistIDCard
+    state: pda-boxer

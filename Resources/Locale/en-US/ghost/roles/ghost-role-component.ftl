@@ -138,10 +138,10 @@ ghost-role-information-holoclown-description = Listen to your owner. Utilize you
 ghost-role-information-ifrit-name = Ifrit
 ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
 
-ghost-role-information-space-dragon-name = Space Dragon
-ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
-ghost-role-information-space-dragon-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all your summoned carp.
-ghost-role-information-space-dragon-summoned-carp-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with your dragon and its allies.
+ghost-role-information-space-dragon-name = Space Dragon # CD: Updated role description
+ghost-role-information-space-dragon-description = You're here for your own goals and reasons. Kill and conquer, engage in diplomacy, or anything in between.
+ghost-role-information-space-dragon-rules = You are a [color=yellow][bold]Free Agent[/bold][/color] alongside all your summoned carp.
+ghost-role-information-space-dragon-summoned-carp-rules = You are a [color=yellow][bold]Free Agent[/bold][/color] with your dragon and its allies.
 
 ghost-role-information-space-dragon-dungeon-description = Defend the expedition dungeon with your fishy comrades!
 ghost-role-information-space-dragon-dungeon-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all dungeon mobs.
@@ -156,7 +156,10 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 
 ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
+#CD changes below
+ghost-role-information-closet-skeleton-description = You are a primordial force with no allegiance. Follow your skeletal whims.
+ghost-role-information-closet-skeleton-rules = All rules apply. [color=red]THIS MEANS YOU ARE STILL SUBJECT TO SELF ANTAG RULES, AHELP FOR PERMISSION TO DO CRIMES.[/color]
+# end CD
 
 ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
 ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.

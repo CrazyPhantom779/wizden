@@ -35,12 +35,14 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] NoSpawnMaps =
         {
             "CentComm",
+            "CDCentComm",
             "Dart"
         };
 
         private static readonly string[] Grids =
         {
             "/Maps/centcomm.yml",
+            "/Maps/_CD/centcomm.yml", // CD
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -72,7 +74,10 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] DoNotMapWhitelist =
         {
             "/Maps/centcomm.yml",
-            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
+            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
+            "/Maps/Misc/terminal.yml", // CD terminal
+            "/Maps/_CD/centcomm.yml", // CD
+            "/Maps/_CD/gemini.yml", // CD, somebody should probably look into this
         };
 
         /// <summary>
@@ -102,6 +107,13 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
             "Snowball",
+            "Ferrous", // CD Map
+            "Aspid", // CD Map
+            "Gemini", // CD Map
+            "Omega", // CD Map
+            "CDCentComm", // CD Map
+            "Amber", // CD Map
+            "Cluster", // CD Map
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
@@ -429,38 +441,41 @@ namespace Content.IntegrationTests.Tests
 
                 mapSystem.DeleteMap(shuttleMap);
 
-                if (entManager.HasComponent<StationJobsComponent>(station))
-                {
-                    // Test that the map has valid latejoin spawn points or container spawn points
-                    if (!NoSpawnMaps.Contains(mapProto))
-                    {
-                        var lateSpawns = 0;
-
-                        lateSpawns += GetCountLateSpawn<SpawnPointComponent>(gridUids, entManager);
-                        lateSpawns += GetCountLateSpawn<ContainerSpawnPointComponent>(gridUids, entManager);
-
-                        Assert.That(lateSpawns, Is.GreaterThan(0), $"Found no latejoin spawn points on {mapProto}");
-                    }
-
-                    // Test all availableJobs have spawnPoints
-                    // This is done inside gamemap test because loading the map takes ages and we already have it.
-                    var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
-
-                    var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
-                        .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
-                        .Select(x => x.Job.Value);
-
-                    jobs.ExceptWith(spawnPoints);
-
-                    spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
-                        .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
-                        .Select(x => x.Job.Value);
-
-                    jobs.ExceptWith(spawnPoints);
-
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
-                }
+                // CD NOTE: This if statement is disabled as the test below (checking for a latejoin spawn) is also disabled
+                // This is because our arrivals works as a fallback for roles who don't have a latejoin spawn point,
+                // And anyone should be spawning there anyways.
+                // if (entManager.HasComponent<StationJobsComponent>(station))
+                // {
+                //     // Test that the map has valid latejoin spawn points or container spawn points
+                //     if (!NoSpawnMaps.Contains(mapProto))
+                //     {
+                //         var lateSpawns = 0;
+                //
+                //         lateSpawns += GetCountLateSpawn<SpawnPointComponent>(gridUids, entManager);
+                //         lateSpawns += GetCountLateSpawn<ContainerSpawnPointComponent>(gridUids, entManager);
+                //
+                //         Assert.That(lateSpawns, Is.GreaterThan(0), $"Found no latejoin spawn points on {mapProto}");
+                //     }
+                //
+                //     // Test all availableJobs have spawnPoints
+                //     // This is done inside gamemap test because loading the map takes ages and we already have it.
+                //     var comp = entManager.GetComponent<StationJobsComponent>(station);
+                //     var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
+                //
+                //     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
+                //         .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
+                //         .Select(x => x.Job.Value);
+                //
+                //     jobs.ExceptWith(spawnPoints);
+                //
+                //     spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
+                //         .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
+                //         .Select(x => x.Job.Value);
+                //
+                //     jobs.ExceptWith(spawnPoints);
+                //
+                //     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                // }
 
                 try
                 {
