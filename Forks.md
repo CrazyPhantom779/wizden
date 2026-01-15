@@ -36,7 +36,7 @@ WizDen (space-wizards/space-station-14) [UPSTREAM] https://github.com/space-wiza
 MERGE ORDER:
 
 WizDen
-Trieste Port                    → git merge --no-commit --no-ff trieste/master
+Trieste Port                    → git merge --no-commit --no-ff trieste/master DONE
 Cosmatic Drift                  → git merge --no-commit --no-ff cosmatic/master
 Harmony                         → git merge --no-commit --no-ff harmony/master
 Nyanotrasen                     → git merge --no-commit --no-ff nyanotrasen/master
