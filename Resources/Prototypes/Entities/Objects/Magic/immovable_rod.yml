@@ -12,6 +12,12 @@
     state: icon
     noRot: false
   - type: ImmovableRod
+    # Harmony start
+    shouldGib: false
+    damage:
+      types:
+        Piercing: 400
+    # Harmony end
   - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
@@ -72,13 +78,16 @@
   suffix: Wizard
   components:
   - type: ImmovableRod
-    maxSpeed: 25
+    maxSpeed: 15 # Harmony - 25 -> 15
     destroyTiles: false
     randomizeVelocity: false
     shouldGib: false
     damage:
       types:
-        Blunt: 190
+# Begin harmony change - tweaked damage values
+#       Blunt: 190
+        Piercing: 90
+# End harmony change
   - type: Physics
     bodyType: KinematicController
   - type: InputMover

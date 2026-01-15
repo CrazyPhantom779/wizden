@@ -301,7 +301,7 @@
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 33
+    damage: 30  # Harmony Change - Reverts to Pre-Buff (33 -> 30)
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -588,12 +588,13 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 25 # Harmony change- DeltaV PKA Rework - 15 -> 25
         Structural: 30
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.22 # roughly 5.5 tiles
   - type: GatheringProjectile
+  - type: PressureProjectile # Harmony change - DeltaV PKA Rework
 
 - type: entity
   id: BulletKineticShuttle
@@ -621,6 +622,7 @@
     color: white
     energy: 0.5
   - type: GatheringProjectile
+  - type: PressureProjectile # Harmony change - DeltaV PKA Rework
 
 - type: entity
   id: BulletCharge
@@ -645,8 +647,10 @@
         - MobState
     damage:
       types:
-        Blunt: 20  # TP, From Harmony, 18 to 20
-        Slash: 5  # TP, From Harmony, 4 to 5
+      # Harmony Change - reverts salvage weapon changes
+        Blunt: 20 # 18 -> 20
+        Slash: 5 # 4 -> 5
+      # Harmony end
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
@@ -656,20 +660,22 @@
   - type: TimedDespawn
     lifetime: 0.4
 
+# Harmony Start - removes leech bolt
   # Deals less damage, glaive has better HP recovery
-- type: entity
-  id: BulletChargeGlaive
-  name: leech bolt
-  parent: BulletCharge
-  components:
-  - type: DamageMarkerOnCollide
-    whitelist:
-      components:
-        - MobState
-    damage:
-      types:
-        Blunt: 1
-        Slash: 5
+#- type: entity
+  #id: BulletChargeGlaive
+  #name: leech bolt
+  #parent: BulletCharge
+  #components:
+  #- type: DamageMarkerOnCollide
+    #whitelist:
+      #components:
+        #- MobState
+    #damage:
+      #types:
+        #Blunt: 1
+        #Slash: 5
+# Harmony End
 
 - type: entity
   parent: BaseBullet

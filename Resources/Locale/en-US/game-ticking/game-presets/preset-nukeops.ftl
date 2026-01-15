@@ -29,6 +29,6 @@ nukeops-list-name-user = - [color=White]{$name}[/color] ([color=gray]{$user}[/co
 nukeops-not-enough-ready-players = Not enough players readied up for the game! There were {$readyPlayersCount} players readied up out of {$minimumPlayers} needed. Can't start Cascops.
 nukeops-no-one-ready = No players readied up! Can't start Cascops.
 
-nukeops-role-commander = Admiral
-nukeops-role-agent = Sargeant
-nukeops-role-operator = Corporal
+nukeops-role-commander = Commander
+nukeops-role-agent = Corpsman
+nukeops-role-operator = Operator

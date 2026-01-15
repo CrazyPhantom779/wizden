@@ -296,6 +296,19 @@ namespace Content.Server.Chemistry.EntitySystems
 
             Solution? solution;
             Entity<SolutionComponent>? soln = null;
+            // Harmony Change Start - ChemMasters make pills from containers and not the buffer
+            // if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var solution))
+            // {
+            //     return false;
+            // }
+
+            var container = _itemSlotsSystem.GetItemOrNull(chemMaster, SharedChemMaster.InputSlotName);
+            if (container is null ||
+                !_solutionContainerSystem.TryGetFitsInDispenser(container.Value, out var containerSoln, out var solution))
+            {
+                return false;
+            }
+            // Harmony Change End
 
             switch (chemMaster.Comp.DrawSource)
             {
@@ -353,10 +366,7 @@ namespace Content.Server.Chemistry.EntitySystems
             }
 
             outputSolution = solution.SplitSolution(neededVolume);
-
-            if (soln.HasValue)
-                _solutionContainerSystem.UpdateChemicals(soln.Value);
-
+            _solutionContainerSystem.UpdateChemicals(containerSoln.Value); // DeltaV
             return true;
         }
 

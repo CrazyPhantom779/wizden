@@ -1,0 +1,54 @@
+- type: reagent
+  id: SunsetSoda
+  name: reagent-name-sunset-soda
+  parent: BaseSoda
+  desc: reagent-desc-sunset-soda
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: fizzy
+  color: "#cd7314"
+  metamorphicSprite:
+    sprite: _Harmony/Objects/Consumable/Drinks/sunset-soda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: StarsetSarsaparilla
+  name: reagent-name-starset-sarsaparilla
+  parent: BaseSoda
+  desc: reagent-desc-starset-sarsaparilla
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: themojave
+  color: "#2a1704"
+  metamorphicSprite:
+    sprite: _Harmony/Objects/Consumable/Drinks/starset-sarsaparilla.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: ThirstTrap
+  name: reagent-name-thirst-trap
+  parent: BaseSoda
+  desc: reagent-desc-thirst-trap
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: regret
+  color: "#e3f7f7"
+  metamorphicSprite:
+    sprite: _Harmony/Objects/Consumable/Drinks/thirst-trap.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Poison:
+      effects:
+      - !type:SatiateThirst
+        factor: -6 # This is basically industrial dessicant
+      - !type:PopupMessage
+        visualType: MediumCaution
+        type: Local
+        messages: [ "generic-reagent-effect-parched" ]
+        probability: 0.1

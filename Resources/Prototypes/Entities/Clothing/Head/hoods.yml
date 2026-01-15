@@ -383,9 +383,11 @@
   name: marshal's winter coat hood # TP
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi
+#    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/Head/Hoods/Coat/hoodhos.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi
+#    sprite: Clothing/Head/Hoods/Coat/hoodhos.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/Head/Hoods/Coat/hoodhos.rsi # Updated sprite pathing for Harmony
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
@@ -519,6 +521,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hoods/Coat/hoodsyndicate.rsi
 
+#Harmony Change: Updated Sprite Pathing for security resprite update
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterWarden
@@ -526,9 +529,9 @@
   name: warden's coat hood
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+    sprite: _Harmony/Clothing/Head/Hoods/Coat/hoodward.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Coat/hoodsec.rsi
+    sprite: _Harmony/Clothing/Head/Hoods/Coat/hoodward.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase

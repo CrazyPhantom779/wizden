@@ -11,6 +11,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobAlexander
+    - MobKoboldPoquito # Harmony Pet
 
 - type: entity
   parent: MarkerBase
@@ -213,7 +214,8 @@
     layers:
     - state: green
     - state: monkey
-      sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updated Sprite Pathing
   - type: ConditionalSpawner
     prototypes:
     - MobMonkeyPunpun
@@ -303,6 +305,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobSlimesPet
+    - MobGlorp # Harmony pet
 
 - type: entity
   parent: MarkerBase

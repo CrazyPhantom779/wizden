@@ -775,6 +775,9 @@ BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
 # 2025-06-21
 ClothingNeckHeadphones: ClothingMultipleHeadphones
 
+# 2025-07-06 harmony
+SpawnPointPermaPrisoner: null # harmony
+
 # 2025-07-17
 RipleyChassis: null
 HonkerChassis: null
@@ -790,6 +793,23 @@ ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
 
 # 2025-08-29
 PrefilledSyringe: Syringe
+
+# 2025-09-29 Harmony
+RandomHumanoidSpawnerDeathSquadTime: RandomHumanoidSpawnerDeathSquad
+RandomHumanoidSpawnerERTLeaderTime: RandomHumanoidSpawnerERTLeader
+RandomHumanoidSpawnerERTLeaderEVATime: RandomHumanoidSpawnerERTLeaderEVA
+RandomHumanoidSpawnerERTLeaderEVALecterTime: RandomHumanoidSpawnerERTLeaderEVALecter
+RandomHumanoidSpawnerERTEngineerTime: RandomHumanoidSpawnerERTEngineer
+RandomHumanoidSpawnerERTEngineerEVATime: RandomHumanoidSpawnerERTEngineerEVA
+RandomHumanoidSpawnerERTSecurityTime: RandomHumanoidSpawnerERTSecurity
+RandomHumanoidSpawnerERTSecurityEVATime: RandomHumanoidSpawnerERTSecurityEVA
+RandomHumanoidSpawnerERTSecurityEVALecterTime: RandomHumanoidSpawnerERTSecurityEVALecter
+RandomHumanoidSpawnerERTMedicalTime: RandomHumanoidSpawnerERTMedical
+RandomHumanoidSpawnerERTMedicalEVATime: RandomHumanoidSpawnerERTMedicalEVA
+RandomHumanoidSpawnerCBURNUnitTime: RandomHumanoidSpawnerCBURNUnit
+RandomHumanoidSpawnerCentcomOfficialTime: RandomHumanoidSpawnerCentcomOfficial
+RandomHumanoidSpawnerERPLeaderTime: RandomHumanoidSpawnerERPLeader
+RandomHumanoidSpawnerERPClownTime: RandomHumanoidSpawnerERPClown
 
 # 2025-10-6
 BibleTanakh: null
@@ -826,8 +846,8 @@ SpeedLoaderPistolPractice: null
 GlowstickBase: GlowstickGreen
 
 # 2025-12-06
-SpawnPointZookeeper: null
-SpawnPointBoxer: null
+# Harmony - SpawnPointZookeeper: null
+# Harmony - SpawnPointBoxer: null
 
 # 2025-12-07
 FigureSpawner: MechFigurineSpawner50

@@ -4,8 +4,9 @@
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 1h # Harmony: 2.5h -> 1h
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
@@ -27,10 +28,12 @@
   equipment:
     # eyes: ClothingEyesGlassesSecurity  CD: Secglasses selector fix
     ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
+    pocket1: WeaponDisabler
   storage:
     back:
     - Flash
+    - MagazinePistol
+    - WeaponPistolMk58
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit

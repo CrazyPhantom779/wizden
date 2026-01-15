@@ -516,7 +516,7 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
-    speechSounds: Moth #CD change/addition
+    speechSounds: Moth #CD change/addition, Squeak -> Moth
     allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
@@ -1388,7 +1388,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: monkey
-      sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updates Monkey Sprite Pathing
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
       color: "#ffffff"
@@ -1916,6 +1917,20 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+# Start of Harmony Change: Mice now deal damage when thrown, and take damage when they land
+  - type: DamageOtherOnHit
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: EmitSoundOnLand
+    sound:
+      collection: WeakHit
+# End of Harmony Change
 
 - type: entity
   parent: MobMouse
@@ -2549,7 +2564,7 @@
       - ReagentId: Mechanotoxin
         Quantity: 1
   - type: MeleeChemicalInjector
-    transferAmount: 0.75
+    transferAmount: 1.5 # harmony change - part of tarantula buff PR
     solution: melee
   - type: ReplacementAccent
     accent: xeno
@@ -2622,8 +2637,10 @@
     rules: ghost-role-information-giant-spider-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: short
+    # harmony start: remove ghost role raffle from spiders
+    # raffle:
+    #   settings: short
+    # harmony end
   - type: GhostTakeoverAvailable
 
 - type: entity

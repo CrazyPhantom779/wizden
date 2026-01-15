@@ -27,6 +27,7 @@
   - HoPBackpack
   - HoPOuterClothing
   - FormalShoes # CD
+  - HoPShoesHarmony # Harmony
   - Glasses
   - Survival
   - Trinkets
@@ -129,6 +130,8 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
+  - LibrarianOuterClothingHarmony #Harmony Change: Librarian clothing addition -- Curator Coat
+  - LibrarianNeckHarmony #Harmony Change: Librarian clothing addition -- Curator Mantle
   - CommonBackpack
   - FormalShoes # CD
   - Glasses
@@ -304,9 +307,11 @@
   groups:
   - GroupTankHarness
   - SalvageSpecialistJumpsuit # CD
+  - SalvageSpecialistNeck # Harmony Change
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
+  - SalvageSpecialistID # Harmony Change
   - Glasses
   - Survival
   - Trinkets
@@ -556,6 +561,7 @@
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
+  - MedicalDoctorNeck # Harmony
   - MedicalDoctorJumpsuit
   - MedicalGloves
   - MedicalSpecializationBackpack # CD change from MedicalBackpack

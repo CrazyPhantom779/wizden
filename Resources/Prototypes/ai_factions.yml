@@ -1,7 +1,6 @@
 - type: npcFaction
   id: Dragon
   hostile:
-  - Xenoborg
   - NanoTrasen
   - Syndicate
   - Xeno
@@ -11,6 +10,8 @@
   - AllHostile
   - NanoTrasenTraitor
   - Wizard
+  - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: NanoTrasen
@@ -25,6 +26,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: NanoTrasenTraitor
@@ -57,7 +59,7 @@
   hostile:
   - Mouse
   - SimpleHostile
-  - Zombie
+# - Zombie # Harmony change that should be replaced with a more elaborate solution that solves the initial-infected problem while keeping them attacking zombies as soon as possible
   - Xeno
   - AllHostile
   - Dragon
@@ -77,6 +79,7 @@
   - NanoTrasenTraitor
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: SimpleNeutral
@@ -109,6 +112,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Zombie
@@ -125,6 +129,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Revolutionary
@@ -154,6 +159,7 @@
   - NanoTrasenTraitor
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Wizard
@@ -171,6 +177,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Xenoborg
@@ -181,6 +188,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - BloodBrother # Harmony
 
   - Xeno # rivalry
 

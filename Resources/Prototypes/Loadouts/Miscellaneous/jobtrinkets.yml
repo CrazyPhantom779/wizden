@@ -1,4 +1,4 @@
-﻿# Job-specific trinkets
+# Job-specific trinkets
 
 - type: loadout
   id: LizardPlushieCaptain
@@ -364,7 +364,7 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-        time: 100h
+        time: 50h # Harmony: 100h -> 50h
   storage:
     back:
     - Dinkystar

@@ -28,6 +28,7 @@
   - SpeedLoaderMagnumPractice
   - MagazinePistolSubMachineGunPractice
   - WeaponFlareGunSecurity
+  - SecurityBola #Harmony Change: Adds Security Bolas
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
@@ -51,6 +52,9 @@
   - MagazineRifleEmpty
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
+  - StripperClip  # Harmony change - part of RSC PR
+  - EnergyCarbineCartridgeHarmony # Harmony Change: Adds the heat energy carbine cartridge to the security recipe pack
+
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -100,29 +104,33 @@
   id: SecurityAmmo
   recipes:
   - BoxBeanbag
-  - BoxShotgunIncendiary
-  - BoxShotgunUranium
+# Start harmony changes - Remove special ammo
+#  - BoxShotgunIncendiary
+#  - BoxShotgunUranium
   - BoxShellTranquilizer
-  - MagazineBoxLightRifleIncendiary
-  - MagazineBoxLightRifleUranium
-  - MagazineBoxMagnumIncendiary
-  - MagazineBoxMagnumUranium
-  - MagazineBoxPistolIncendiary
-  - MagazineBoxPistolUranium
-  - MagazineBoxRifleIncendiary
-  - MagazineBoxRifleUranium
-  - MagazineLightRifleIncendiary
-  - MagazineLightRifleUranium
-  - MagazinePistolIncendiary
-  - MagazinePistolUranium
-  - MagazinePistolSubMachineGunIncendiary
-  - MagazinePistolSubMachineGunUranium
-  - MagazineRifleIncendiary
-  - MagazineRifleUranium
+#  - MagazineBoxLightRifleIncendiary
+#  - MagazineBoxLightRifleUranium
+#  - MagazineBoxMagnumIncendiary
+#  - MagazineBoxMagnumUranium
+#  - MagazineBoxPistolIncendiary
+#  - MagazineBoxPistolUranium
+#  - MagazineBoxRifleIncendiary
+#  - MagazineBoxRifleUranium
+#  - MagazineLightRifleIncendiary
+#  - MagazineLightRifleUranium
+#  - MagazinePistolIncendiary
+#  - MagazinePistolUranium
+#  - MagazinePistolSubMachineGunIncendiary
+#  - MagazinePistolSubMachineGunUranium
+#  - MagazineRifleIncendiary
+#  - MagazineRifleUranium
   - MagazineShotgunBeanbag
-  - MagazineShotgunIncendiary
-  - SpeedLoaderMagnumIncendiary
-  - SpeedLoaderMagnumUranium
+#  - MagazineShotgunIncendiary
+#  - SpeedLoaderMagnumIncendiary
+#  - SpeedLoaderMagnumUranium
+# End Harmony changes
+  - EnergyCarbineCartridgeUnstableHarmony # Harmony Change: Adds the unstable energy carbine cartridge to the security recipe pack
+  - EnergyCarbineCartridgeXRayHarmony # Harmony Change: Adds the x-ray energy carbine cartridge to the security recipe pack
 
 - type: latheRecipePack
   id: SecurityWeapons
@@ -132,6 +140,7 @@
   - WeaponLaserCannon
   - WeaponLaserCarbine
   - WeaponXrayCannon
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy carbine to the security recipe pack
   - WeaponTemperatureGun
 
 - type: latheRecipePack

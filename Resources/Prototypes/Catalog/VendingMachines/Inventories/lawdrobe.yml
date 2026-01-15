@@ -24,3 +24,8 @@
     # "Legally" obtained currency
     SpaceCash100: 2
     ToyFigurineLawyer: 1
+  # Harmony Change - adds business uniform to emagged lawdrobe
+  emaggedInventory:
+    ClothingUniformJumpsuitSyndicateBusinessSuitHarmony: 1
+    CyberPen: 1
+  # Harmony Change end

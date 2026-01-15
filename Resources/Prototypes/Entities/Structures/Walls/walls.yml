@@ -75,7 +75,10 @@
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: state
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -123,7 +126,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: brick
 
 - type: entity
@@ -152,7 +158,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: clockwork
+# End of Harmony Change
     base: clock
 
 - type: entity
@@ -185,7 +194,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: clown
   - type: Fixtures
     fixtures:
@@ -230,7 +242,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: meat
+# End of Harmony Change
     base: meat
 
 - type: entity
@@ -256,7 +271,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: cult
+# End of Harmony Change
     base: cult
 
 - type: entity
@@ -286,7 +304,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: debug
 
 - type: entity
@@ -316,7 +337,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: diamond
 
 - type: entity
@@ -369,7 +393,10 @@
         - WallLayer
         density: 4000
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: gold
 
 - type: entity
@@ -395,7 +422,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: ice
 
 - type: entity
@@ -437,7 +467,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: plasma
   - type: RadiationBlocker
     resistance: 5
@@ -481,7 +514,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: plastic
 
 - type: entity
@@ -491,11 +527,18 @@
   suffix: indestructible
   components:
     - type: Sprite
-      sprite: Structures/Walls/plastitanium.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#      sprite: Structures/Walls/plastitanium.rsi
+      sprite: _Harmony/Structures/Walls/plastitanium.rsi
     - type: Icon
-      sprite: Structures/Walls/plastitanium.rsi
+#      sprite: Structures/Walls/plastitanium.rsi
+      sprite: _Harmony/Structures/Walls/plastitanium.rsi
+# End of Harmony Change
     - type: IconSmooth
-      key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#      key: walls
+      key: station
+# End of Harmony Change
       base: plastitanium
     - type: Fixtures
       fixtures:
@@ -542,10 +585,16 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/plastitanium_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Icon
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/plastitanium_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -561,10 +610,16 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/plastitanium_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Icon
-    sprite: Structures/Walls/plastitanium_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/plastitanium_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Destructible
     thresholds:
@@ -589,9 +644,13 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid.rsi
+    sprite: _Harmony/Structures/Walls/solid.rsi
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+#    sprite: Structures/Walls/solid.rsi
+    sprite: _Harmony/Structures/Walls/solid.rsi
+# End of Harmony Change
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -622,7 +681,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: reinf_over
   - type: Appearance
   - type: GenericVisualizer
@@ -660,15 +722,22 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Harmony/Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+#    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Harmony/Structures/Walls/solid_rust.rsi
+# End of Harmony Change
     state: rgeneric
   - type: Construction
     graph: Girder
     node: reinforcedWallRust
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: reinf_over
   - type: Destructible
     thresholds:
@@ -707,10 +776,16 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/reinforced_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/reinforced_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -767,7 +842,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: riveted
   - type: StaticPrice
     price: 150
@@ -799,7 +877,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: sandstone
 
 - type: entity
@@ -841,7 +922,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: silver
 
 #shuttle walls
@@ -911,6 +995,11 @@
     resistance: 5
   - type: StaticPrice
     price: 200
+# Start of Harmony Change: Adds IconSmooth key
+  - type: IconSmooth
+    key: shuttle
+    base: state
+# End of Harmony Change
 
 - type: entity
   parent: BaseWall
@@ -955,7 +1044,10 @@
     graph: Girder
     node: shuttleWall
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: shuttle
+# End of Harmony Change
     base: state
   - type: Appearance
   - type: GenericVisualizer
@@ -989,13 +1081,19 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid.rsi
+    sprite: _Harmony/Structures/Walls/solid.rsi
+# End of Harmony Change
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid.rsi
+    sprite: _Harmony/Structures/Walls/solid.rsi
+# End of Harmony Change
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -1023,7 +1121,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: solid
 
 - type: entity
@@ -1033,10 +1134,16 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/solid_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/solid_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Icon
-    sprite: Structures/Walls/solid_diagonal.rsi
+  # Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid_diagonal.rsi
+    sprite: _Harmony/Structures/Walls/solid_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Destructible
     thresholds:
@@ -1071,15 +1178,22 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Harmony/Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+#    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Harmony/Structures/Walls/solid_rust.rsi
+# End of Harmony Change
     state: full
   - type: Construction
     graph: Girder
     node: wallrust
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: station
+# End of Harmony Change
     base: solid
   - type: Destructible
     thresholds:
@@ -1286,7 +1400,10 @@
         - WallLayer
         density: 6000
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: material
+# End of Harmony Change
     base: uranium
   - type: RadiationBlocker
     resistance: 6
@@ -1327,7 +1444,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: woods
+# Start of Harmony Change: Updates IconSmooth key
+#    key: woods
+    key: material
+# End of Harmony Change
     base: wood
 
 - type: entity
@@ -1400,7 +1520,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: necropolis
+# End of Harmony Change
     base: necropolis
 
 - type: entity
@@ -1421,7 +1544,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
+# Start of Harmony Change: Updates IconSmooth key
+#    key: walls
+    key: mining
+# End of Harmony Change
     base: mining
   - type: RandomIconSmooth
     randomStates:
@@ -1469,6 +1595,11 @@
           collection: MetalSlam
       - !type:DoActsBehavior
         acts: ["Destruction"]
+# Start of Harmony Change: Adds IconSmoothing
+  - type: IconSmooth
+    key: mining
+    base: state
+# End of Harmony Change
 
 
 # Vault Walls

@@ -4,23 +4,26 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 5h # Platform 2nd in command. Some playtime should be required (also they'll get this for sec anyways)
+    # Harmony start
+    # - !type:DepartmentTimeRequirement
+    #   department: Engineering
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Medical
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Science
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 2.5h
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 1h
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 1h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 1h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 1h
+      department: Civilian
+      time: 4h
+  # Harmony end
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 1h
+      time: 4h # Harmony: 2.5h -> 4h
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -63,12 +66,13 @@
 - type: startingGear
   id: HoPGear
   equipment:
-    # shoes: ClothingShoesColorBrown | CD, removed due to loadout addtion.
+  # shoes: ClothingShoesColorBrown # Harmony uses a custom loadout group
     id: HoPPDA
     gloves: ClothingHandsGlovesHop
     # ears: ClothingHeadsetAltCommand #CD: Loadouts
     belt: BoxFolderClipboardThreePapers
     eyes: ClothingEyesHudCommand
+    pocket1: BookSOP #Harmony Change
   storage:
     back:
     - Flash

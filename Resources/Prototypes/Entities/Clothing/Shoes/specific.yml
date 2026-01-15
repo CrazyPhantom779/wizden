@@ -111,15 +111,20 @@
   description: Specialised non-slip rubber boots, designed to reduce janitorial workplace accidents; a tider's treasure.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: NoSlip
   - type: SlowedOverSlippery
     slowdownModifier: 0.7
   - type: SpeedModifierContactCapClothing
     maxContactSprintSlowdown: 0.7
     maxContactWalkSlowdown: 0.7
+  - type: Tag # Harmony change. Tag component is needed for ducky galoshes
+    tags:
+    - ClothingShoesGaloshes
+    - WhitelistChameleon
+    - ClothMade
 
 - type: entity
   parent: [ClothingShoesBaseButcherable, BaseHighlyIllegalContraband]

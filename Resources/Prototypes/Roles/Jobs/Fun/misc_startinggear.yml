@@ -159,6 +159,19 @@
     - AccessConfiguratorUniversal
     - Multitool
     - ToolDebug # TP14
+    # Begin harmony specific admin tools
+    - Omnitool
+    - WelderExperimental
+    - HolofanProjector
+    - AppraisalTool
+    - AnomalyScanner
+    - WeaponPistolCHIMP
+    - EmagUnlimited
+    - BluespaceBeaker
+    - SyringeBluespace
+    - RubberStampCentcom
+    - DoorRemoteAll
+    # End harmony specific admin tools
 
 #Gladiator with spear
 - type: startingGear

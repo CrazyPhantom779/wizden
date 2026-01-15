@@ -145,6 +145,7 @@ namespace Content.Client.Cargo.BUI
 
             _menu?.UpdateStation(station);
             Populate(cState.Orders);
+            _orderMenu?.PopulateCrewList(cState.CrewManifest); // Harmony change for cargo orders QoL (Crew list)
         }
 
         protected override void Dispose(bool disposing)

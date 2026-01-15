@@ -25,6 +25,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
+using Content.Shared._Harmony.JoinQueue;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
@@ -62,6 +63,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly IConnectionManager _connection = default!;
         [Dependency] private readonly IEntitySystemManager _entSys = default!;
         [Dependency] private readonly IGameMapManager _gameMap = default!;
+        [Dependency] private readonly IJoinQueueManager _joinQueue = default!; // Harmony
         [Dependency] private readonly ILogManager _log = default!;
         [Dependency] private readonly INodeGroupFactory _nodeFactory = default!;
         [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -134,6 +136,7 @@ namespace Content.Server.Entry
             _watchlistWebhookManager.Initialize();
             _job.Initialize();
             _rateLimit.Initialize();
+            _joinQueue.Initialize(); // Harmony
         }
 
         public override void PostInit()

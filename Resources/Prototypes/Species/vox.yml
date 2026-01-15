@@ -6,7 +6,7 @@
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
-  skinColoration: Hues # CD: From VoxFeathers
+  skinColoration: Hues # imp, harmony: Enables expanded color selection
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
   femaleFirstNames: NamesVox
@@ -20,6 +20,7 @@
   sprites:
     Head: MobVoxHead
     Snout: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # imp, harmony: Allows for head markings
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
@@ -56,14 +57,36 @@
     # SnoutCover:
       # points: 1
       # required: false
+    Head:
+      # imp, harmony: Alterations for head markings
+      points: 2
+      required: false
+    HeadSide:
+      points: 2
+      required: false
+      # end imp, harmony
+    Snout:
+      points: 1
+      # imp, harmony: Disable forced default beak, force colorable beak instead
+      required: false
+      defaultMarkings: [ VoxBeakColor ]
+      # defaultMarkings: [ VoxBeak ]
+      # end imp, harmony changes
+    SnoutCover:
+      points: 1
+      required: false
     Arms:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+      # imp, harmony: Disable default arm marking
+      points: 6
+      required: false
+      #defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+      # end imp, harmony changes
     Legs:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      # imp. harmony: Disable default leg markings
+      points: 6
+      required: false
+      #defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      # end imp, harmony changes
     UndergarmentTop:
       points: 1
       required: false
@@ -73,10 +96,18 @@
     # Chest:
       # points: 1
       # required: false
+    Chest:
+      points: 2
+      required: false
+    # imp, harmony: Chest overlay markings
+    Overlay:
+      points: 4
+      required: false
+    # emd imp, harmony change
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ VoxTail ]
+      defaultMarkings: [ VoxTailBack ] # imp, harmony: Changes choices to Imp tails
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
@@ -105,7 +136,7 @@
 - type: humanoidBaseSprite
   id: MobVoxTorso
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi # imp, harmony: Changes torso to Imp torso
     state: torso
 
 - type: humanoidBaseSprite
@@ -135,7 +166,7 @@
 - type: humanoidBaseSprite
   id: MobVoxLHand
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: Mobs/Customization/vox_parts.rsi # imp, harmony: Changes to Imp hand markings
     state: l_hand
 
 - type: humanoidBaseSprite
@@ -159,7 +190,7 @@
 - type: humanoidBaseSprite
   id: MobVoxRHand
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: Mobs/Customization/vox_parts.rsi # imp, harmony: Changes to Imp hand markings
     state: r_hand
 
 - type: humanoidBaseSprite

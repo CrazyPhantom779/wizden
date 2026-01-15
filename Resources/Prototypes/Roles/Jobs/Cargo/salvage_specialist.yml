@@ -4,8 +4,11 @@
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
   requirements:
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 0
     - !type:OverallPlaytimeRequirement
-      time: 7200 #2 hrs
+      time: 0
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
@@ -18,9 +21,15 @@
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:
-#    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist # CD unique
-    id: SalvagePDA
-    ears: ClothingHeadsetCargo
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    # Harmony Change Start
+    # id: SalvagePDA - Harmony change
+    # ears: ClothingHeadsetCargo
+    ears: ClothingHeadsetMining # Salvage Channel
+    # Harmony Change End
+  #storage:
+    #back:
+    #- Stuff
 
 - type: chameleonOutfit
   id: SalvageSpecialistChameleonOutfit

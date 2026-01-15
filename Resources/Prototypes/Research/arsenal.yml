@@ -14,27 +14,29 @@
   - ShuttleGunKineticCircuitboard
   # These are roundstart but not replenishable for salvage
 
-- type: technology
-  id: DraconicMunitions
-  name: research-technology-draconic-munitions
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
-    state: incendiarydisplay
-  discipline: Arsenal
-  tier: 1
-  cost: 10000
-  recipeUnlocks:
-  - BoxShotgunIncendiary
-  - MagazineRifleIncendiary
-  - MagazinePistolIncendiary
-  - MagazinePistolSubMachineGunIncendiary
-  - MagazineLightRifleIncendiary
-  - SpeedLoaderMagnumIncendiary
-  - MagazineShotgunIncendiary
-  - MagazineBoxPistolIncendiary
-  - MagazineBoxMagnumIncendiary
-  - MagazineBoxLightRifleIncendiary
-  - MagazineBoxRifleIncendiary
+# Harmony change start - Remove special ammo types
+#- type: technology
+#  id: DraconicMunitions
+#  name: research-technology-draconic-munitions
+#  icon:
+#    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
+#    state: incendiarydisplay
+#  discipline: Arsenal
+#  tier: 1
+#  cost: 10000
+#  recipeUnlocks:
+#  - BoxShotgunIncendiary
+#  - MagazineRifleIncendiary
+#  - MagazinePistolIncendiary
+#  - MagazinePistolSubMachineGunIncendiary
+#  - MagazineLightRifleIncendiary
+#  - SpeedLoaderMagnumIncendiary
+#  - MagazineShotgunIncendiary
+#  - MagazineBoxPistolIncendiary
+#  - MagazineBoxMagnumIncendiary
+#  - MagazineBoxLightRifleIncendiary
+#  - MagazineBoxRifleIncendiary
+# Harmony change end
 
 - type: technology
   id: WeaponizedLaserManipulation
@@ -47,6 +49,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy Carbine to the Laser Munipulation Research.
 
 - type: technology
   id: NonlethalAmmunition
@@ -63,26 +66,28 @@
   - BoxBeanbag
   - WeaponDisabler
 
-- type: technology
-  id: UraniumMunitions
-  name: research-technology-uranium-munitions
-  icon:
-    sprite: Objects/Materials/Sheets/other.rsi
-    state: uranium
-  discipline: Arsenal
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - MagazineRifleUranium
-  - MagazinePistolUranium
-  - MagazinePistolSubMachineGunUranium
-  - MagazineLightRifleUranium
-  - SpeedLoaderMagnumUranium
-  - MagazineBoxPistolUranium
-  - MagazineBoxMagnumUranium
-  - MagazineBoxLightRifleUranium
-  - MagazineBoxRifleUranium
-  - BoxShotgunUranium
+# Harmony change start - Remove special ammo types
+#- type: technology
+#  id: UraniumMunitions
+#  name: research-technology-uranium-munitions
+#  icon:
+#    sprite: Objects/Materials/Sheets/other.rsi
+#    state: uranium
+#  discipline: Arsenal
+#  tier: 1
+#  cost: 7500
+#  recipeUnlocks:
+#  - MagazineRifleUranium
+#  - MagazinePistolUranium
+#  - MagazinePistolSubMachineGunUranium
+#  - MagazineLightRifleUranium
+#  - SpeedLoaderMagnumUranium
+#  - MagazineBoxPistolUranium
+#  - MagazineBoxMagnumUranium
+#  - MagazineBoxLightRifleUranium
+#  - MagazineBoxRifleUranium
+#  - BoxShotgunUranium
+# Harmony change end
 
 - type: technology
   id: AdvancedRiotControl
@@ -144,6 +149,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
+  - EnergyCarbineCartridgeUnstableHarmony # Harmony Change: Adds the Unstable Energy Carbine Cartridge to the Concentrated Laser Research
 
 - type: technology
   id: WaveParticleHarnessing
@@ -156,6 +162,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
+  - EnergyCarbineCartridgeXRayHarmony # Harmony Change: Adds the X-ray Energy Carbine Cartridge to the Wave Particle Research
 
 - type: technology
   id: KineticModifications
@@ -164,7 +171,7 @@
     sprite: Objects/Tools/upgrade.rsi
     state: display
   discipline: Arsenal
-  tier: 2
+  tier: 1 #Harmony Change: Changes the tier to T1
   cost: 7500
   recipeUnlocks:
   - PKAUpgradeDamage

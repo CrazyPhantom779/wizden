@@ -92,9 +92,10 @@
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "gloves" ]
       - map: [ "shoes" ]
+      #- map: [ "belt" ] #Harmony Change: Moves Belt back over outerclothing
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "belt" ] # CD: Move to below outerClothing
+      - map: [ "belt" ] #Harmony Change: Moves Belt back over outerclothing
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]

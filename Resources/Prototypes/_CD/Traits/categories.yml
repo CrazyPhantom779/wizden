@@ -6,3 +6,4 @@
 - type: traitCategory
   id: Meta
   name: cd-trait-category-meta
+  maxTraitPoints: 1

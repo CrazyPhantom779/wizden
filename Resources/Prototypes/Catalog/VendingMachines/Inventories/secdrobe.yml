@@ -23,6 +23,8 @@
     ClothingUniformSecurtyCasualSummer: 3 # CD
     ClothingUniformCasualWinterNavy: 3 # CD
     ClothingUniformJumpsuitSecurityModern: 3 # CD
+    ClothingHeadHatBeretSecurityBlueHarmony: 3 # Harmony
+    ClothingHeadHatSecSoftBlueHarmony: 3 # Harmony
     ClothingHeadsetSecurity: 3
     ClothingOuterWinterSec: 2
     ClothingOuterArmorBasic: 2
@@ -40,6 +42,7 @@
   contrabandInventory:
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1
+    ClothingOuterCoatAMG: 1 # Harmony
     ToyFigurineSecurity: 1
     ToyFigurineWarden: 1
     ToyFigurineHeadOfSecurity: 1

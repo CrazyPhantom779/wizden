@@ -26,7 +26,7 @@ public sealed partial class CluwneComponent : Component
     {
         DamageDict = new()
         {
-            { "Genetic", 300.0 },
+            { "Genetic", 100.0 }, // Harmony: 300 -> 100
         },
     };
 

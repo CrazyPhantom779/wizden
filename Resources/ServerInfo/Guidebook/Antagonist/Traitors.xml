@@ -108,5 +108,11 @@
     <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>
   </Box>
+  <!-- Start Harmony Change: Adds guidebook entry for stealing the access configurator -->
+  - Stealing the [color=#f39f27]Chief Engineer[/color]'s or [color=#9fed58]Head of Personnel[/color]'s [bold]access configurator[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="AccessConfigurator" Caption=""/>
+  </Box>
+  <!-- End Harmony Change -->
 
 </Document>

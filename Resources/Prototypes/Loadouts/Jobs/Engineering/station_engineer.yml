@@ -1,22 +1,22 @@
-# # Senior times (CD: Disabled timers)
-# - type: loadoutEffectGroup
-#   id: SeniorEngineering
-#   effects:
-#   - !type:JobRequirementLoadoutEffect
-#     requirement:
-#       !type:RoleTimeRequirement
-#       role: JobAtmosphericTechnician
-#       time: 21600 #6 hrs
-#   - !type:JobRequirementLoadoutEffect
-#     requirement:
-#       !type:RoleTimeRequirement
-#       role: JobStationEngineer
-#       time: 21600 #6 hrs
-#   - !type:JobRequirementLoadoutEffect
-#     requirement:
-#       !type:DepartmentTimeRequirement
-#       department: Engineering
-#       time: 216000 # 60 hrs
+# Senior times
+- type: loadoutEffectGroup
+  id: SeniorEngineering
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 3h # Harmony: 6h -> 3h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 3h # Harmony: 6h -> 3h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 30h # Harmony: 60h -> 30h
 
 # Head
 - type: startingGear

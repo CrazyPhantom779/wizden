@@ -27,7 +27,7 @@
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/bartender.rsi # Harmony
 
 - type: entity
   parent: ClothingUniformBase
@@ -93,7 +93,7 @@
   description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ce.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/ce.rsi # Harmony
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -102,9 +102,9 @@
   description: A yellow turtleneck designed specifically for work in conditions of the engineering department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ce_turtle.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/ce_turtle.rsi # Harmony
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ce_turtle.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/ce_turtle.rsi # Harmony
 
 - type: entity
   parent: ClothingUniformBase
@@ -264,27 +264,31 @@
   - type: Clothing
     sprite: _CD/Clothing/Uniforms/Jumpsuit/cmoturtle.rsi # CD
 
+# Harmony Change - Updates sprite pathing, contraband level, name, and description.
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitDetective
-  name: hard-worn suit
-  description: Someone who wears this means business.
+  name: detective's hard-worn suit
+  description: This suit used to really catch the light. The tie is god awful.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective.rsi
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective.rsi
+# End of Harmony changes.
 
+# Harmony Change - Updates sprite pathing, contraband level, name, and description.
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitDetectiveGrey
-  name: noir suit
-  description: A hard-boiled private investigator's grey suit, complete with tie clip.
+  name: detective's noir suit
+  description: Beyond the shadow of a doubt, this is the epitome of impeccable tailoring.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective_grey.rsi
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+# End of Harmony changes.
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -311,8 +315,9 @@
   description: Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hop.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hop.rsi # Harmony
 
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoS
@@ -320,43 +325,33 @@
   description: It's bright red and rather crisp, much like security's victims tend to be.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-left
-      right:
-      - state: inhand-right
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-right
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
 
+# Harmony Change: Updated Sprite Pathing, Name, and Description for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoSAlt
-  name: marshal's turtleneck # TP
-  description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
+  name: head of security's assault jumpsuit
+  description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
 
+#Harmony Change: Updated the name and sprite for bluesec update
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoSBlue
-  name: marshal's blue jumpsuit # TP
-  description: A blue jumpsuit of the Marshal.
+  name: head of security's blue suit
+  description: A blue suit of Head of Security.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos_blue.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos_blue.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -407,7 +402,7 @@
   description: This jumpsuit seems to attract all the seagull droppings. Poor lad.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/janitor.rsi # Harmony
 
 - type: entity
   parent: ClothingUniformBase
@@ -452,15 +447,15 @@
     sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSecurityContraband] # Harmony Change: Added Contraband Level
   id: ClothingUniformJumpsuitBrigmedic
   name: brigmedic jumpsuit
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Harmony
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Harmony
 
 - type: entity
   parent: ClothingUniformBase
@@ -575,6 +570,7 @@
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/roboticist.rsi
 
+#Harmony Change: Updated Pathing and Name for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitSec
@@ -582,30 +578,19 @@
   description: A jumpsuit made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-left
-      right:
-      - state: inhand-right
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-right
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi # Harmony
 
+#Harmony Change: Updated the name, sprite, and contraband level for bluesec update
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitSecBlue
-  name: blue shirt and tie
+  name: security blue suit
   description: I'm a little busy right now, Calhoun.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security_blue.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security_blue.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -629,28 +614,17 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
 
+#Harmony Change: Updated Pathing and Name for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitWarden
-  name: warden's uniform
-  description: A formal security suit for wardens, complete with extra butt-padding for those long hours at the desk.
+  name: warden's jumpsuit
+  description: A formal security suit for officers complete with Nanotrasen belt buckle.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/warden.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-left
-      right:
-      - state: inhand-right
-        color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
-      - state: overlay-inhand-right
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/warden.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -958,10 +932,11 @@
   description: A fancy tuxedo for the musically inclined.  Perfect for any lounge act!
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/musician.rsi
+#    sprite: Clothing/Uniforms/Jumpsuit/musician.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/musician.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/musician.rsi
-
+#    sprite: Clothing/Uniforms/Jumpsuit/musician.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/musician.rsi # Updated sprite pathing for Harmony
 - type: entity
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTChaplain
@@ -1175,6 +1150,7 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
 
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitSeniorOfficer
@@ -1182,9 +1158,9 @@
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/senior_officer.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/senior_officer.rsi
 
 - type: entity
   parent: ClothingUniformBase

@@ -18,6 +18,7 @@
     - id: MassHallucinations
     - id: MimicVendorRule
     - id: TP14FlashStorm
+    # - id: MimicVendorRule # Harmony Change
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -26,6 +27,7 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
+    - id: CarpMigration # Harmony Change
     - id: VentClog
     - id: SynthStorm # CD: Unique event for synths
 
@@ -33,6 +35,8 @@
   id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
+    - !type:NestedSelector # DeltaV
+      tableId: BasicAntagEventsTableDeltaV
     - id: ClosetSkeleton
     # - id: KingRatMigration
     - id: RevenantSpawn
@@ -52,6 +56,7 @@
     - id: LoneOpsSpawn # fuck you loneops
     - id: DerelictGenericCyborgSpawn
     - id: WizardSpawn
+    - id: BingleSpawn # Harmony
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -198,10 +203,10 @@
   id: DragonSpawn # FOUND YOUUUUUU
   components:
   - type: StationEvent
-    weight: 7.5
+    weight: 3.5 # Harmony 6.5 -> 3.5
     earliestStart: 40
-    reoccurrenceDelay: 20
-    minimumPlayers: 40 # yay
+    reoccurrenceDelay: 40 # Harmony 20 -> 40
+    minimumPlayers: 35 # Harmony 20 -> 35
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -229,11 +234,11 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 6
+    weight: 3 # Harmony 6 -> 3
     duration: null
     earliestStart: 30
-    reoccurrenceDelay: 20
-    minimumPlayers: 30
+    reoccurrenceDelay: 40 # Harmony 20 -> 40
+    minimumPlayers: 35 # Harmony 30 -> 35
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
   - type: AntagObjectives
@@ -453,7 +458,7 @@
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 50 # Delta V Change
   - type: VentClogRule
 
 - type: entity
@@ -466,16 +471,14 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 2 # CD: Nerf from 5 to 2
-    duration: 60
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
 
 - type: entity
   id: SnakeSpawn
@@ -487,16 +490,14 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 1 # CD: Nerf from 5 to 1
-    duration: 60
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobPurpleSnake
-      prob: 0.02
-    - id: MobSmallPurpleSnake
-      prob: 0.02
-    - id: MobCobraSpace
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobPurpleSnake
+      - id: MobSmallPurpleSnake
+      - id: MobCobraSpace
 
 - type: entity
   id: SpiderSpawn
@@ -508,12 +509,11 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 2 # CD: Nerf from 5 to 2
-    duration: 60
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobGiantSpiderAngry
 
 - type: entity
   id: SpiderClownSpawn
@@ -524,13 +524,12 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 15
-    weight: 1
-    duration: 60
+    minimumPlayers: 20
+    weight: 1.5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobClownSpider
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      id: MobClownSpider
 
 - type: entity
   id: ZombieOutbreak
@@ -571,11 +570,11 @@
   parent: BaseNukeopsRule
   id: LoneOpsSpawn
   components:
-  # - type: StationEvent
-  #   earliestStart: 35
-  #   weight: 5.5
-  #   minimumPlayers: 20
-  #   duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+  - type: StationEvent
+    earliestStart: 60 # Harmony 35 -> 60
+    weight: 2 # Harmony 5.5 -> 2
+    minimumPlayers: 35 # Harmony 20 -> 35
+    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml

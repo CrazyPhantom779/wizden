@@ -17,9 +17,9 @@
   description: Sturdy boots made for heavy work. Originally standard issue for security teams.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/jackboots.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/jackboots.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/jackboots.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/jackboots.rsi # Updated sprite pathing for Harmony
 #  CD remove SlowOnDamageModifier
 #  - type: ClothingSlowOnDamageModifier
 #    modifier: 0.5
@@ -154,15 +154,18 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/winterbootssci.rsi
 
+# Harmony Change: Updated Sprite Pathing, Name, and Damage Slowdown Modifier for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingShoesBaseWinterBoots, ClothingShoesMilitaryBase, BaseSecurityContraband]
   id: ClothingShoesBootsWinterSec
-  name: security winter boots
+  name: winter jackboots
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/winterbootssec.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/winterbootssec.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
 
 - type: entity
   parent: [ClothingShoesBaseWinterBoots, BaseSyndicateContraband]

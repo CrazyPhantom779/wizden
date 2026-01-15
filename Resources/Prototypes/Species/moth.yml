@@ -69,6 +69,9 @@
     Snout:
       points: 1
       required: false
+    Head:
+      points: 6 # Harmony - 1->6
+      required: false
     # Head:
       # points: 3
       # required: false
@@ -78,15 +81,15 @@
     UndergarmentBottom:
       points: 1
       required: false
-    # Chest:
-      # points: 4 # CD
-      # required: false
-    # Legs:
-      # points: 6
-      # required: false
-    # Arms:
-      # points: 6
-      # required: false
+    Chest:
+      points: 4 # Harmony - 2->4
+      required: false
+    Legs:
+      points: 6 # Harmony - 2->6
+      required: false
+    Arms:
+      points: 6 # Harmony - 2->6
+      required: false
 
 - type: humanoidBaseSprite
   id: MobMothHead

@@ -29,7 +29,10 @@
         layer:
         - GlassAirlockLayer
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -182,7 +185,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed
@@ -258,7 +264,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -327,7 +336,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed
@@ -403,7 +415,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -472,7 +487,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed

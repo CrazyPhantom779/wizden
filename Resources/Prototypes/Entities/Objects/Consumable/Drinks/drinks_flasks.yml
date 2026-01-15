@@ -72,13 +72,13 @@
     sprite: Objects/Consumable/Drinks/detflask.rsi
 
 - type: entity
-  parent: FlaskBase
+  parent: [FlaskBase, BaseCommandContraband] # Harmony - make flask contraband
   id: DrinkHosFlask
-  name: marshal's flask
+  name: head of security's flask # Harmony
   description: A metal flask, fit for a hard working HoS.
   components:
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/hosflask.rsi
+    sprite: _Harmony/Objects/Consumable/Drinks/hosflask.rsi # Harmony
 
 - type: entity
   parent: FlaskBase

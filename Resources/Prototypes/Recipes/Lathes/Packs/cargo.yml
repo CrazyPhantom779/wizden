@@ -6,6 +6,7 @@
   - AppraisalTool
   - Pickaxe
   - UtilityKnife
+  - BoxFolderClipboard # Harmony
 
 - type: latheRecipePack
   id: CargoBoardsStatic

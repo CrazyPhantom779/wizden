@@ -1,0 +1,14 @@
+- files: ["moodswings.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by pigeonbeans"
+  source: "https://soundcloud.com/pigeonbeans/moodswings"
+
+- files: ["sponsored_by_syndicate.ogg"]
+  license: "Custom"
+  copyright: "Sponsored By Syndicate by mrjajkes is licensed under the following terms: free use and modification with proper credit to the original creator, excluding usage by FulpStation, White Dream, and any ERP/sexually-oriented servers, or for commercial use unless granted permission by the author. For commercial use (Patreon is fine). please contact the author to discuss details."
+  source: "https://youtu.be/vO_dMp4d3ew"
+
+- files: ["parabellum.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Soundtrack made by Jacek 'Fragik' Rogal for SCP: Secret Laboratory, modified by Halycon (Github)"
+  source: "https://youtu.be/XL9Qbkl3FPE"

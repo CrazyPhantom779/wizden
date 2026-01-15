@@ -29,6 +29,8 @@ using Content.Shared.NullLink;
 using Content.Shared.IoC;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Client._Harmony.JoinQueue;
+using Content.Shared._Harmony.JoinQueue;
 
 namespace Content.Client.IoC
 {
@@ -65,11 +67,14 @@ namespace Content.Client.IoC
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
             collection.Register<ClientsidePlaytimeTrackingManager>();
-
             // NullLink start
             collection.Register<INullLinkPlayerRolesManager, NullLinkPlayerRolesManager>();
             collection.Register<ISharedNullLinkPlayerRolesReqManager, PlayerRolesReqManager>();
             // NullLink end
+            // Harmony Queue Start
+            collection.Register<IJoinQueueManager, JoinQueueManager>();
+            collection.Register<IClientJoinQueueManager, JoinQueueManager>();
+            // Harmony Queue End
         }
     }
 }

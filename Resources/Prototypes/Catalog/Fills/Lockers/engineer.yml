@@ -158,6 +158,7 @@
     - id: HolofanProjector
     - id: RCD
     - id: RCDAmmo
+    - id: RPD # Harmony
     - id: AirGrenade
     #CD Addions
     - id: BookSOPEngineering

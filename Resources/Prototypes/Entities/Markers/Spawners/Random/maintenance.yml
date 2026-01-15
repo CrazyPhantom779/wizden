@@ -116,6 +116,14 @@
         - id: ClothingNeckCloakPan
       - id: ToyFigurineSkeleton
       - id: MysteryFigureBox
+      # Start Harmony Change: Adds Playing Cards to Loot Table
+      - !type:GroupSelector
+        children:
+        - id: CardBoxBlack
+        - id: CardBoxNanotrasen
+        - id: CardBoxSyndicate
+          weight: 0.1
+      # End Harmony Change
       # Cult
       - !type:AllSelector
         children:
@@ -295,7 +303,7 @@
       - id: PetCarrier
       - id: DrinkMopwataBottleRandom
       - id: SpectralLocator
-      - id: WehpetInstrument  # CD: Rare maints loot can only be in upstream code, so that the weh-pet can actually spawn in maints lockers.
+      - id: WehpetInstrument  # Harmony change to add weh-pet to rare maints loot
       - id: LidSalami
         weight: 0.05
 

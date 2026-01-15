@@ -379,6 +379,10 @@
       - CombatKnife
       - Truncheon
       - HandGrenade
+# Harmony Change: Adds the Energy Cartridges to the security belt whitelist
+      - EnergyCarbineCartridge
+      - EnergyCarbineCartridgeSyndicate
+# End of Harmony Change
       components:
       - Stunbaton
       - FlashOnTrigger
@@ -390,6 +394,7 @@
       - DoorRemote
       - Whistle
       - BalloonPopper
+      - Ensnaring #Harmony Change: Allows Bolas into Security Belts, intended for Security Bolas.
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:

@@ -20,6 +20,9 @@
     - id: UnknownShuttleMeatZone
     - id: UnknownShuttleMicroshuttle
     - id: UnknownShuttleSpacebus
+    - id: UnknownShuttleChemLab # Harmony
+    - id: UnknownShuttleBrigmedic # Harmony
+    - id: UnknownShuttleCasino # Harmony
 
 - type: entityTable
   id: UnknownShuttlesFreelanceTable
@@ -33,7 +36,8 @@
     children:
     - id: LoneOpsSpawn
     - id: UnknownShuttleManOWar
-    - id: UnknownShuttleInstigator
+   #- id: UnknownShuttleInstigator # Disabled, Harmony
+    - id: UnknownShuttleSyndicateReinforcement # Harmony
 
 # Shuttle Game Rules
 

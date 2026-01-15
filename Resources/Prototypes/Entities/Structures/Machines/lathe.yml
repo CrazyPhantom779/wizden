@@ -134,6 +134,8 @@
     - PowerCellsStatic
     - ElectronicsStatic
     - CDAutolatheStatic
+    - HarmonyCargoStatic # Harmony
+    - HarmonyServiceStatic # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -389,6 +391,8 @@
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
     - CDSecfabStatic
+    - HarmonySecurityEquipmentStatic # Harmony
+    - HarmonySecurityAmmoStatic # Harmony
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -433,6 +437,7 @@
       runningState: icon
       staticPacks:
       - SecurityAmmoStatic
+      - HarmonySecurityAmmoStatic # Harmony
     - type: EmagLatheRecipes
       emagStaticPacks:
       - SyndicateAmmoStatic
@@ -471,6 +476,7 @@
     - EmptyMedkitsStatic
     - SurgeryStatic
     - CDMedfabStatic
+    - HarmonyMedicalStatic # Harmony
     dynamicPacks:
     - Chemistry
   - type: Machine
@@ -517,6 +523,7 @@
     - Carpets
     - Bedsheets
     - CDUniformPrinterStatic
+    - HarmonyClothing # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -688,6 +695,7 @@
     - FloorConcreteTilesStatic
     - CircuitFloorsStatic
     - FloorMarbleTilesStatic
+    - HarmonyFloorTilesStatic # Harmony
     dynamicPacks:
     - FauxTiles
   - type: MaterialStorage

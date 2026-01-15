@@ -1110,6 +1110,7 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NanoChatCartridge # CD
+      - AstroNavCartridge # Harmony change to give Syndicate PDA AstroNav
 
 - type: entity
   parent: [ SyndiPDA, BaseSyndicateContraband ]
@@ -1130,7 +1131,7 @@
 - type: entity
   parent: [ SyndiOperativePDA, BaseSyndicateContraband ]
   id: SyndiCorpsmanPDA
-  name: syndicate corpsman PDA
+  name: syndicate medic PDA # Harmony Change - Nukie Corpsman > Nukie Medic
   description: Commander... I need to cook!
   components:
   - type: Pda
@@ -1148,6 +1149,7 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - MedTekCartridge
+      - AstroNavCartridge # Harmony change to give Syndicate Agent PDA AstroNav
 
 - type: entity
   parent: [ SyndiOperativePDA, BaseSyndicateContraband ]

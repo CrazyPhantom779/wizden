@@ -10,6 +10,14 @@
     ClothingUniformJumpskirtCargoDark: 3 # CD
     ClothingUniformJumpsuitCargoPants: 3 # CD
     ClothingUniformJumpsuitCargoOveralls: 3 # CD
+    ClothingUniformJumpsuitCargo: 3
+    ClothingUniformJumpskirtCargo: 3
+# start of harmony change: adds new cargo jumpsuits
+    ClothingUniformJumpsuitCargoPantsHarmony: 3
+    ClothingUniformJumpsuitCargoverallsHarmony: 3
+    ClothingUniformJumpsuitCargoOfficeSlacksHarmony: 3
+    ClothingUniformJumpskirtCargoOfficeSkirtHarmony: 3
+# end of harmony change
     ClothingShoesColorBlack: 3
     ClothingHandsGlovesFingerless: 3
     ClothingHandsGlovesMechanic: 3 # CD

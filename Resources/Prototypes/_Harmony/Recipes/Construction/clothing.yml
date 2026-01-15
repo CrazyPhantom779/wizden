@@ -1,0 +1,15 @@
+- type: construction
+  id: ClothingShoesDuckyGaloshes
+  graph: ClothingShoesDuckyGaloshes
+  startNode: start
+  targetNode: shoes
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: ClothingGoliathCloak
+  graph: ClothingGoliathCloak
+  startNode: start
+  targetNode: cloak
+  category: construction-category-clothing
+  objectType: Item

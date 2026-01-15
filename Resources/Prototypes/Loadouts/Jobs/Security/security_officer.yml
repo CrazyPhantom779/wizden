@@ -1,17 +1,17 @@
-# # Senior Time (CD: Disabled)
-# - type: loadoutEffectGroup
-#   id: SeniorOfficer
-#   effects:
-#   - !type:JobRequirementLoadoutEffect
-#     requirement:
-#       !type:RoleTimeRequirement
-#       role: JobWarden
-#       time: 21600 #6 hrs
-#   - !type:JobRequirementLoadoutEffect
-#     requirement:
-#       !type:DepartmentTimeRequirement
-#       department: Security
-#       time: 216000 # 60 hrs
+# Senior Time
+- type: loadoutEffectGroup
+  id: SeniorOfficer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobWarden
+      time: 3h # Harmony: 6h -> 3h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 30h # Harmony: 60h -> 30h
 
 # Head
 - type: loadout

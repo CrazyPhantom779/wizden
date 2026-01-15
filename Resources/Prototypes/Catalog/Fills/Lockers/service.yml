@@ -91,6 +91,7 @@
     - id: LightReplacer
     - id: BoxLightMixed
     - id: Holoprojector
+    - id: ToolboxJanitorialFilled # Harmony change, added janitorial toolbox spawn to janitor's locker
     - !type:AllSelector
       rolls: 2
       children:

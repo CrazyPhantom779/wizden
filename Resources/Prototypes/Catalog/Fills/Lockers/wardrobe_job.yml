@@ -29,6 +29,10 @@
       - id: ClothingUniformJumpsuitPrisoner
       - id: ClothingUniformJumpskirtPrisoner
       - id: ClothingShoesColorBlack
+      # Harmony start
+      - id: ClothingOuterVestTank
+      - id: ClothingHeadsetGrey
+      # Harmony end
     - id: ClothingMaskMuzzle
     - !type:GroupSelector
       prob: 0.15
@@ -310,6 +314,7 @@
     children:
     - id: ClothingHeadHatCargosoft
     - id: ClothingUniformJumpsuitCargo
+    - id: ClothingUniformJumpsuitCargoPantsHarmony # Harmony change
     - id: ClothingBackpack
     - id: ClothingShoesColorBlack
     - id: ClothingUniformJumpskirtCargo

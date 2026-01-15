@@ -26,6 +26,10 @@
       prob: 0.05
     - id: Xenoborgs
       prob: 0.05
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -37,6 +41,10 @@
       prob: 0.5
     - id: Xenoborgs
       prob: 0.05
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -48,6 +56,10 @@
       prob: 0.5
     - id: SubWizard
       prob: 0.05
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -57,6 +69,10 @@
     rules:
     - id: Thief
       prob: 0.5
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -123,6 +139,7 @@
     - NamesOperationSuffix
     nameFormat: name-format-nuclear-operation
   - type: NukeopsRule
+    warDeclarationMinOps: 3 # Harmony addition
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
@@ -182,7 +199,7 @@
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsOperative
-      max: 3
+      max: 2
       playerRatio: 10
       startingGear: SyndicateOperativeGearFull
       roleLoadout:
@@ -212,7 +229,7 @@
   - type: AntagRandomObjectives
     sets:
     - groups: TraitorObjectiveGroups
-    maxDifficulty: 5
+    maxDifficulty: 7.5 # Harmony. Change: 5 -> 7.5
   - type: AntagSelection
     agentName: traitor-round-end-agent-name
   - type: DynamicRuleCost
@@ -357,7 +374,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 25 # Harmony specific change. 10 -> 25
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn

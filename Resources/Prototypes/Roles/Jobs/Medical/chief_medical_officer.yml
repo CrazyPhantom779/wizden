@@ -6,17 +6,21 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 2.5h
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 1h
+    # Harmony start
+    # - !type:RoleTimeRequirement
+    #   role: JobChemist
+    #   time: 2.5h
+    # - !type:RoleTimeRequirement
+    #   role: JobMedicalDoctor
+    #   time: 5h
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 1h
+      time: 8h # Harmony: 10h -> 8h
+  # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 2h
+      time: 12h
+    # Harmony end
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

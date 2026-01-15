@@ -11,7 +11,10 @@
         amount: 6
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: syringe
 
 - type: entity
@@ -27,7 +30,10 @@
         amount: 9
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: pillbox
 
 - type: entity
@@ -43,7 +49,10 @@
         amount: 6
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: bottle
 
 - type: entity
@@ -59,7 +68,10 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: sterile
 
 - type: entity
@@ -75,7 +87,10 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: latex
 
 - type: entity
@@ -91,7 +106,10 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: nitrile
 
 - type: entity
@@ -107,7 +125,10 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: bodybags
   - type: Storage # TODO cardboard boxes shouldn't have whitelisting
     whitelist:
@@ -130,7 +151,10 @@
         amount: 6
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: vials
 
 ##CHEM LAB STUFF

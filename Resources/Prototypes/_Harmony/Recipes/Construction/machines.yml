@@ -1,0 +1,84 @@
+# Button frames
+- type: construction
+  name: recipes-button-frame-grey-name
+  id: ButtonFrameGreyRecipe
+  graph: ButtonFrameGraph
+  startNode: start
+  targetNode: ButtonFrameGreyNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  name: recipes-button-frame-caution-name
+  id: ButtonFrameCautionRecipe
+  graph: ButtonFrameGraph
+  startNode: start
+  targetNode: ButtonFrameCautionNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  name: recipes-button-frame-caution-security-name
+  id: ButtonFrameCautionSecurityRecipe
+  graph: ButtonFrameGraph
+  startNode: start
+  targetNode: ButtonFrameCautionSecurityNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  name: recipes-button-frame-exit-name
+  id: ButtonFrameExitRecipe
+  graph: ButtonFrameGraph
+  startNode: start
+  targetNode: ButtonFrameExitNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition
+
+- type: construction
+  name: recipes-button-frame-janitor-name
+  id: ButtonFrameJanitorRecipe
+  graph: ButtonFrameGraph
+  startNode: start
+  targetNode: ButtonFrameJanitorNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  conditions:
+    - !type:WallmountCondition
+  canBuildInImpassable: true
+
+# Lockable buttons
+- type: construction
+  id: LockableButtonRecipe
+  graph: LockableButtonGraph
+  startNode: start
+  targetNode: LockableButtonNode
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:WallmountCondition

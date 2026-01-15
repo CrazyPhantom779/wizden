@@ -54,7 +54,8 @@ public sealed partial class BlockingSystem
 
         var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
         blockFraction = Math.Clamp(blockFraction, 0, 1);
-        _damageable.TryChangeDamage((item, dmgComp), blockFraction * args.OriginalDamage);
+        _damageable.TryChangeDamage((item, dmgComp), blockFraction * args.OriginalDamage,
+            armorPenetration: args.ArmorPenetration); // Goob: armor penetration
 
         var modify = new DamageModifierSet();
         foreach (var key in dmgComp.Damage.DamageDict.Keys)
@@ -62,7 +63,8 @@ public sealed partial class BlockingSystem
             modify.Coefficients.TryAdd(key, 1 - blockFraction);
         }
 
-        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
+        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage,
+            DamageSpecifier.PenetrateArmor(modify ,args.ArmorPenetration)); // Goob edit
 
         if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
         {

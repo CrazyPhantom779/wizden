@@ -5,7 +5,11 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 7200 #2 hrs
+      time: 1h # Harmony: 10h -> 1h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 5h
+      inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
@@ -30,10 +34,13 @@
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: BookSecurity
+    pocket1: WeaponDisabler
+    pocket2: BookSecurity
   storage:
     back:
     - Flash
+    - MagazinePistol
+    - WeaponPistolMk58
 
 - type: chameleonOutfit
   id: SecurityCadetChameleonOutfit

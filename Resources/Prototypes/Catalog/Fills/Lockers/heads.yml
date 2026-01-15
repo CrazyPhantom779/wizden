@@ -17,6 +17,11 @@
     - id: BookSOPCommand
       prob: 0.3
     - id: SalvageShuttleConsoleCircuitboard
+    - id: ClothingHandsKnuckleDustersQM
+    # Harmony Change Start - Adds unique salv comms
+    - id: BoxEncryptionKeySalvage
+    - id: RadioHandheldMining
+    # Harmony Change End
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -25,8 +30,16 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: LockerFillQuarterMaster
+    # Harmony Change Start
+      # entity_storage: !type:NestedSelector
+        # tableId: LockerFillQuarterMaster
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LockerFillQuarterMaster
+        - !type:NestedSelector
+          tableId: FillQuarterMasterHardsuit
+    # Harmony Change End
 
 # No laser table
 - type: entityTable
@@ -142,6 +155,7 @@
     - id: BookSOPService
     - id: BookSOPCommand
       prob: 0.3
+    - id: BookSOP # Harmony Change
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -170,6 +184,7 @@
     - id: BoxCECircuitboards
     - id: RCD
     - id: RCDAmmo
+    - id: RPD # Harmony Change: Add RPD to locker before upstream implimentation
     - id: RubberStampCE
     - id: MetalFoamGrenade
     #CD Addions
@@ -221,7 +236,7 @@
     children:
     - id: BoxEncryptionKeyMedical
     - id: ClothingBackpackDuffelSurgeryFilled
-    - id: ClothingEyesHudMedical
+    - id: ClothingEyesGlassesMedical # Harmony: hud -> glasses
     - id: ClothingHandsGlovesNitrile
     - id: ClothingHeadsetAltMedical
     - id: ClothingMaskSterile
@@ -348,6 +363,7 @@
     - id: BoxHoSCircuitboards
     - id: WeaponDisabler
 #    - id: WeaponTaser # Trieste 
+    # - id: WeaponTaser # Harmony
     - id: WantedListCartridge
     - id: DrinkHosFlask
     #CD Addions

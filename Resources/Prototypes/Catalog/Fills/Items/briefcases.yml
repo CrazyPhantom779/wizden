@@ -28,7 +28,7 @@
         - id: MagazineBoxAntiMateriel
         - id: ClothingNeckTieRed
         - id: ClothingHandsGlovesLatex
-        - id: ClothingUniformJumpsuitLawyerBlack
+        - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony # Harmony
         - id: BarberScissors
 
 - type: entity
@@ -45,7 +45,7 @@
         - id: EncryptionKeySyndie
         - id: RubberStampTrader
         - id: PhoneInstrumentSyndicate
-        - id: ClothingUniformJumpsuitTacticool
+        - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony # Harmony
         - id: ClothingOuterCoatJensen
         - id: ClothingHandsGlovesCombat
         - id: ClothingMaskNeckGaiter

@@ -8,8 +8,11 @@ alert-level-green-announcement = It is now safe to return to your daily activiti
 alert-level-green-instructions = Proceed as normal.
 
 alert-level-blue = Blue
-alert-level-blue-announcement = There is a potential threat onboard the platform. Law Enforcement should perform random searches. Citizens are advised to be vigilant and report suspicious activity to the nearest Enforcer.
-alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to the nearest Enforcer.
+# Start Harmony Change - Align description with SOP
+# alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
+alert-level-blue-announcement = There is a suspected threat to the station. Security can now perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
+# End Harmony Change - Align description with SOP
+alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to security.
 
 alert-level-red = Red
 alert-level-red-announcement = There is a confirmed threat on the platform. Enforcement should prepare to use lethal force if necessary. Citizens should find a safe place to shelter in, and are advised to follow any present authorities.

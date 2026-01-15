@@ -230,7 +230,7 @@ namespace Content.Server.Light.EntitySystems
             var appearanceComponent = EntityManager.GetComponentOrNull<AppearanceComponent>(uid);
 
             var chargeFraction = _battery.GetChargeLevel(battery.Value.AsNullable());
-            if (chargeFraction >= 0.30)
+            if (chargeFraction >= 0.05) // Harmony: 0.30 -> 0.05
             {
                 _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.FullPower, appearanceComponent);
             }

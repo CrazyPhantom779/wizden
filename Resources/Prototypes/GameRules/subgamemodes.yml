@@ -42,6 +42,11 @@
   parent: BaseWizardRule
   id: SubWizard
   components:
+  # Start harmony specific change
+  - type: GameRule
+    minPlayers: 25
+    cancelPresetOnTooFewPlayers: false
+  # End harmony specific change
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn

@@ -1,0 +1,112 @@
+#Harmony trinkets below
+- type: loadout
+  id: ClothingNeckVulturePin
+  storage:
+    back:
+    - ClothingNeckVulturePin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckMirosPin
+  storage:
+    back:
+    - ClothingNeckMirosPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckSalamanderPin
+  storage:
+    back:
+    - ClothingNeckSalamanderPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckLizardPin
+  storage:
+    back:
+    - ClothingNeckLizardPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckLeviathanPin
+  storage:
+    back:
+    - ClothingNeckLeviathanPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckFrontierPin
+  storage:
+    back:
+    - ClothingNeckFrontierPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckCosmaticDriftPin
+  storage:
+    back:
+    - ClothingNeckCosmaticDriftPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckDeltaVPin
+  storage:
+    back:
+    - ClothingNeckDeltaVPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckAxolotlPin
+  storage:
+    back:
+    - ClothingNeckAxolotlPin
+  groupBy: "pins"
+
+- type: loadout
+  id: ClothingNeckLanyard
+  storage:
+    back:
+    - ClothingNeckLanyard
+
+- type: loadout
+  id: HarmonicaInstrument
+  storage:
+    back:
+    - HarmonicaInstrument
+
+- type: loadout
+  id: PlushieVox
+  storage:
+    back:
+    - PlushieVox
+
+- type: loadout
+  id: SilverRing
+  storage:
+    back:
+    - SilverRing
+
+- type: loadout
+  id: GoldRing
+  storage:
+    back:
+    - GoldRing
+
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+
+# Towels
+- type: loadout
+  id: TowelStripedOrange
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPermaPrisoner
+      time: 360000 # 100hr
+  storage:
+    back:
+    - TowelStripedOrange

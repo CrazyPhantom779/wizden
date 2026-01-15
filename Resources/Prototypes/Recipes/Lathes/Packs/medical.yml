@@ -6,6 +6,7 @@
   - Brutepack
   - Ointment
   - Gauze
+  - Bloodpack # Harmony
 
 - type: latheRecipePack
   id: BasicChemistryStatic
@@ -26,6 +27,7 @@
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
   - TP14ChemistryHudEyepatchRecipe # TP14
+  - BaseChemistryEmptyVial # Harmony
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -36,6 +38,7 @@
   - Drill
   - Saw
   - Hemostat
+  - CircularSaw # Harmony
 
 - type: latheRecipePack
   id: MedicalStatic
@@ -51,6 +54,8 @@
   - JetInjector
   - TP14MedicalHudRecipe # TP14
   - TP14MedicalHudEyepatchRecipe #TP14
+  - ClothingEyesEyepatchHudMedical # Harmony
+  - ClothingEyesHudMedical # Harmony
 
 - type: latheRecipePack
   id: RollerBedsStatic
@@ -77,7 +82,7 @@
   - MedkitBrute
   - MedkitAdvanced
   - MedkitRadiation
-  - MedkitCombat
+# - MedkitCombat -Harmony
 
 - type: latheRecipePack
   id: MedicalBoardsStatic

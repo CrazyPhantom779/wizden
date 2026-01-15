@@ -104,9 +104,13 @@
   productEntity: ThrowingKnivesKit
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+# Start of Harmony Change: Lowers throwing knives kit cost to four TC
+#    Telecrystal: 3
+    Telecrystal: 2
   cost:
-    Telecrystal: 6
+#    Telecrystal: 6
+    Telecrystal: 4
+# End of Harmony Change
   categories:
     - UplinkWeaponry
 
@@ -131,9 +135,13 @@
   productEntity: ClothingHandsKnuckleDustersSyndicate
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+# Start of Harmony Change: Lowers syndicate knuckle duster price to three TC
+#    Telecrystal: 3
+    Telecrystal: 1
   cost:
-    Telecrystal: 6
+#    Telecrystal: 6
+    Telecrystal: 3
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -210,25 +218,31 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledSMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+# Start of Harmony Change: Lowers the C20 TC cost and discount cost
+#   Telecrystal: 10
+    Telecrystal: 8
   cost:
-    Telecrystal: 17
+#   Telecrystal: 17
+    Telecrystal: 16
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
-- type: listing
-  id: UplinkEstocBundle
-  name: uplink-estoc-bundle-name
-  description: uplink-estoc-bundle-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 11
-  cost:
-    Telecrystal: 18
-  categories:
-  - UplinkWeaponry
+# Start Harmony Change : removes Estoc DMR from uplink
+#- type: listing
+#  id: UplinkEstocBundle
+#  name: uplink-estoc-bundle-name
+#  description: uplink-estoc-bundle-desc
+#  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
+#  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
+#  discountCategory: veryRareDiscounts
+#  discountDownTo:
+#    Telecrystal: 11
+#  cost:
+#    Telecrystal: 18
+#  categories:
+#  - UplinkWeaponry
+# End harmony change
 
 - type: listing
   id: UplinkBulldogBundle
@@ -238,9 +252,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledShotgun
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 12
+# Start of Harmony Change: Lowers the Bulldog TC cost and discount cost
+#   Telecrystal: 12
+    Telecrystal: 10
   cost:
-    Telecrystal: 20
+#   Telecrystal: 20
+    Telecrystal: 18
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -252,9 +270,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 20
-  cost:
+# Start of Harmony Change: Increases the price of the china lake bundle
+#    Telecrystal: 20
     Telecrystal: 25
+  cost:
+#    Telecrystal: 25
+    Telecrystal: 30
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -266,9 +288,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledLMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 24
+  # Start of Harmony Change: Decreases the price of the L6 saw bundle
+#    Telecrystal: 24
+    Telecrystal: 20
   cost:
-    Telecrystal: 30
+#    Telecrystal: 30
+    Telecrystal: 25
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -652,9 +678,9 @@
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 4 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -713,9 +739,9 @@
   productEntity: ChemistryBottleNocturine
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 6 # Harmony change
   cost:
-    Telecrystal: 4
+    Telecrystal: 8 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -950,12 +976,15 @@
     Telecrystal: 4
   categories:
   - UplinkDeception
-  restockTime: 1800
+  #Start of Harmony change
   conditions:
-  - !type:StoreWhitelistCondition
+  - !type:BuyerWhitelistCondition
     blacklist:
-      tags:
-      - NukeOpsUplink
+      components:
+      - SurplusBundle
+  #End of Harmony change
+
+# Disruption
 
 - type: listing
   id: UplinkSyndicateBombFakeNukie
@@ -1230,6 +1259,13 @@
     Telecrystal: 12
   categories:
     - UplinkDisruption
+  #Start of Harmony change
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkCameraBug
@@ -1382,6 +1418,13 @@
     Telecrystal: 6
   categories:
     - UplinkAllies
+  #Start of Harmony change
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkSyndicatePersonalAI
@@ -1623,6 +1666,13 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
+  # Harmony change start - Adds stealth jetpack for Nukies
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+  # Harmony change end
 
 - type: listing
   id: UplinkHolster
@@ -1778,11 +1828,13 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Start harmony change - adds elite suit to traitor uplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+# End harmony change
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
@@ -2223,6 +2275,7 @@
   conditions:
   - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Chef can also get this
     whitelist:
+    - Zookeeper # Harmony
     - Scientist
     - ResearchDirector
     - Chef
@@ -2239,15 +2292,18 @@
   cost:
     Telecrystal: 3
   categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Librarian
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
+  #Start of Harmony change
+  #- UplinkJob
+  - UplinkWeaponry #Swapped the category to weaponry. It was originally a librarian's job item upstream which is why it's listed in job specific
+  #conditions:
+  #- !type:BuyerJobCondition
+  #  whitelist:
+  #  - Librarian
+  #- !type:BuyerWhitelistCondition
+  #  blacklist:
+  #    components:
+  #    - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkCombatBakery

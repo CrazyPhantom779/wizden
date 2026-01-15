@@ -26,6 +26,7 @@
   - PermanentBlindness
   - Snoring
   - Unrevivable
+  - Uncloneable # Harmony
   # accents
   - Accentless
   - BackwardsAccent
@@ -54,6 +55,15 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+  # Hamrony addons start
+  - IrishAccent
+  - ScandinavianAccent
+  - ScottishAccent
+  - StreetpunkAccent
+  - Hypophonia
+  - IlleismAccent
+  - Speech # For raisedBy traits
+  # Hamrony addons end
 
 # for job-specific traits etc.
 - type: cloningSettings
@@ -73,6 +83,8 @@
   - HeadRevolutionary
   - Revolutionary
   - NukeOperative
+  - BloodBrother # Harmony
+  - InitialBloodBrother # Harmony
 
 # a full clone with all traits and items, but no antag roles
 - type: cloningSettings

@@ -1,0 +1,20 @@
+- type: playTimeTracker
+  id: JobBrigMedicHarmony
+
+- type: playTimeTracker
+  id: JobPermaPrisoner
+
+- type: playTimeTracker
+  id: JobERPLeader
+
+- type: playTimeTracker
+  id: JobERPClown
+
+- type: playTimeTracker
+  id: JobCentCommInspector
+
+- type: playTimeTracker
+  id: JobBoxer
+
+- type: playTimeTracker
+  id: JobZookeeper

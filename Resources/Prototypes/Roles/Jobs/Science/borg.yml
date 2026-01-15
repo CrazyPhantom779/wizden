@@ -5,8 +5,10 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 21600 #6 hrs
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 4h # harmony: 5h -> 4h
+  weight: 10
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
@@ -26,7 +28,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 5h
+      time: 4h # harmony: 10h -> 4h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

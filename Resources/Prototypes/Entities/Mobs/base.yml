@@ -59,6 +59,7 @@
   - type: Tag
     tags:
     - NoPaint
+  - type: AnimatedEmotes # Harmony
 
 - type: entity
   save: false

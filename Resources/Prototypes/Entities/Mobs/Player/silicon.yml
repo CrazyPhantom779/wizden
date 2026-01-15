@@ -85,6 +85,10 @@
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
+  # harmony start
+  - type: IonStormTarget
+    chance: 0.5
+  # harmony end
 
 - type: entity
   id: AiHeldIntellicard

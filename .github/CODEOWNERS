@@ -1,41 +1,32 @@
 # Last match in file takes precedence.
 
-# Sorting by path instead of by who added it one day :(
-# this isn't how codeowners rules work pls read the first comment instead of trying to force a sorting order
+# Everything
+*                                                   @KeldWolf @FluffMe @youtissoum
 
-/Resources/ConfigPresets/WizardsDen/  @crazybrain23
-/Content.*/Administration/ @DrSmugleaf @crazybrain23
-/Resources/ServerInfo/ @crazybrain23
-/Resources/ServerInfo/Guidebook/ServerRules/ @crazybrain23
+# C# code
+/Content.*/                                         @KeldWolf @FluffMe @youtissoum
 
-/Resources/Prototypes/Maps/** @Emisse @ArtisticRoomba @spanky-spanky
-/Resources/Maps/** @Emisse @ArtisticRoomba @spanky-spanky
+# YML files
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
 
-/Resources/Prototypes/Body/ @DrSmugleaf # suffering
-/Resources/Prototypes/Entities/Mobs/Player/ @DrSmugleaf
-/Resources/Prototypes/Entities/Mobs/Species/ @DrSmugleaf
-/Resources/Prototypes/Guidebook/rules.yml @crazybrain23
-/Content.*/Body/ @DrSmugleaf
-/Content.YAMLLinter @DrSmugleaf
-/Content.Shared/Damage/ @DrSmugleaf
+# FTL files
+/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
 
-/Content.*/Anomaly/ @TheShuEd
-/Resources/Prototypes/Entities/Structures/Specific/anomalies.yml @TheShuEd
+# Server info and rules
+/Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527 @spanky-spanky
 
-/Content.*/Forensics/ @ficcialfaint
+# Sprites
+/Resources/Textures/                                @TheCrimsonJupiter @KeldWolf @FluffMe @youtissoum
 
-/Content.*/Trigger/ @slarticodefast
+# Lobby art and music
+/Resources/Audio/Lobby/                             @KeldWolf
+/Resources/Audio/_Harmony/Lobby/                    @KeldWolf
+/Resources/Textures/LobbyScreens/                   @TheCrimsonJupiter
+/Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
 
-/Content.*/Stunnable/ @Princess-Cheeseballs
-/Content.*/Nutrition/ @Princess-Cheeseballs
-/Content.*/EntityEffects @Princess-Cheeseballs @sowelipililimute
-
-# SKREEEE
-/Content.*.Database/ @PJB3005 @DrSmugleaf
-/Content.Shared.Database/Log*.cs @PJB3005 @DrSmugleaf @crazybrain23
-/Pow3r/ @PJB3005
-/Content.Server/Power/Pow3r/ @PJB3005
-
-/Content.Server/Discord/ @Simyon264
-
-/Content.*/Atmos/** @ArtisticRoomba
+# Maps
+/Resources/Maps/                                    @spanky-spanky @raccoonio
+/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio
+/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio

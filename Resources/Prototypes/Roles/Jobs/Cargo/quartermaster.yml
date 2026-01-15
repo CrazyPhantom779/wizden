@@ -4,22 +4,21 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobCargoTechnician
-      time: 1h
-    - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 2.5h
-    - !type:DepartmentTimeRequirement # TP14
-      department: Expeditionary
-      time: 1h
+    # Harmony start
+    # - !type:RoleTimeRequirement
+    #   role: JobCargoTechnician
+    #   time: 5h
+    # - !type:RoleTimeRequirement
+    #   role: JobSalvageSpecialist
+    #   time: 2.5h
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Cargo
-      time: 1h
+      time: 8h # Harmony: 10h -> 8h
+  # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 2h
-    - !type:OverallPlaytimeRequirement
-      time: 14400 #4 hrs
+      time: 12h
+    # Harmony end
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

@@ -2,9 +2,8 @@
   id: Marathon
   mapName: 'Marathon Station'
   mapPath: /Maps/marathon.yml
-  minPlayers: 25 #CD change
-  maxPlayers: 55 #CD change
-  patchfile: /CDMapPatches/marathon.yml # CD Edit: Apply map patch
+  minPlayers: 30
+  maxPlayers: 70
   stations:
     Marathon:
       stationProto: StandardNanotrasenStation
@@ -22,7 +21,7 @@
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
-            Botanist: [ 3, 3 ] #CD change from 2-3 to 3-3
+            Botanist: [ 2, 2 ] # Harmony change, - 2, 3 > 2, 2 reduced botany slots
             Chef: [ 2, 2 ]
             Janitor: [ 2, 2 ] #CD change from 1-2 to 2-2
             Chaplain: [ 1, 1 ]

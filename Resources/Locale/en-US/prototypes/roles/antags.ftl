@@ -21,7 +21,8 @@ roles-antag-zombie-objective = Turn as many humans as possible into zombies.
 roles-antag-nuclear-operative-commander-name = Nuclear operative commander
 roles-antag-nuclear-operative-commander-objective = Lead your team to the destruction of the station.
 
-roles-antag-nuclear-operative-agent-name = Nuclear operative corpsman
+## Harmony Change - Nukie Corpsman > Nukie Medic
+roles-antag-nuclear-operative-agent-name = Nuclear operative medic
 roles-antag-nuclear-operative-agent-objective = The medic of the nuclear operative team. Heal your team to victory!
 
 roles-antag-nuclear-operative-name = Nuclear operative

@@ -162,6 +162,7 @@ namespace Content.Client.Chemistry.UI
                     throw new($"Chemmaster {castState.OutputContainerInfo} draw source is not set");
             }
 
+            BufferCurrentVolume.Text = $" {castState.InputContainerInfo?.CurrentVolume.Int() ?? 0}u"; // DeltaV
             InputEjectButton.Disabled = castState.InputContainerInfo is null;
             OutputEjectButton.Disabled = castState.OutputContainerInfo is null;
             CreateBottleButton.Disabled = castState.OutputContainerInfo?.Reagents == null;

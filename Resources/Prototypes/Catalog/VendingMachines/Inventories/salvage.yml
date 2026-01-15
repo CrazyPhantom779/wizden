@@ -7,11 +7,18 @@
     Flare: 4
     FlashlightLantern: 2
     HandheldGPSBasic: 2
-    RadioHandheld: 2
+    RadioHandheldMining: 2 # Harmony Change - RadioHandheld -> RadioHandheldMining
     WeaponGrapplingGun: 4
     #WeaponProtoKineticAccelerator: 4 #TP14 - We have HARPOONS!
     TP14HarpoonGun: 4 #TP14
     TP14Harpoon: 8 #TP14
+    WeaponProtoKineticAccelerator: 4
+# Harmony change - Readed Floodlights, seismic charges, fultons, and fulton beacons.
+    Floodlight: 2
+    SeismicCharge: 2
+    FultonBeacon: 1
+    Fulton: 2
+# End of Harmony change.
   contrabandInventory:
     PlushieCarp: 1
     TP14HarpoonBomb: 4 #TP14

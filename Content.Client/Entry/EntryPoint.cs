@@ -23,6 +23,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Shared._Harmony.JoinQueue;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -84,6 +85,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly INullLinkPlayerRolesManager _nullLinkPlayerRolesManager = default!;
         [Dependency] private readonly ISharedNullLinkPlayerRolesReqManager _sharedNullLinkPlayer = default!;
         // NullLink End
+        [Dependency] private readonly IJoinQueueManager _joinQueue = default!; // Harmony
 
         public override void PreInit()
         {
@@ -136,6 +138,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
             _prototypeManager.RegisterIgnore("codewordGenerator");
             _prototypeManager.RegisterIgnore("codewordFaction");
+            _prototypeManager.RegisterIgnore("mapModification"); // Harmony
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
@@ -162,6 +165,10 @@ namespace Content.Client.Entry
             base.PostInit();
 
             _stylesheetManager.Initialize();
+
+            // Harmony Queue Start
+            _joinQueue.Initialize();
+            // Harmony Queue End
 
             // Setup key contexts
             ContentContexts.SetupContexts(_inputManager.Contexts);

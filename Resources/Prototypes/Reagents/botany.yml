@@ -216,9 +216,24 @@
     Poison:
       effects:
       - !type:HealthChange
+        # start harmony change
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Avali ]
+          inverted: true
+        # end harmony change
         damage:
           types:
             Caustic: 1
+        # start harmony change
+    Drink:
+      effects:
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Avali ]
+        amount: 6
+        # end harmony change
     Gas:
       effects:
       - !type:HealthChange

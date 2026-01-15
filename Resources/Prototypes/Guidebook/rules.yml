@@ -5,6 +5,23 @@
   name: guide-entry-rules
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
+  priority: 50
+  # Harmony change - Harmony specific rules
+  text: "/ServerInfo/_Harmony/Guidebook/ServerRules/HarmonyRules/HarmonyRules.xml"
+  children:
+  - HarmonyR0
+  - HarmonyR1
+  - HarmonyR2
+  - HarmonyR3
+  - HarmonyR4
+  - HarmonyR5
+  - HarmonyR6
+  - HarmonyR7
+  - HarmonyR8
+  - HarmonyS1
+  - HarmonyS2
+  - HarmonyS3
+  # End harmony
 
 - type: guideEntry
   id: CosmaticDriftRules

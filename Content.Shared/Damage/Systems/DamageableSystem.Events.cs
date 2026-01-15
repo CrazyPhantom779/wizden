@@ -216,7 +216,7 @@ public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid?
 ///
 ///     For example, armor.
 /// </summary>
-public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0f) // Goob: armor penetration
     : EntityEventArgs, IInventoryRelayEvent
 {
     /// <inheritdoc/>
@@ -240,6 +240,11 @@ public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin 
     ///     Contains the entity which caused the damage, if any was responsible.
     /// </summary>
     public readonly EntityUid? Origin = origin;
+
+    /// <summary>
+    ///     Armor penetration value for this damage instance.
+    /// </summary>
+    public float ArmorPenetration = armorPenetration; // Goob
 }
 
 public sealed class DamageChangedEvent : EntityEventArgs

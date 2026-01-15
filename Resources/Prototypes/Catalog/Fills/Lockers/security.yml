@@ -29,6 +29,8 @@
     - id: FlashlightSeclite
     - id: WeaponDisabler
 #    - id: WeaponTaser # Trieste
+    # - id: WeaponDisabler # Harmony
+    # - id: WeaponTaser # Harmony
     - id: ClothingBeltSecurityFilled
     - id: Flash
     - id: ClothingEyesGlassesSecurity
@@ -50,6 +52,7 @@
     #CD Addions
     - id: BookSOPSecurity
       prob: 0.2
+    - id: ClothingHeadsetAltWarden # Harmony Change: Adds Warden over-ear headset
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -78,6 +81,8 @@
       prob: 0.8
     - id: WeaponDisabler
 #    - id: WeaponTaser # Trieste
+    # - id: WeaponDisabler # Harmony
+    # - id: WeaponTaser # Harmony
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
@@ -116,6 +121,8 @@
     - id: ClothingEyesGlassesSecurity
 #    - id: WeaponTaser # Trieste
     - id: WeaponDisabler
+    # - id: WeaponTaser # Harmony
+    # - id: WeaponDisabler # Harmony
     - id: TrackingImplanter
       amount: 2
     - id: ClothingOuterHardsuitBrigmedic
@@ -179,6 +186,7 @@
     - id: BoxTapeRecorder
     - id: BookSOPSecurity
       prob: 0.2
+    - id: BoxTapeRecorder # DeltaV
 
 - type: entity
   id: ClosetBombFilled

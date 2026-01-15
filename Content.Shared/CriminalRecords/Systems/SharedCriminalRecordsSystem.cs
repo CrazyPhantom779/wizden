@@ -47,6 +47,8 @@ public abstract class SharedCriminalRecordsSystem : EntitySystem
             SecurityStatus.Suspected => "SecurityIconSuspected",
             SecurityStatus.Hostile => "SecurityIconHostile",
             SecurityStatus.Eliminated => "SecurityIconEliminated",
+            SecurityStatus.Monitor => "SecurityIconMonitor", // Harmony
+            SecurityStatus.Search => "SecurityIconSearch", // Harmony
             _ => record.StatusIcon
         };
 

@@ -6,7 +6,6 @@
   - Cluster #CD map
   - Bagel
   - Box
-  - Elkridge
   - Fland
   - Gemini
   - Marathon
@@ -20,3 +19,16 @@
   - Snowball
   - Trieste
   #- Train <- return after station anchoring PR is finished and merged
+  # Harmony maps start
+  - Aspid
+  - Atlas
+  - Barratry
+  - Elkridge
+  - Jellyfish
+  - Mira
+  - Omega
+  - Prime
+  - Scylla
+  - Wapiti
+  - Amber
+  # Harmony maps end

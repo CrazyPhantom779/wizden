@@ -28,6 +28,7 @@
         - id: ClothingUniformJumpskirtChiefEngineerTurtle
         - id: ClothingUniformJumpsuitChiefEngineerFormal # CD Drip 4
         - id: ClothingHeadHatBeretEngineering
+        - id: ClothingHeadHatBeretChiefEngineerHarmony # Harmony
         - id: ClothingOuterWinterCE
         - id: ClothingNeckCloakCe
 
@@ -60,6 +61,7 @@
       storagebase: !type:AllSelector
         children:
         - id: ClothingHeadHatHopcap
+        - id: ClothingHeadHatBeretHeadofPersonnelHarmony # Harmony Change
         - id: ClothingOuterWinterHoP
         - id: ClothingEyesGlasses
         - id: ClothingNeckCloakHop
@@ -110,7 +112,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingHeadHatBeretRND
+        - id: ClothingHeadHatBeretResearchDirectorHarmony # Harmony
         - id: ClothingHandsGlovesColorPurple
         - id: ClothingEyesGlasses
         - id: ClothingOuterWinterRD

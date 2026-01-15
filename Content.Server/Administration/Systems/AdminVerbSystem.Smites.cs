@@ -59,6 +59,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server._Latestation.Speech.Components;//Harmony added-Valley Girl Acent
 
 namespace Content.Server.Administration.Systems;
 
@@ -1064,6 +1065,23 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", homingRodSlowName, Loc.GetString("admin-smite-homing-rod-slow-description"))
         };
         args.Verbs.Add(homingRodSlow);
+
+        //Harmony change start-Added Valley Girl Smite
+        var valleyGirlName = Loc.GetString("admin-smite-valley-accent-name").ToLowerInvariant();
+        Verb valleyaccent = new()
+        {
+            Text = valleyGirlName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("Interface/Actions/voice-mask.rsi"), "icon"),
+            Act = () =>
+            {
+                EnsureComp<ValleyGirlAccentComponent>(args.Target);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", valleyGirlName, Loc.GetString("admin-smite-valley-accent-description"))
+        };
+        args.Verbs.Add(valleyaccent);
+        //Harmony change end
     }
 
     public void HomingLaunchSequence(EntityUid target, EntProtoId proto, float distance, float speed)

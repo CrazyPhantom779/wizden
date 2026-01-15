@@ -1,0 +1,81 @@
+#Harmony pet
+- type: entity
+  name: Poquito
+  parent: MobBaseKobold
+  id: MobKoboldPoquito
+  description: Famous Privateer, Entrepreneur, Goober, and Chef
+  components:
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-Poquito-name
+    description: ghost-role-information-Poquito-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: GhostTakeoverAvailable
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - VimPilot
+    - AnomalyHost
+  - type: Loadout
+    prototypes: [ MobPoquitoGear ]
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        kobold: PoquitoColors
+    - horns:
+        horns_ram: KoboldHornColors
+
+- type: entity
+  parent: MobCat
+  id: MobGlorp
+  name: Glorp
+  description: An esoteric feline from outer space. Gleeby deeby florba zorp.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Harmony/Mobs/Pets/glorp.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: glorp
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: GlorpExtract
+        Quantity: 650
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: glorp
+      Critical:
+        Base: glorp_dead
+      Dead:
+        Base: glorp_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 2
+  - type: InteractionPopup
+    interactSuccessString: petting-success-glorp
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalGlorp

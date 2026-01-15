@@ -40,6 +40,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
+    key: shuttle # Harmony Change: Adds IconSmoothing Key
     base: swindow
   - type: Construction
     graph: Window
@@ -73,7 +74,10 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+# Start of Harmony Change: Updates IconSmooth key
+#    key: windows
+    key: shuttle
+# End of Harmony Change
     base: state
   - type: Icon
     sprite: Structures/Windows/shuttle_window_diagonal.rsi

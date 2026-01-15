@@ -45,6 +45,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/centcomm.yml",
             AdminTestArenaSystem.ArenaMapPath,
             "/Maps/_CD/centcomm.yml", // CD
+            "/Maps/_Harmony/centcomm.yml", // Harmony CC version
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -64,6 +65,28 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
             {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
+            {"/Maps/_Harmony/eclipse.yml", ["ShuttleGunKinetic", "ShuttleGunSvalinnMachineGun"]}, // Harmony
+            // Harmony start
+            {
+                "/Maps/_Harmony/Nonstations/listening-outpost.yml",
+                [
+                    "RubberStampCaptain",
+                    "RubberStampCE",
+                    "RubberStampChaplain",
+                    "RubberStampClown", "RubberStampCMO",
+                    "RubberStampDetective",
+                    "RubberStampHop",
+                    "RubberStampHos",
+                    "RubberStampMime",
+                    "RubberStampPsychologist",
+                    "RubberStampQm",
+                    "RubberStampRd",
+                    "RubberStampSyndicate",
+                    "RubberStampWarden",
+                ]
+            },
+            // Harmony end
+            {"/Maps/_Harmony/Shuttles/ShuttleEvent/ERPSmall.yml", ["GoldenBikeHorn"]}, // Harmony
         };
 
         /// <summary>
@@ -80,10 +103,12 @@ namespace Content.IntegrationTests.Tests
             "/Maps/triesteLEGACY.yml", // Legacy map
             "/Maps/triesteOld.yml", // Legacy map
             "/Maps/Misc/terminalOLD.yml", // Legacy map
-            "/Maps/Misc/terminalOLDER.yml" // Legacy map
+            "/Maps/Misc/terminalOLDER.yml", // Legacy map
             "/Maps/Misc/terminal.yml", // CD terminal
             "/Maps/_CD/centcomm.yml", // CD
             "/Maps/_CD/gemini.yml", // CD, somebody should probably look into this
+            "/Maps/_Harmony/centcomm.yml", // Harmony
+            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
         };
 
         /// <summary>
@@ -95,6 +120,21 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] GameMaps =
         {
+            "dm02-sandbomb", // Harmony, deathmatch PROMOD map by Unisol
+            "Barratry", // Harmony, revived by Spanky
+            "Aspid", // Harmony, revived by Golinth and gruesomegray
+            "Atlas", // Harmony revived by Kravin
+            "Mira", // Harmony, developed by tanuko
+            "Eclipse", //Harmony, Developed by Lachryphage
+            "Prime", // Harmony, developed/revived by luckyshotpictures
+            "Spire", // Harmony, Developed by Dogbone10, PenguinCodest, Jack_the_Dragon
+            "Athena", // Harmony, Developed by whythelettuce
+            "Omega", // Harmony, updated from Spanky's version by OrnamentalFreak and CrimsonJupiter
+            "Jellyfish", // Harmony, Developed by whythelettuce
+            "Scylla", // Harmony, Developed by tanuko, luckyshotpictures
+			"Elkridge", // Harmony, Developed by deerstop, maintained by luckyshotpictures
+			"Wapiti", // Harmony, Developed by deerstop, maintained by luckyshotpictures
+            "Amber", // Harmony, Developed by Southbridge, maintained by whythelettuce
             "Dev",
             "TestTeg",
             "Fland",
@@ -108,7 +148,6 @@ namespace Content.IntegrationTests.Tests
             "Reach",
             "Oasis",
             "Plasma",
-            "Elkridge",
             "Relic",
             "dm01-entryway",
             "Exo",

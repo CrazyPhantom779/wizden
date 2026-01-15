@@ -19,7 +19,9 @@
     EncryptionKeyMedical: 3 #CD change from 2 to 3.
     EncryptionKeyScience: 3 #CD change from 2 to 3.
     EncryptionKeySecurity: 3 #CD change from 1 to 3.
+    EncryptionKeySalvage: 2 # Harmony Change - Adds Salvage Comms
     EncryptionKeyService: 3
+    ClothingNeckLanyard: 5 #Harmony addition. Also obtainable through bureaucracy crates and character loadouts
   contrabandInventory:
     BalloonNT: 2
     LuxuryPen: 1

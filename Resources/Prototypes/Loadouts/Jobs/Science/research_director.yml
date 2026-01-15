@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 72000 #20 hrs
+      time: 4.5h # Harmony: 20h -> 4.5h
 
 # Head
 - type: loadout

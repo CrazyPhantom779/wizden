@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
     - Arachnid
+    - Avali # harmony
     - Diona
     - Dwarf
     - Human
@@ -13,7 +14,6 @@
     - Vox
     - Vulpkanin
     - Jellid # TP14
-    - Avali #CD Species
     - Foxfolk #CD Species
     - Rodentia #CD Species
 

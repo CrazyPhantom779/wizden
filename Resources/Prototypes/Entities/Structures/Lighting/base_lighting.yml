@@ -561,6 +561,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightCyan
@@ -590,6 +593,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightBlue
@@ -619,6 +625,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightYellow
@@ -648,6 +657,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightPink
@@ -677,6 +689,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightOrange
@@ -707,6 +722,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightBlack
@@ -736,6 +754,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightRed
@@ -765,6 +786,9 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
+  - type: Tag # Harmony
+    tags:
+    - PoweredLightColored
 
 - type: entity
   id: AlwaysPoweredlightGreen

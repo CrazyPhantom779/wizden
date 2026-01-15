@@ -94,13 +94,13 @@
 - type: entity
   parent: [ClothingOuterArmorBase, BaseSecurityContraband]
   id: ClothingOuterVestDetective
-  name: detective's vest
+  name: detective's armor vest # Harmony
   description: A hard-boiled private investigator's armored vest.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Vests/detvest.rsi # Harmony
   - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Vests/detvest.rsi # Harmony
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]

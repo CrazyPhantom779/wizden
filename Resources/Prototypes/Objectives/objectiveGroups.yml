@@ -5,7 +5,7 @@
     TraitorObjectiveGroupSteal: 1
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
-    TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
+    TraitorObjectiveGroupSocial: 0.5 # Harmony. Change: 1 -> 0.5 #Involves helping/harming others without killing them or stealing their stuff
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
@@ -23,25 +23,28 @@
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 0.5
     EnergyMagnumStealObjective: 0.5
+    AccessConfiguratorStealObjective: 1 # Harmony Objective
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
     KillRandomPersonObjective: 1
     KillRandomHeadObjective: 0.25
+    TeachLessonRandomPersonObjective: 1 #Harmony objective
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState
   weights:
-    EscapeShuttleObjective: 1
-    DieObjective: 0.2
+    EscapeShuttleObjective: 0.4 #Harmony change: 1 -> 0.4
+    DieObjective: 0.15 # Harmony. Change: 0.2 -> 0.15
+    TraitorSurviveObjective: 0.6 #Harmony objective
     #HijackShuttleObjective: 0.02
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial
   weights:
 #    RandomTraitorAliveObjective: 1 - Removed because the objective was boring and didn't progress the round.
-    RandomTraitorProgressObjective: 1
+    RandomTraitorProgressObjective: 0.5 # Harmony. Change: 1 -> 0.5
 
 #Thief groups
 - type: weightedRandom
@@ -81,6 +84,7 @@
     WantedListCartridgeStealObjective: 1
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
     MedicalTechFabCircuitboardStealObjective: 1
+    CMOGogglesStealObjective: 1 # harmony change
     FireAxeStealObjective: 1                            #eng
     AmePartFlatpackStealObjective: 1
     ExpeditionsCircuitboardStealObjective: 1            #sup
@@ -89,6 +93,7 @@
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other
     ClothingNeckClownmedalStealObjective: 0.5
+    ThiefAccessConfiguratorStealObjective: 1 # Harmony Objective
 
 - type: weightedRandom
   id: ThiefObjectiveGroupStructure
@@ -115,6 +120,7 @@
     RenaultStealObjective: 1
     ShivaStealObjective: 1
     TropicoStealObjective: 1
+    GlorpStealObjective: 1 # Harmony Objective
 
 - type: weightedRandom
   id: ThiefObjectiveGroupEscape

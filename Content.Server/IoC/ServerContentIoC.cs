@@ -1,6 +1,7 @@
 using Content.Server._NullLink.Core;
 using Content.Server._NullLink.EventBus;
 using Content.Server._NullLink.PlayerData;
+using Content.Server._Harmony.JoinQueue;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -26,6 +27,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
+using Content.Shared._Harmony.JoinQueue;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -90,5 +92,6 @@ internal static class ServerContentIoC
         IoCManager.Register<INullLinkEventBusManager, NullLinkEventBusManager>();
         IoCManager.Register<ISharedNullLinkPlayerRolesReqManager, PlayerRolesReqManager>();
         // nulllink end
+        deps.Register<IJoinQueueManager, JoinQueueManager>(); // Harmony
     }
 }

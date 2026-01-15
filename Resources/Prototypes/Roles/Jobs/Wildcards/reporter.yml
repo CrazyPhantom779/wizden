@@ -16,11 +16,11 @@
     shoes: ClothingShoesColorWhite
     id: ReporterPDA
     ears: ClothingHeadsetService
-  storage:
+  storage: # DeltaV: Give reporters tape recording equipment
     back:
-    - TapeRecorder # CD Change
-    - CassetteTape # CD Change
-    - CassetteTape # CD Change
+    - TapeRecorder
+    - CassetteTape
+    - CassetteTape
 
 - type: chameleonOutfit
   id: ReporterChameleonOutfit

@@ -45,13 +45,13 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleHOS
-  name: marshal's mantle # TP
-  description: Blasting corporate scum is all in a day's work for this Marshal.
-  components:
+  name: head of security's mantle
+  description: Shootouts with syndicate agents are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
+  components: #Harmony Update:Updating pathing for HoS mantle spriting fix
   - type: Sprite
-    sprite: Clothing/Neck/mantles/hosmantle.rsi
+    sprite: _Harmony/Clothing/Neck/mantles/hosmantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/mantles/hosmantle.rsi
+    sprite: _Harmony/Clothing/Neck/mantles/hosmantle.rsi
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
