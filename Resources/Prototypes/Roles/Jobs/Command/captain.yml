@@ -36,11 +36,11 @@
 - type: startingGear
   id: CaptainGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
+    # shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
-    ears: ClothingHeadsetAltCommand
+    # ears: ClothingHeadsetAltCommand #CD: Loadouts
   storage:
     back:
     - Flash

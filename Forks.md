@@ -37,7 +37,7 @@ MERGE ORDER:
 
 WizDen
 Trieste Port                    → git merge --no-commit --no-ff trieste/master DONE
-Cosmatic Drift                  → git merge --no-commit --no-ff cosmatic/master
+Cosmatic Drift                  → git merge --no-commit --no-ff cosmatic/master DONE
 Harmony                         → git merge --no-commit --no-ff harmony/master
 Nyanotrasen                     → git merge --no-commit --no-ff nyanotrasen/master
 Goob Station                    → git merge --no-commit --no-ff goob/master

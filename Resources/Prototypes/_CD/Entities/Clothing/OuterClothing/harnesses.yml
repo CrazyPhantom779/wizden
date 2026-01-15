@@ -1,0 +1,11 @@
+# Actual harnesses
+- type: entity
+  parent: ClothingBeltMedical
+  id: ClothingBeltHarnessETU
+  name: ETU harness
+  description: A robust harness worn by emergency trauma unit teams.
+  components:
+  - type: Sprite
+    sprite: _CD/Clothing/Belt/Harnesses/etu_trauma.rsi
+  - type: Clothing
+    sprite: _CD/Clothing/Belt/Harnesses/etu_trauma.rsi

@@ -6,8 +6,8 @@
     - id: BluespaceArtifact
     - id: BluespaceLocker
     - id: BreakerFlip
-    - id: BureaucraticError
-    - id: ClericalError
+    # - id: BureaucraticError
+    # - id: ClericalError
     - id: CockroachMigration
     - id: GasLeak
     - id: GreytideVirus
@@ -27,16 +27,17 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    - id: SynthStorm # CD: Unique event for synths
 
 - type: entityTable
   id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: ClosetSkeleton
-    - id: KingRatMigration
+    # - id: KingRatMigration
     - id: RevenantSpawn
-    - !type:NestedSelector
-      tableId: DerelictBorgEventTable
+    # - !type:NestedSelector
+    #   tableId: DerelictBorgEventTable
 
 - type: entityTable
   id: ModerateAntagEventsTable
@@ -48,7 +49,7 @@
     - id: RevenantSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
-    #- id: LoneOpsSpawn # fuck you loneops
+    - id: LoneOpsSpawn # fuck you loneops
     - id: DerelictGenericCyborgSpawn
     - id: WizardSpawn
     - !type:NestedSelector
@@ -71,35 +72,36 @@
       children:
         - id: DerelictSyndicateAssaultCyborgSpawn
 
+# CD Change - Tripled most event times
 - type: entity
   id: BaseStationEvent
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  10
-      max:  20
+    - type: GameRule
+      delay:
+        min:  30
+        max:  60
 
 - type: entity
   id: BaseStationEventShortDelay
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  10
-      max:  20
+    - type: GameRule
+      delay:
+        min:  30
+        max:  60
 
 - type: entity
   id: BaseStationEventLongDelay
   parent: BaseGameRule
   abstract: true
   components:
-  - type: GameRule
-    delay:
-      min:  40
-      max:  60
+    - type: GameRule
+      delay:
+        min:  90
+        max:  180
 
 - type: entity
   id: AnomalySpawn
@@ -109,7 +111,7 @@
     startAnnouncementColor: "#18abf5"
     startAudio:
       path: /Audio/Announcements/announce.ogg
-    weight: 8
+    weight: 10
     duration: 35
   - type: AnomalySpawnRule
 
@@ -119,8 +121,8 @@
   components:
   - type: GameRule
     delay:
-      min:  30
-      max:  30
+      min:  45
+      max:  45
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
@@ -134,7 +136,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 1
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -145,7 +147,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 10
     duration: 1
     minimumPlayers: 15
   - type: BreakerFlipRule
@@ -183,9 +185,11 @@
   id: ClosetSkeleton
   components:
   - type: StationEvent
-    weight: 5
+    weight: 2
     duration: 1
-    minimumPlayers: 10
+    earliestStart: 45
+    reoccurrenceDelay: 60
+    minimumPlayers: 20
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -206,7 +210,7 @@
   - type: DragonRule
   - type: AntagObjectives
     objectives:
-    - CarpRiftsObjective
+#   - CarpRiftsObjective |CD disabled for free agent status
     - DragonSurviveObjective
   - type: AntagSelection
     agentName: dragon-round-end-agent-name
@@ -249,7 +253,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalSpaceNinja
+      - RoleSurvivalEVA
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -315,9 +319,9 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 7.5
+    weight: 1
     duration: 1
-    earliestStart: 45
+    earliestStart: 135
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: MobRevenant
@@ -361,15 +365,15 @@
       mindRoles:
       - MindRoleWizard
 
-# disabled until event is rewritten to be more interesting
-#- type: entity
-#  id: FalseAlarm
-#  parent: BaseGameRule
-#  components:
-#  - type: StationEvent
-#    weight: 15
-#    duration: 1
-#  - type: FalseAlarmRule
+# CD: Keeping enabled.
+- type: entity
+  id: FalseAlarm
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 15
+    duration: 1
+  - type: FalseAlarmRule
 
 - type: entity
   id: GasLeak
@@ -380,7 +384,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
-    weight: 8
+    weight: 10
   - type: GasLeakRule
 
 - type: entity
@@ -390,7 +394,7 @@
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
-    weight: 7
+    weight: 8
     duration: 240
   - type: KudzuGrowthRule
 
@@ -399,7 +403,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    weight: 5
+    weight: 10
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
@@ -415,7 +419,7 @@
   id: SolarFlare
   components:
   - type: StationEvent
-    weight: 8
+    weight: 12.5
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
@@ -462,7 +466,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 2 # CD: Nerf from 5 to 2
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -483,7 +487,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 1 # CD: Nerf from 5 to 1
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -504,7 +508,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 2 # CD: Nerf from 5 to 2
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -520,8 +524,8 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 20
-    weight: 1.5
+    minimumPlayers: 15
+    weight: 1
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -537,7 +541,6 @@
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
-    occursDuringRoundEnd: false
   - type: ZombieRule
   - type: AntagSelection
     definitions:
@@ -568,11 +571,11 @@
   parent: BaseNukeopsRule
   id: LoneOpsSpawn
   components:
-  - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
-    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+  # - type: StationEvent
+  #   earliestStart: 35
+  #   weight: 5.5
+  #   minimumPlayers: 20
+  #   duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -635,10 +638,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 15
     duration: 150
     maxDuration: 300
-    reoccurrenceDelay: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -651,7 +653,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 8
+    weight: 11
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -674,10 +676,11 @@
   - type: StationEvent
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    weight: 5
+    weight: 3 # CD: Changed from 5 to 3
     minimumPlayers: 25
     reoccurrenceDelay: 20
   - type: GreytideVirusRule
+    severity: 1 # CD: Locked to one severity
     accessGroups:
     - Cargo
     - Command

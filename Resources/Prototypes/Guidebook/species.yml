@@ -5,7 +5,7 @@
   children:
     - Arachnid
     - Diona
-#    - Dwarf # TP14
+    - Dwarf
     - Human
     - Moth
     - Reptilian
@@ -13,6 +13,9 @@
     - Vox
     - Vulpkanin
     - Jellid # TP14
+    - Avali #CD Species
+    - Foxfolk #CD Species
+    - Rodentia #CD Species
 
 - type: guideEntry
   id: Arachnid
@@ -24,11 +27,10 @@
   name: species-name-diona
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
-# TP14 - We have removed dwarves as a species
-#- type: guideEntry
-#  id: Dwarf
-#  name: species-name-dwarf
-#  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+- type: guideEntry
+  id: Dwarf
+  name: species-name-dwarf
+  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human

@@ -73,6 +73,25 @@ namespace Content.Server.Database
                     .HasMaxLength(32);
             });
             // Starlight - End
+            // CD: CD Character Data
+            modelBuilder.Entity<CDModel.CDProfile>()
+                .HasOne(p => p.Profile)
+                .WithOne(p => p.CDProfile)
+                .HasForeignKey<CDModel.CDProfile>(p => p.ProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<CDModel.CharacterAllergy>()
+                .HasOne(a => a.CDProfile)
+                .WithMany(p => p.CharacterAllergies)
+                .HasForeignKey(a => a.CDProfileId)
+                .IsRequired();
+
+            modelBuilder.Entity<CDModel.CharacterRecordEntry>()
+                .HasOne(e => e.CDProfile)
+                .WithMany(e => e.CharacterRecordEntries)
+                .HasForeignKey(e => e.CDProfileId)
+                .IsRequired();
+            // END CD
 
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
@@ -443,6 +462,7 @@ namespace Content.Server.Database
         public Preference Preference { get; set; } = null!;
 
         public StarLightModel.StarLightProfile? StarLightProfile { get; set; } // Starlight
+        public CDModel.CDProfile? CDProfile { get; set; }
     }
 
     public class Job

@@ -30,6 +30,7 @@
     Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # CD
     LArm: MobHumanLArm
     RArm: MobHumanRArm
     LHand: MobHumanLHand
@@ -43,7 +44,7 @@
   id: MobHumanMarkingLimits
   points:
     Special: # the cat ear joke
-      points: 0
+      points: 1 # CD
       required: false
     Hair:
       points: 1
@@ -51,33 +52,35 @@
     FacialHair:
       points: 1
       required: false
-    Snout:
-      points: 1
-      required: false
+    # Snout: #CD Disable several point limits.
+      # points: 1
+      # required: false
     Tail: # the cat tail joke
       points: 1 # TP14 - Was set to 0
-      required: false
-    HeadTop:
-      points: 1
       required: false
     HeadSide:
       points: 1
       required: false
+      points: 1 # CD
+      required: false
+    # HeadTop:
+      # points: 1
+      # required: false
     UndergarmentTop:
       points: 1
       required: false
     UndergarmentBottom:
       points: 1
       required: false
-    Chest:
-      points: 2
-      required: false
-    Legs:
-      points: 2
-      required: false
-    Arms:
-      points: 2
-      required: false
+    # Chest:
+      # points: 4 # CD
+      # required: false
+    # Legs:
+      # points: 6 # CD
+      # required: false
+    # Arms:
+      # points: 6 # CD
+      # required: false
 
 - type: humanoidBaseSprite
   id: MobHumanoidEyes

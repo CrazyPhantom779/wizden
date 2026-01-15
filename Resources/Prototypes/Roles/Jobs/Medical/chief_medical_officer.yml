@@ -30,6 +30,7 @@
   - ChiefMedicalOfficer
   - Brig
   - Cryogenics
+  - External #CD addition.
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -42,7 +43,9 @@
   equipment:
     id: CMOPDA
     ears: ClothingHeadsetCMO
-    belt: TP14ClothingBeltStorageMedicalPouchFilled
+    # belt: TP14ClothingBeltStorageMedicalPouchFilled #TP14
+    # ears: ClothingHeadsetCMO #CD: Loadouts
+    belt: ClothingBeltMedicalFilled
   storage:
     back:
     - Flash

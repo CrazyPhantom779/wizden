@@ -44,6 +44,11 @@
   - type: IgnitionSource
     temperature: 700
     ignited: true
+  # BEGIN CD
+  - type: Tag
+    tags:
+      - NoPaint
+  # END CD
 
 - type: entity
   parent: BaseBonfire

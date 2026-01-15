@@ -1,4 +1,4 @@
-- type: gamePreset
+- type: gamePreset # CD: A lot of game presets are enabled as we don't intend to use them.
   id: Survival
   alias:
     - survival
@@ -9,20 +9,21 @@
     - RampingStationEventScheduler
     - BasicRoundstartVariation
 
+
 - type: gamePreset
   id: KesslerSyndrome
   alias:
-    - kessler
-    - junk
-    - meteorhell
+  - kessler
+  - junk
+  - meteorhell
   name: kessler-syndrome-title
   showInVote: false # secret
   description: kessler-syndrome-description
   rules:
-    - KesslerSyndromeScheduler
-    - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
+  - KesslerSyndromeScheduler
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: AllAtOnce
@@ -32,16 +33,16 @@
   description: all-at-once-description
   showInVote: false
   rules:
-    - Nukeops
-    - Traitor
-    - Revolutionary
-    - Zombie
-    - Wizard
-    - Xenoborgs
-    - KesslerSyndromeScheduler
-    - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
+  - Nukeops
+  - Traitor
+  - Revolutionary
+  - Zombie
+  - Wizard
+  - Xenoborgs
+  - KesslerSyndromeScheduler
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: AllerAtOnce
@@ -124,16 +125,16 @@
     - Secret
 
 # TP14 - We don't need this shit, oh my god.
-#- type: gamePreset
-#  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
-#  alias:
-#    - secretextended
-#  name: secret-title
-#  showInVote: false #Admin Use
-#  description: secret-description
-#  rules:
-#    - BasicStationEventScheduler
-#    - BasicRoundstartVariation
+- type: gamePreset
+  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
+  alias:
+    - secretextended
+  name: secret-title
+  showInVote: false #Admin Use
+  description: secret-description
+  rules:
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -227,6 +228,22 @@
   - DummyNonAntagChance
   - Revolutionary
   - SubGamemodesRuleNoWizard
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Wizard
+  alias:
+  - wizard
+  name: wizard-title
+  description: wizard-description
+  showInVote: false
+  rules:
+  - Wizard
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler

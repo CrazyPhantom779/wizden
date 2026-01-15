@@ -15,6 +15,8 @@
       time: 1h
     - !type:OverallPlaytimeRequirement
       time: 2h
+    - !type:OverallPlaytimeRequirement
+      time: 14400 #4 hrs
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
@@ -40,8 +42,8 @@
   id: ChiefEngineerGear
   equipment:
     id: CEPDA
-    eyes: ClothingEyesGlassesMeson
-    ears: ClothingHeadsetCE
+#    eyes: ClothingEyesGlassesMeson # CD
+    # ears: ClothingHeadsetCE #CD: Loadouts
     belt: ClothingBeltUtilityEngineering
   storage:
     back:

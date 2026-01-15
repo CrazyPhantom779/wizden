@@ -259,6 +259,7 @@
     damage:
         types:
             Shock: 5
+  - type: BorgSwitchableSubtype
 
 - type: entity
   abstract: true

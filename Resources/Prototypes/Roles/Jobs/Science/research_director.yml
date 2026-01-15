@@ -10,6 +10,8 @@
   - !type:DepartmentTimeRequirement
     department: Science
     time: 2h
+  - !type:OverallPlaytimeRequirement
+    time: 14400 #4 hrs
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -22,6 +24,7 @@
   - ResearchDirector
   - Brig
   - Cryogenics
+  - External #CD addition.
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -33,7 +36,7 @@
   id: ResearchDirectorGear
   equipment:
     id: RnDPDA
-    ears: ClothingHeadsetRD
+    # ears: ClothingHeadsetRD #CD: Loadouts
   storage:
     back:
     - Flash
