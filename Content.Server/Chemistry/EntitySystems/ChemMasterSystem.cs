@@ -161,6 +161,7 @@ namespace Content.Server.Chemistry.EntitySystems
             {
                 amount = FixedPoint2.Min(amount, containerSolution.AvailableVolume);
                 amount = bufferSolution.RemoveReagent(id, amount, preserveOrder: true);
+                _solutionContainerSystem.SetTemperature(containerSoln.Value, 293);
                 _solutionContainerSystem.TryAddReagent(containerSoln.Value, id, amount, out var _);
             }
             else // Container to buffer

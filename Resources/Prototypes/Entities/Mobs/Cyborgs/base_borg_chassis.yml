@@ -16,6 +16,7 @@
     soundHit:
       collection: MetalThud
   - type: CombatMode
+  - type: WaterBlocker
   - type: NoSlip
   - type: StaticPrice
     price: 1250
@@ -251,6 +252,13 @@
     requiredMobState:
     - Critical
     - Dead
+  - type: InGas # TP
+    gasID: 9 # short-circuits in water
+    damagedByGas: true
+    gasThreshold: 50
+    damage:
+        types:
+            Shock: 5
 
 - type: entity
   abstract: true
@@ -327,7 +335,7 @@
     tags:
     - Borg
   - type: AccessReader
-    access: [["Command"], ["Research"]]
+    access: [["Command"], ["Research"], ["TP14SettlerAccessLevel"]]
   - type: ShowJobIcons
   - type: InteractionPopup
     interactSuccessSound:

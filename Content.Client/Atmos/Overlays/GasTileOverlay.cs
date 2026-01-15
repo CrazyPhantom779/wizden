@@ -279,6 +279,7 @@ namespace Content.Client.Atmos.Overlays
             if (!mapGrid && args.Space != OverlaySpace.WorldSpaceBelowWorld)
                 return;
 
+           // Always draw map atmospheres, both for grid and non-grid situations
             var bottomLeft = args.WorldAABB.BottomLeft.Floored();
             var topRight = args.WorldAABB.TopRight.Ceiled();
 
@@ -288,6 +289,7 @@ namespace Content.Client.Atmos.Overlays
                 {
                     var tilePosition = new Vector2(x, y);
 
+                    // Draw overlays for each tile in the atmosphere
                     for (var i = 0; i < atmos.OverlayData.Opacity.Length; i++)
                     {
                         var opacity = atmos.OverlayData.Opacity[i];
@@ -297,6 +299,7 @@ namespace Content.Client.Atmos.Overlays
                     }
                 }
             }
+
         }
     }
 }

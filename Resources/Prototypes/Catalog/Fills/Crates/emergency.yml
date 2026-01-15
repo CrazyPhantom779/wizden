@@ -72,7 +72,9 @@
         - id: ClothingMaskGas
           amount: 6
         - id: ClothingMaskBreath
-          amount: 6
+          amount: 3
+        - id: TP14ClothingMaskAir # TP14
+          amount: 3
         - id: OxygenTankFilled
           amount: 6
         - id: NitrogenTankFilled

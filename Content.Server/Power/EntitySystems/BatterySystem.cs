@@ -65,4 +65,43 @@ public sealed class BatterySystem : SharedBatterySystem
             SetCharge((uid, bat), netBat.NetworkBattery.CurrentStorage);
         }
     }
+
+    /// <summary>
+    /// Gets the price for the power contained in an entity's battery.
+    /// </summary>
+    private void CalculateBatteryPrice(Entity<BatteryComponent> ent, ref PriceCalculationEvent args)
+    {
+        args.Price += ent.Comp.CurrentCharge * ent.Comp.PricePerJoule;
+    }
+
+    private void OnChangeCharge(Entity<BatteryComponent> ent, ref ChangeChargeEvent args)
+    {
+        if (args.ResidualValue == 0)
+            return;
+
+        args.ResidualValue -= ChangeCharge(ent.AsNullable(), args.ResidualValue);
+    }
+
+    private void OnGetCharge(Entity<BatteryComponent> entity, ref GetChargeEvent args)
+    {
+        args.CurrentCharge += entity.Comp.CurrentCharge;
+        args.MaxCharge += entity.Comp.MaxCharge;
+    }
+
+    public override void Update(float frameTime)
+    {
+        var query = EntityQueryEnumerator<BatterySelfRechargerComponent, BatteryComponent>();
+        var curTime = _timing.CurTime;
+        while (query.MoveNext(out var uid, out var comp, out var bat))
+        {
+            // TP14 Change - WizDen broke shit again!
+            if (!comp.AutoRecharge || (IsFull((uid, bat)) && comp.AutoRechargeRate > 0))
+                continue;
+
+            if (comp.NextAutoRecharge > curTime)
+                continue;
+
+            SetCharge((uid, bat), bat.CurrentCharge + comp.AutoRechargeRate * frameTime);
+        }
+    }
 }

@@ -879,16 +879,6 @@
   - UplinkDeception
 
 - type: listing
-  id: UplinkCyberpen
-  name: uplink-cyberpen-name
-  description: uplink-cyberpen-desc
-  productEntity: CyberPen
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkDeception
-
-- type: listing
   id: UplinkDecoyDisk
   name: uplink-decoy-disk-name
   description: uplink-decoy-disk-desc
@@ -987,18 +977,18 @@
 
 # Disruption
 
-- type: listing
-  id: UplinkAccessBreaker
-  name: uplink-access-breaker-name
-  description: uplink-access-breaker-desc
-  productEntity: AccessBreaker
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 2
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkDisruption
+#- type: listing
+#  id: UplinkAccessBreaker
+#  name: uplink-access-breaker-name
+#  description: uplink-access-breaker-desc
+#  productEntity: AccessBreaker
+#  discountCategory: rareDiscounts
+#  discountDownTo:
+#    Telecrystal: 2
+#  cost:
+#    Telecrystal: 4
+#  categories:
+#  - UplinkDisruption
 
 - type: listing
   id: UplinkEmag

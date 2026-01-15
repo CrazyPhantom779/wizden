@@ -3,10 +3,9 @@
   name: department-Cargo
   description: department-Cargo-description
   color: "#A46106"
-  roles:
+  roles: # TP - Moved Salvage
   - CargoTechnician
   - Quartermaster
-  - SalvageSpecialist
 
 - type: department
   id: Civilian

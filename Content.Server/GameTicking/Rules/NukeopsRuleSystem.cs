@@ -497,7 +497,6 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         nukeops.RoundEndTextShuttleCall,
         nukeops.RoundEndTextAnnouncement);
 
-
         // prevent it called multiple times
         nukeops.RoundEndBehavior = RoundEndBehavior.Nothing;
     }

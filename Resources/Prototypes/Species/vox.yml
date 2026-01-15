@@ -1,7 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true
+  roundStart: true # back by popular demand! GOD FUCKING DAMNIT-
   prototype: MobVox
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
@@ -13,6 +13,7 @@
   naming: First
   sexes:
   - Unsexed
+  customName: true # Starlight
 
 - type: speciesBaseSprites
   id: MobVoxSprites

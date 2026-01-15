@@ -49,6 +49,7 @@
   description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
   suffix: Extended
   components:
+<<<<<<< HEAD
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -59,6 +60,16 @@
         - id: Flare
         - id: FoodSnackNutribrick
         - id: DrinkWaterBottleFull
+=======
+  - type: StorageFill
+    contents:
+    - id: TP14ClothingMaskAir # TP14
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+>>>>>>> trieste/master
   - type: Sprite
     layers:
     - state: internals
@@ -69,6 +80,7 @@
   id: BoxSurvivalEngineeringNitrogen
   suffix: Extended N2
   components:
+<<<<<<< HEAD
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -79,6 +91,16 @@
         - id: Flare
         - id: FoodSnackNutribrick
         - id: DrinkWaterBottleFull
+=======
+  - type: StorageFill
+    contents:
+    - id: TP14ClothingMaskAir # TP14
+    - id: ExtendedEmergencyNitrogenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+>>>>>>> trieste/master
   - type: Sprite
     layers:
     - state: internals
@@ -189,6 +211,7 @@
     - state: heart
   - type: Item
     heldPrefix: hug
+<<<<<<< HEAD
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -199,6 +222,16 @@
         - id: Flare
         - id: FoodSnackNutribrick
         - id: DrinkWaterBottleFull
+=======
+  - type: StorageFill
+    contents:
+    - id: TP14ClothingMaskAir # TP14
+    - id: EmergencyFunnyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodSnackNutribrick
+    - id: DrinkWaterBottleFull
+>>>>>>> trieste/master
   - type: Tag
     tags:
     - BoxCardboard
@@ -227,6 +260,7 @@
   id: BoxMime
   suffix: Mime, Emergency
   components:
+<<<<<<< HEAD
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -237,6 +271,16 @@
         - id: Flare
         - id: FoodBreadNutriBatard
         - id: DrinkWaterBottleFull
+=======
+  - type: StorageFill
+    contents:
+    - id: TP14ClothingMaskAir # TP14
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodBreadNutriBatard
+    - id: DrinkWaterBottleFull
+>>>>>>> trieste/master
 
 - type: entity
   parent: BoxSurvivalNitrogen
@@ -265,6 +309,7 @@
   id: BoxMimeMoth
   suffix: Mime, Emergency moth
   components:
+<<<<<<< HEAD
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -275,6 +320,16 @@
         - id: Flare
         - id: FoodBreadCottonNutriBatard
         - id: DrinkWaterBottleFull
+=======
+  - type: StorageFill
+    contents:
+    - id: TP14ClothingMaskAir # TP14
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+    - id: FoodBreadCottonNutriBatard
+    - id: DrinkWaterBottleFull
+>>>>>>> trieste/master
 
 - type: entity
   parent: BoxCardboard

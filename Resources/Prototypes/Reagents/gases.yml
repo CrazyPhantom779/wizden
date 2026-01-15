@@ -26,6 +26,12 @@
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+        ratios:
+          Water: -1.0
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
@@ -34,6 +40,14 @@
         damage:
           types:
             Poison: 1.5
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Jellid ]
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: 1.5
       - !type:AdjustAlert
         alertType: Toxins
         minScale: 1

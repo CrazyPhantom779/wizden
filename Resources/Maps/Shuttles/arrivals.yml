@@ -13,20 +13,18 @@ orphans:
 - 292
 nullspace: []
 tilemap:
-  0: Space
-  47: FloorGrass
-  81: FloorShuttleBlue
-  82: FloorShuttleOrange
-  85: FloorShuttleWhite
-  120: Lattice
-  121: Plating
+  3: Space
+  2: FloorMining
+  1: FloorTechMaint3
+  0: Plating
+  4: PlatingDamaged
 entities:
 - proto: ""
   entities:
-  - uid: 292
+  - uid: 1
     components:
     - type: MetaData
-      name: NT-Arrivals 1101
+      name: Diving Bell
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -50,15 +48,12 @@ entities:
     - type: Broadphase
     - type: Physics
       bodyStatus: InAir
-      angularDamping: 0.05
-      linearDamping: 0.05
       fixedRotation: False
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
-    - type: BecomesStation
-      id: Empty
     - type: OccluderTree
+    - type: SpreaderGrid
     - type: Shuttle
       dampingModifier: 0.25
     - type: DeviceNetwork
@@ -74,100 +69,49 @@ entities:
         nodes:
         - node:
             color: '#FFFFFFFF'
-            id: BushCThree
+            id: Bot
           decals:
-            9: -1,-1
+            40: 3,-1
+            41: -3,-1
+            42: -3,1
         - node:
             color: '#FFFFFFFF'
-            id: Bushe3
+            id: WarnLineGreyscaleN
           decals:
-            11: -1,1
+            24: 2,2
+            25: 3,2
+            26: 1,2
+            28: -1,2
+            30: -3,2
         - node:
             color: '#FFFFFFFF'
-            id: Bushi3
+            id: WarnLineN
           decals:
-            10: -1,0
-        - node:
-            color: '#FFFFFFFF'
-            id: Flowersbr3
-          decals:
-            6: -1,1
-        - node:
-            color: '#FFFFFFFF'
-            id: Flowerspv3
-          decals:
-            7: -1,-1
-        - node:
-            color: '#FFFFFFFF'
-            id: Flowersy3
-          decals:
-            4: -1,2
-        - node:
-            color: '#FFFFFFFF'
-            id: Flowersy4
-          decals:
-            5: -1,0
-        - node:
-            color: '#FFFFFFFF'
-            id: Grassb5
-          decals:
-            8: -1,2
-        - node:
-            color: '#FFFFFFFF'
-            id: Grassd3
-          decals:
-            3: -1,2
-        - node:
-            color: '#FFFFFFFF'
-            id: Grasse1
-          decals:
-            2: -1,1
-        - node:
-            color: '#FFFFFFFF'
-            id: Grasse2
-          decals:
-            1: -1,0
-        - node:
-            color: '#FFFFFFFF'
-            id: Grasse3
-          decals:
-            0: -1,-1
+            7: 2,-2
+            8: 3,-2
+            9: 0,-2
+            10: -2,-2
+            11: -3,-2
+            13: -3,-2
+            14: -1,-2
+            34: -3,2
+            35: 0,2
+            36: -1,2
+            37: 1,2
+            38: 2,2
+            39: 3,2
     - type: GridAtmosphere
       version: 2
       data:
         tiles:
-          -1,-1:
-            0: 3
-            1: 65532
-          -1,0:
-            1: 65535
-          -2,-2:
-            1: 34816
-          -2,-1:
-            1: 34952
-          -1,-2:
-            1: 65520
           0,0:
-            1: 65535
-          0,1:
-            1: 32687
-            0: 80
-          0,2:
-            1: 307
-          -2,0:
-            1: 34952
-          -2,1:
-            1: 2184
-          -1,1:
-            1: 65455
-            0: 80
-          -1,2:
-            1: 3310
-          0,-2:
-            1: 65392
+            0: 16374
           0,-1:
-            1: 65531
-            0: 4
+            0: 65329
+          -1,0:
+            0: 36588
+          -1,-1:
+            0: 61056
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -2206,7 +2150,183 @@ entities:
     - RCDDeconstructable
 - proto: SpaceVillainArcadeFilled
   entities:
-  - uid: 259
+  - uid: 43
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: AtmosDeviceFanDirectional
+  entities:
+  - uid: 140
+    components:
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 1
+- proto: CableApcExtension
+  entities:
+  - uid: 59
+    components:
+    - type: Transform
+      pos: 0.5,0.5
+      parent: 1
+  - uid: 60
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 61
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 1
+  - uid: 62
+    components:
+    - type: Transform
+      pos: -1.5,1.5
+      parent: 1
+  - uid: 63
+    components:
+    - type: Transform
+      pos: -1.5,0.5
+      parent: 1
+  - uid: 64
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 1
+  - uid: 65
+    components:
+    - type: Transform
+      pos: -1.5,-1.5
+      parent: 1
+  - uid: 66
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
+      parent: 1
+  - uid: 67
+    components:
+    - type: Transform
+      pos: 1.5,-1.5
+      parent: 1
+  - uid: 68
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 1
+  - uid: 69
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 1
+  - uid: 70
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
+  - uid: 71
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 72
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 73
+    components:
+    - type: Transform
+      pos: 2.5,1.5
+      parent: 1
+  - uid: 74
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 1
+  - uid: 75
+    components:
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 1
+- proto: CableHV
+  entities:
+  - uid: 47
+    components:
+    - type: Transform
+      pos: 0.5,4.5
+      parent: 1
+  - uid: 48
+    components:
+    - type: Transform
+      pos: 0.5,3.5
+      parent: 1
+  - uid: 49
+    components:
+    - type: Transform
+      pos: 1.5,3.5
+      parent: 1
+  - uid: 50
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
+  - uid: 58
+    components:
+    - type: Transform
+      pos: -0.5,3.5
+      parent: 1
+- proto: CableMV
+  entities:
+  - uid: 51
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
+  - uid: 52
+    components:
+    - type: Transform
+      pos: 1.5,3.5
+      parent: 1
+  - uid: 53
+    components:
+    - type: Transform
+      pos: 0.5,3.5
+      parent: 1
+  - uid: 54
+    components:
+    - type: Transform
+      pos: -0.5,3.5
+      parent: 1
+  - uid: 55
+    components:
+    - type: Transform
+      pos: 0.5,2.5
+      parent: 1
+  - uid: 56
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 57
+    components:
+    - type: Transform
+      pos: 0.5,0.5
+      parent: 1
+- proto: ClosetWallEmergencyFilledRandom
+  entities:
+  - uid: 86
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,1.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 87
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -2370,403 +2490,506 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 2.5,-6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Anchorable
-    - Construction
-  - uid: 176
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 78
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -3.5,-6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Anchorable
-    - Construction
-- proto: ToolboxEmergencyFilled
+      pos: -1.5,0.5
+      parent: 1
+- proto: PuddleVomit
   entities:
-  - uid: 270
+  - uid: 94
     components:
     - type: Transform
-      pos: -1.4722855,-3.4471583
-      parent: 292
-  - uid: 272
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 95
     components:
     - type: Transform
-      pos: -1.4722855,-3.4471583
-      parent: 292
-  - uid: 275
+      rot: 1.5707963267948966 rad
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 96
     components:
     - type: Transform
-      pos: -3.5079994,5.600461
-      parent: 292
-- proto: VendingMachineClothing
+      pos: 0.5,-2.5
+      parent: 1
+- proto: RandomSpawner
   entities:
-  - uid: 261
+  - uid: 97
     components:
     - type: Transform
-      pos: 1.5,-3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Anchorable
-- proto: WallShuttle
+      pos: -0.5,1.5
+      parent: 1
+  - uid: 98
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-0.5
+      parent: 1
+  - uid: 99
+    components:
+    - type: Transform
+      pos: 1.5,2.5
+      parent: 1
+  - uid: 100
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 101
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 1
+- proto: SpaceHeaterEnabled
   entities:
-  - uid: 1
+  - uid: 102
     components:
     - type: Transform
-      pos: 3.5,-3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 2
+      pos: 0.5,1.5
+      parent: 1
+- proto: SubstationWallBasic
+  entities:
+  - uid: 46
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,3.5
+      parent: 1
+- proto: TP14MarkerInside
+  entities:
+  - uid: 103
+    components:
+    - type: Transform
+      pos: -0.5,3.5
+      parent: 1
+  - uid: 104
+    components:
+    - type: Transform
+      pos: -0.5,2.5
+      parent: 1
+  - uid: 105
+    components:
+    - type: Transform
+      pos: 0.5,3.5
+      parent: 1
+  - uid: 106
+    components:
+    - type: Transform
+      pos: 0.5,2.5
+      parent: 1
+  - uid: 107
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 108
+    components:
+    - type: Transform
+      pos: 1.5,3.5
+      parent: 1
+  - uid: 109
+    components:
+    - type: Transform
+      pos: 1.5,2.5
+      parent: 1
+  - uid: 110
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
+  - uid: 111
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 1
+  - uid: 112
+    components:
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 1
+  - uid: 113
+    components:
+    - type: Transform
+      pos: 1.5,-0.5
+      parent: 1
+  - uid: 114
+    components:
+    - type: Transform
+      pos: 1.5,-1.5
+      parent: 1
+  - uid: 115
+    components:
+    - type: Transform
+      pos: 1.5,-2.5
+      parent: 1
+  - uid: 116
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 1
+  - uid: 117
+    components:
+    - type: Transform
+      pos: -0.5,-2.5
+      parent: 1
+  - uid: 118
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
+      parent: 1
+  - uid: 119
+    components:
+    - type: Transform
+      pos: -0.5,-0.5
+      parent: 1
+  - uid: 120
+    components:
+    - type: Transform
+      pos: -0.5,0.5
+      parent: 1
+  - uid: 121
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 1
+  - uid: 122
+    components:
+    - type: Transform
+      pos: 0.5,-0.5
+      parent: 1
+  - uid: 123
+    components:
+    - type: Transform
+      pos: -1.5,-1.5
+      parent: 1
+  - uid: 124
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 1
+  - uid: 125
+    components:
+    - type: Transform
+      pos: -1.5,0.5
+      parent: 1
+  - uid: 126
+    components:
+    - type: Transform
+      pos: -1.5,1.5
+      parent: 1
+  - uid: 127
+    components:
+    - type: Transform
+      pos: -2.5,-1.5
+      parent: 1
+  - uid: 128
+    components:
+    - type: Transform
+      pos: -2.5,-0.5
+      parent: 1
+  - uid: 129
+    components:
+    - type: Transform
+      pos: -2.5,1.5
+      parent: 1
+  - uid: 130
+    components:
+    - type: Transform
+      pos: -1.5,2.5
+      parent: 1
+  - uid: 131
+    components:
+    - type: Transform
+      pos: 3.5,2.5
+      parent: 1
+  - uid: 132
+    components:
+    - type: Transform
+      pos: 3.5,1.5
+      parent: 1
+  - uid: 133
+    components:
+    - type: Transform
+      pos: 3.5,-0.5
+      parent: 1
+  - uid: 134
     components:
     - type: Transform
       pos: 3.5,-1.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 3
+      parent: 1
+  - uid: 135
     components:
     - type: Transform
-      pos: -4.5,-3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: 2.5,1.5
+      parent: 1
+  - uid: 136
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 137
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 138
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 1
+  - uid: 139
+    components:
+    - type: Transform
+      pos: 2.5,2.5
+      parent: 1
+- proto: WallMining
+  entities:
+  - uid: 8
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 4.5,2.5
+      parent: 1
+  - uid: 9
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 4.5,1.5
+      parent: 1
+  - uid: 12
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-1.5
+      parent: 1
+  - uid: 13
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-2.5
+      parent: 1
+  - uid: 15
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,-3.5
+      parent: 1
+  - uid: 18
+    components:
+    - type: Transform
+      pos: -2.5,-2.5
+      parent: 1
+  - uid: 22
+    components:
+    - type: Transform
+      pos: -3.5,1.5
+      parent: 1
+  - uid: 23
+    components:
+    - type: Transform
+      pos: -3.5,2.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,-2.5
+      parent: 1
+- proto: WallMiningDiagonal
+  entities:
+  - uid: 28
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,2.5
+      parent: 1
+  - uid: 29
+    components:
+    - type: Transform
+      pos: 3.5,-1.5
+      parent: 1
+  - uid: 32
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,-1.5
+      parent: 1
+  - uid: 34
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-2.5
+      parent: 1
+- proto: WallReinforced
+  entities:
   - uid: 4
     components:
     - type: Transform
-      pos: -4.5,-1.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      rot: 1.5707963267948966 rad
+      pos: 0.5,4.5
+      parent: 1
   - uid: 5
     components:
     - type: Transform
-      pos: -4.5,3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      rot: 1.5707963267948966 rad
+      pos: 1.5,4.5
+      parent: 1
   - uid: 6
     components:
     - type: Transform
-      pos: -4.5,5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      rot: 1.5707963267948966 rad
+      pos: 2.5,4.5
+      parent: 1
+  - uid: 21
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,0.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -1.5,-2.5
+      parent: 1
+  - uid: 35
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,0.5
+      parent: 1
+- proto: WallReinforcedDiagonal
+  entities:
+  - uid: 26
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,2.5
+      parent: 1
+  - uid: 33
+    components:
+    - type: Transform
+      pos: 1.5,-2.5
+      parent: 1
+- proto: WallReinforcedRust
+  entities:
+  - uid: 2
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,4.5
+      parent: 1
+  - uid: 3
+    components:
+    - type: Transform
+      pos: -0.5,4.5
+      parent: 1
   - uid: 7
     components:
     - type: Transform
       pos: 3.5,3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 8
-    components:
-    - type: Transform
-      pos: 3.5,5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 9
-    components:
-    - type: Transform
-      pos: 3.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      parent: 1
   - uid: 10
     components:
     - type: Transform
-      pos: 2.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: 4.5,0.5
+      parent: 1
   - uid: 11
     components:
     - type: Transform
-      pos: -4.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 12
-    components:
-    - type: Transform
-      pos: -3.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 13
-    components:
-    - type: Transform
-      pos: -2.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: 4.5,-0.5
+      parent: 1
   - uid: 14
     components:
     - type: Transform
-      pos: -2.5,7.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 15
-    components:
-    - type: Transform
-      pos: 1.5,6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: 2.5,-3.5
+      parent: 1
   - uid: 16
     components:
     - type: Transform
-      pos: 1.5,7.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: -0.5,-3.5
+      parent: 1
   - uid: 17
     components:
     - type: Transform
-      pos: 3.5,-4.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 18
-    components:
-    - type: Transform
-      pos: 2.5,-4.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: -1.5,-3.5
+      parent: 1
   - uid: 19
     components:
     - type: Transform
-      pos: -4.5,-4.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: -3.5,-1.5
+      parent: 1
   - uid: 20
     components:
     - type: Transform
-      pos: -3.5,-4.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 21
-    components:
-    - type: Transform
-      pos: -0.5,-4.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 22
-    components:
-    - type: Transform
-      pos: 2.5,-5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 23
-    components:
-    - type: Transform
-      pos: 3.5,-5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: -3.5,-0.5
+      parent: 1
   - uid: 24
     components:
     - type: Transform
-      pos: -3.5,-5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      pos: -2.5,3.5
+      parent: 1
   - uid: 25
     components:
     - type: Transform
-      pos: -4.5,-5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 26
-    components:
-    - type: Transform
-      pos: -0.5,-6.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      rot: -1.5707963267948966 rad
+      pos: -1.5,3.5
+      parent: 1
   - uid: 27
     components:
     - type: Transform
-      pos: -0.5,-5.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 74
+      rot: -1.5707963267948966 rad
+      pos: 2.5,3.5
+      parent: 1
+  - uid: 36
     components:
     - type: Transform
-      pos: -0.5,-1.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
-  - uid: 75
+      rot: 1.5707963267948966 rad
+      pos: 0.5,0.5
+      parent: 1
+  - uid: 37
     components:
     - type: Transform
-      pos: -0.5,3.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Destructible
-    - Construction
+      rot: 1.5707963267948966 rad
+      pos: 3.5,0.5
+      parent: 1
+- proto: WindoorSecureEngineeringLocked
+  entities:
+  - uid: 81
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,2.5
+      parent: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 215
+  - uid: 82
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-0.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 216
+      rot: 3.141592653589793 rad
+      pos: -1.5,2.5
+      parent: 1
+  - uid: 83
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,0.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 217
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,1.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 218
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -0.5,2.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 219
+      parent: 1
+  - uid: 84
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,2.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 220
+      rot: 3.141592653589793 rad
+      pos: 1.5,2.5
+      parent: 1
+  - uid: 85
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,1.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 221
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,0.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
-  - uid: 222
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-0.5
-      parent: 292
-    - type: Godmode
-    missingComponents:
-    - Construction
-    - RCDDeconstructable
-    - Destructible
+      rot: 3.141592653589793 rad
+      pos: 2.5,2.5
+      parent: 1
 ...

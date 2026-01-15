@@ -65,8 +65,8 @@
   - quantity: 10
     weight: 3
     reagents:
-    - Bicaridine
-    - Dermaline
+    - HyperPlatelet
+    - HyperMarrow
     - Ephedrine
     - NorepinephricAcid
     - Tricordrazine
@@ -103,7 +103,7 @@
     weight: 3.5
     reagents:
     - Vitamin
-    - Kelotane
+    - Lexodine
     - Inaprovaline
     - Oil
     - Slime

@@ -48,6 +48,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     drawdepth: ThinPipe
+    layers: []
     visible: false
   - type: Appearance
   - type: PipeAppearance

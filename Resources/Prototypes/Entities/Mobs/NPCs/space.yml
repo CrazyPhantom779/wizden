@@ -34,7 +34,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead
+      100: Dead  # TP, From Harmony, 80 to 100
   - type: Stamina
     baseCritThreshold: 150
   - type: MovementAlwaysTouching
@@ -171,10 +171,10 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      60: Dead
+#  - type: MobThresholds # TP, From Harmony
+#    thresholds:
+#      0: Alive
+#      60: Dead
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -201,7 +201,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      45: Dead
+      90: Dead # TP, From Harmony, 45 to 90
   - type: Stamina
     baseCritThreshold: 150
   - type: DamageStateVisuals
@@ -304,7 +304,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        45: Dead
+        90: Dead # TP, From Harmony, 45 to 90
     - type: Stamina
       baseCritThreshold: 150
     - type: DamageStateVisuals

@@ -108,10 +108,10 @@
           prob: 0.5
 
 - type: entity
+  parent: ToolboxMechanical
   id: ToolboxMechanicalFilledAllTools
   name: mechanical toolbox
   suffix: Filled, all tools
-  parent: ToolboxMechanical
   components:
   - type: EntityTableContainerFill
     containers:

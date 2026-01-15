@@ -12,8 +12,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakCap
-  name: captain's cloak
-  description: A pompous and comfy blue cloak with a nice gold trim, while not particularly valuable as your other possessions, it sure is fancy.
+  name: overseer's cloak
+  description: A pompous and comfy blue cloak with a nice gold trim, while not particularly valuable as your other possessions, it sure is badass.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/cap.rsi
@@ -23,7 +23,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakHos
-  name: head of security's cloak
+  name: marshal's cloak # TP
   description: An exquisite dark and red cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
   components:
   - type: Sprite
@@ -67,7 +67,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakQm
-  name: quartermaster's cloak
+  name: harbormaster's cloak
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
   components:
   - type: Sprite
@@ -107,7 +107,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakCapFormal
-  name: captain's formal cloak
+  name: overseer's formal cloak
   description: A lavish and decorated cloak for special occasions.
   components:
   - type: Sprite

@@ -256,7 +256,19 @@ public abstract partial class SharedGunSystem : EntitySystem
             return false;
         }
 
-        var toCoordinates = gun.Comp.ShootCoordinates;
+        // Trieste Port Start: Prevent the gun from firing if underwater if not waterproof
+        // if (TryComp<InGasComponent>(user, out var water) && !gun.Waterproof)
+        // {
+        //     if (water.InWater)
+        //     {
+        //             PopupSystem.PopupEntity(Loc.GetString("waterlogged-gun"), user, PopupType.Small);
+        //         Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
+        //         return;
+        //         }
+        // }
+        // Trieste Port End
+
+        var toCoordinates = gun.ShootCoordinates;
 
         if (toCoordinates == null)
             return false;

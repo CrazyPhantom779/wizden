@@ -6,10 +6,7 @@
   showInVote: false # secret
   description: survival-description
   rules:
-    - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -57,20 +54,20 @@
   description: aller-at-once-description
   showInVote: false #Please god dont do this
   rules:
-    - Nukeops
-    - Traitor
-    - Revolutionary
-    - Zombie
-    - Wizard
-    - Xenoborgs
-    - BasicStationEventScheduler
-    - KesslerSyndromeScheduler
-    - MeteorSwarmMildScheduler
-    - MeteorSwarmScheduler
-    - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
-    - BasicRoundstartVariation
+  - Nukeops
+  - Traitor
+  - Revolutionary
+  - Zombie
+  - Wizard
+  - Xenoborgs
+  - BasicStationEventScheduler
+  - KesslerSyndromeScheduler
+  - MeteorSwarmMildScheduler
+  - MeteorSwarmScheduler
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Extended
@@ -78,7 +75,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #2boring2vote #TP14 - You guys are dumb
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -126,6 +123,29 @@
   rules:
     - Secret
 
+# TP14 - We don't need this shit, oh my god.
+#- type: gamePreset
+#  id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
+#  alias:
+#    - secretextended
+#  name: secret-title
+#  showInVote: false #Admin Use
+#  description: secret-description
+#  rules:
+#    - BasicStationEventScheduler
+#    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
+  alias:
+  - secretgreenshift
+  name: secret-title
+  showInVote: false #Admin Use
+  description: secret-description
+  rules:
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
+
 - type: gamePreset
   id: Sandbox
   alias:
@@ -168,6 +188,17 @@
     - DeathMatch31
 
 - type: gamePreset
+  id: Longpast
+  alias:
+    - longpast
+    - lp
+  name: long-past-title
+  description: long-past-description
+  maxPlayers: 25
+  showInVote: true
+  supportedMaps: LongPastPool
+
+- type: gamePreset
   id: Nukeops
   alias:
     - nukeops
@@ -196,22 +227,6 @@
   - DummyNonAntagChance
   - Revolutionary
   - SubGamemodesRuleNoWizard
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-
-- type: gamePreset
-  id: Wizard
-  alias:
-  - wizard
-  name: wizard-title
-  description: wizard-description
-  showInVote: false
-  rules:
-  - Wizard
-  - DummyNonAntagChance
-  - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
@@ -247,7 +262,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
@@ -265,4 +279,19 @@
   - BasicStationEventScheduler
   - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SafeHarbor
+  alias:
+  - safeharbor
+  - crashedship
+  - ThatOneFuckedShip
+  - floatsam
+  - flotsam
+  name: safe-harbor-title
+  showInVote: false
+  description: safe-harbor-description
+  supportedMaps: SafeHarborPool
+  rules:
   - BasicRoundstartVariation

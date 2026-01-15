@@ -1,9 +1,11 @@
+using Content.Shared.Alert;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Guidebook;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Power.Components;
 
@@ -74,6 +76,11 @@ public sealed partial class BatteryComponent : Component
     /// </remarks>
     [ViewVariables, AutoNetworkedField]
     public BatteryState State = BatteryState.Neither;
+    /// !! TRIESTE SPECIFIC !!
+    /// The alert to play when the battery is empty.
+    /// </summary>
+     [DataField]
+     public ProtoId<AlertPrototype> NoBatteryAlert = "JellidBatteryNone";
 }
 
 /// <summary>

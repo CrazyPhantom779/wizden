@@ -22,6 +22,9 @@ public sealed partial class MassHallucinationsRuleComponent : Component
     [DataField("maxSoundDistance", required: true), ViewVariables(VVAccess.ReadWrite)]
     public float MaxSoundDistance;
 
+    [DataField("sweetwaterOnly"), ViewVariables(VVAccess.ReadWrite)]
+    public bool SweetwaterOnly = false;
+
     [DataField("sounds", required: true)]
     public SoundSpecifier Sounds = default!;
 

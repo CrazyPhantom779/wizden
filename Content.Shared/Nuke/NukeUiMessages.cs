@@ -11,6 +11,7 @@ namespace Content.Shared.Nuke
         /// Used to prevent clients from trying to brute force it.
         /// </summary>
         public static readonly TimeSpan EnterCodeCooldown = TimeSpan.FromSeconds(1);
+        public const string NukeResonanceSlotId = "Resonance";
     }
 
     [Serializable, NetSerializable]

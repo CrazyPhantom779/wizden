@@ -169,6 +169,19 @@
         probability: 0.35
 
 - type: reagent
+  id: Mimicrium
+  name: reagent-name-mimicrium
+  group: Toxins
+  desc: reagent-desc-mimicrium
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#FDD023"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:Electrocute # mimics generally only have enough of this shit to do one good shock, so it's fineeee
+
+- type: reagent
   id: Razorium
   name: reagent-name-razorium
   group: Toxins
@@ -275,7 +288,7 @@
       - !type:AdjustTemperature
         conditions:
         - !type:TemperatureCondition
-          min: 160.15 # not quite enough for cryo, but can speed it up if you wanna take the risk
+            min: 160.15 # not quite enough for cryo, but can speed it up if you wanna take the risk
         amount: -10000
       - !type:MovementSpeedModifier
         conditions:

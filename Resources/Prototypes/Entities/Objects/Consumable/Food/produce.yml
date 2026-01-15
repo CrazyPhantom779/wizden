@@ -1553,7 +1553,7 @@
         reagents:
         - ReagentId: Aloe
           Quantity: 10
-        - ReagentId: Dermaline
+        - ReagentId: HyperMarrow
           Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
@@ -1591,7 +1591,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: Bicaridine
+        - ReagentId: HyperPlatelet
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
@@ -1623,7 +1623,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: Bicaridine
+        - ReagentId: HyperPlatelet
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lily.rsi
@@ -1689,9 +1689,9 @@
       food:
         maxVol: 14
         reagents:
-        - ReagentId: Bicaridine
+        - ReagentId: HyperPlatelet
           Quantity: 5
-        - ReagentId: Kelotane
+        - ReagentId: Lexodine
           Quantity: 5
         - ReagentId: Nutriment
           Quantity: 2

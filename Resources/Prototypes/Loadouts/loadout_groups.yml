@@ -87,7 +87,9 @@
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater # TP
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -97,6 +99,7 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+  - LoadoutSpeciesJellidWater # TP
 
 # vox get a nitrogen tank, other species get nothing
 - type: loadoutGroup
@@ -113,6 +116,7 @@
   loadouts:
   - LoadoutSpeciesPocketDoubleNitrogen
   - LoadoutSpeciesPocketDoubleOxygen
+  - LoadoutSpeciesJellidWater # TP
 
 # Command
 - type: loadoutGroup
@@ -207,6 +211,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieHeadOfPersonnel
+  - TP14LoadoutGoldenCoffeeFilterHoP
 
 # Civilian
 - type: loadoutGroup
@@ -298,9 +303,11 @@
   id: BartenderJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
+  maxLimit: 2
   loadouts:
   - LizardPlushieBartender
   - BartenderGoldenShaker
+  - TP14LoadoutGoldenCoffeeFilterBar
 
 - type: loadoutGroup
   id: ServiceWorkerJobTrinkets
@@ -498,6 +505,7 @@
   minLimit: 0
   loadouts:
   - BotanistHead
+  - BotanistBucket
   - BotanistBandana
 
 - type: loadoutGroup
@@ -506,6 +514,7 @@
   loadouts:
   - BotanistJumpsuit
   - BotanistJumpskirt
+  - BotanistWarmOveralls
   - BotanistOveralls
 
 - type: loadoutGroup
@@ -536,40 +545,40 @@
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
-  - JesterHat
-  - JesterAltHat
+  - WearyClownHat
 
 - type: loadoutGroup
   id: ClownJumpsuit
   name: loadout-group-clown-jumpsuit
   loadouts:
-  - ClownSuit
-  - ClownSkirt
-  - JesterSuit
-  - JesterAltSuit
+  - WearyOveralls
 
 - type: loadoutGroup
   id: ClownBackpack
   name: loadout-group-clown-backpack
   loadouts:
-  - ClownBackpack
-  - ClownSatchel
-  - ClownDuffel
+  - ClownBindle
 
 - type: loadoutGroup
   id: ClownOuterClothing
   name: loadout-group-clown-outerclothing
   minLimit: 0
   loadouts:
-  - ClownRobes
-  - ClownWintercoat
+  - WearyClownCoat
+
+- type: loadoutGroup
+  id: ClownNeck
+  name: loadout-group-clown-neck
+  minLimit: 0
+  loadouts:
+  - RedBowtie
+
 
 - type: loadoutGroup
   id: ClownShoes
   name: loadout-group-clown-shoes
   loadouts:
-  - ClownShoes
-  - JesterShoes
+  - WearyClownShoes
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -579,7 +588,9 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 - type: loadoutGroup
   id: ClownJobTrinkets
@@ -594,24 +605,22 @@
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
-  - MimeHead
+  - PierrotHat
   - MimeFrenchBeret
   - MimeCap
 
 - type: loadoutGroup
   id: MimeMask
   name: loadout-group-mime-mask
+  minLimit: 1
   loadouts:
-  - MimeMask
-  - MimeMaskSad
-  - MimeMaskScared
+  - PierrotMask
 
 - type: loadoutGroup
   id: MimeJumpsuit
   name: loadout-group-mime-jumpsuit
   loadouts:
-  - MimeJumpsuit
-  - MimeJumpskirt
+  - PierrotJumpsuit
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -622,15 +631,9 @@
   - MimeDuffel
 
 - type: loadoutGroup
-  id: MimeOuterClothing
-  name: loadout-group-mime-outerclothing
-  minLimit: 0
-  loadouts:
-  - MimeWintercoat
-
-- type: loadoutGroup
   id: MimeBelt
   name: loadout-group-mime-belt
+  minLimit: 0
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
@@ -643,8 +646,10 @@
   loadouts:
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
+  - EmergencyWater
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 - type: loadoutGroup
   id: MimeJobTrinkets
@@ -769,6 +774,7 @@
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
+  - TankTop
   - CargoTechnicianJumpskirt
 
 - type: loadoutGroup
@@ -999,7 +1005,9 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 # Science
 - type: loadoutGroup
@@ -1052,6 +1060,7 @@
   minLimit: 0
   loadouts:
   - RoboticistCap
+  - ScientificBucket
   - SkullBandana
   - ScientificBeret
 
@@ -1068,6 +1077,8 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
+  - MadScientistJumpsuit
+  - MadScientistJumpskirt
   - RoboticistJumpsuit
   - RoboticistJumpskirt
   - SeniorResearcherJumpsuit
@@ -1217,21 +1228,20 @@
   minLimit: 0
   loadouts:
   - SecurityHelmet
-  - SecurityBeret
+  - SecurityBandana
   - SecurityHat
-  - TrooperHat
+  - SecurityBeret
+  - SecurityBucketHat
 
 - type: loadoutGroup
   id: SecurityJumpsuit
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
-  - SecurityJumpskirt
-  - SecurityJumpsuitGrey
-  - SecurityJumpskirtGrey
+  - SecurityTanktop
+  - SecurityJumpsuitBlue
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
-  - TrooperUniform
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1260,6 +1270,7 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
+  - CombatBoots
   - JackBoots
   - SecurityWinterBoots
 
@@ -1322,8 +1333,8 @@
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+  - BlueJumpsuit
+  - BlueJumpskirt
 
 - type: loadoutGroup
   id: SecurityCadetJobTrinkets
@@ -1340,7 +1351,9 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 # Medical
 - type: loadoutGroup
@@ -1396,6 +1409,7 @@
   minLimit: 0
   loadouts:
   - MedicalBeret
+  - MedicalBucket
   - SeniorPhysicianBeret
   - MedicalHeadMirror
   - BlueSurgeryCap
@@ -1408,6 +1422,8 @@
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
   - MedicalDoctorJumpsuit
+  - MedicalDoctorJumpsuitBloody
+  - MedicalDoctorNurseDress
   - MedicalDoctorJumpskirt
   - SeniorPhysicianJumpsuit
   - SeniorPhysicianJumpskirt
@@ -1420,7 +1436,9 @@
   name: loadout-group-medical-doctor-outerclothing
   minLimit: 0
   loadouts:
-  - RegularLabCoat
+  - MedicalLabcoat
+  - MedicalCoat
+  - MedicalCoatGreen
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
 
@@ -1434,6 +1452,8 @@
 
 - type: loadoutGroup
   id: MedicalShoes
+  minLimit: 0 # TP14
+  defaultSelected: 1 # TP14
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
@@ -1569,7 +1589,9 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater # TP
 
 # Wildcards
 - type: loadoutGroup
@@ -1609,7 +1631,9 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
+  - EmergencyWater
   - LoadoutSpeciesVoxNitrogen
+  - LoadoutSpeciesJellidWater
 
 - type: loadoutGroup
   id: SurvivalMilitaryDouble
@@ -1628,6 +1652,15 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathTool
+
+- type: loadoutGroup
+  id: GroupSpeciesGasMask
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesGasMask
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical

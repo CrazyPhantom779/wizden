@@ -475,6 +475,43 @@
     heat: 50000
 
 - type: entity
+  name: nanotrasen energy bolt
+  id: NtBolt
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: cyan
+  - type: Projectile
+    #   soundHit:  Waiting on serv3
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 14
+
+
+- type: entity
+  name: trident bolt
+  id: BulletTrident
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: "#CBC3E3"
+  - type: Projectile
+    #   soundHit:  Waiting on serv3
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 15
+
+- type: entity
   name: scorching bolt
   id: BoltTempgunHot
   parent: WatcherBoltMagmawing
@@ -608,8 +645,8 @@
         - MobState
     damage:
       types:
-        Blunt: 18
-        Slash: 4
+        Blunt: 20  # TP, From Harmony, 18 to 20
+        Slash: 5  # TP, From Harmony, 4 to 5
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
@@ -1010,6 +1047,25 @@
         - state: xeno_toxic
     - type: Ammo
       muzzleFlash: null
+    - type: SolutionContainerManager
+      solutions:
+        melee:
+          reagents:
+          - ReagentId: NorepinephricAcid
+            Quantity: 20
+    - type: MeleeChemicalInjector
+      solution: melee
+      transferAmount: 20
+    - type: InjectableSolution
+      solution: melee
+    - type: SolutionInjectOnEmbed
+      transferAmount: 20
+      solution: melee
+    - type: SolutionTransfer
+      maxTransferAmount: 20
+    - type: EmbeddableProjectile
+    - type: TimedDespawn
+      lifetime: 7
 
 - type: entity
   id: BulletWaterShot

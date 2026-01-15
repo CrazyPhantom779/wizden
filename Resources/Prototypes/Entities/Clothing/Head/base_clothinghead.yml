@@ -115,6 +115,7 @@
 #  - type: SlotBlock
 #    slots: [ears, eyes, mask]
   - type: BreathMask
+  - type: WaterBlocker
   - type: Item
     size: Normal
   - type: PressureProtection
@@ -154,6 +155,7 @@
 #  - type: SlotBlock
 #    slots: [ears, eyes, mask]
   - type: BreathMask
+  - type: WaterBlocker
   - type: Sprite
     state: icon # default state used by most inheritors
   - type: Clickable
@@ -211,12 +213,13 @@
       map: [ "light" ]
   - type: Clothing
     equippedPrefix: off
+  - type: WaterBlocker
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
-    radius: 3
+    radius: 5
     energy: 2
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true

@@ -418,6 +418,20 @@
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelNtCburnFilled
+  name: CBURN equipment bundle
+  description: "The label on the strap reads 'Turn and burn, Agent.'"
+  components:
+  - type: Contraband
+    severity: Nanotrasen
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunDoubleBarreled
+      - id: BoxShotgunIncendiary
+      - id: CombatMedipen
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateFilledStarterKit
   name: basic operative bundle
   description: "Contains a weapon, medical supplies, breaching tools, spare ammo, and some simple utilities."

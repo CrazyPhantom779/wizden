@@ -6,6 +6,8 @@ using Content.Server.EUI;
 using Content.Server.Ghost;
 using Content.Server.Popups;
 using Content.Shared.PowerCell;
+using Content.Server.Power.EntitySystems;
+using Content.Server.PowerCell;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Components;
@@ -19,7 +21,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
-using Content.Shared.PowerCell;
+using Content.Shared.Power.Components;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -31,6 +33,7 @@ namespace Content.Server.Medical;
 /// </summary>
 public sealed class DefibrillatorSystem : EntitySystem
 {
+    [Dependency] private readonly BatterySystem _battery = default!; // !! TP14 SPECIFIC !!
     [Dependency] private readonly ChatSystem _chatManager = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
@@ -181,6 +184,7 @@ public sealed class DefibrillatorSystem : EntitySystem
             return;
 
         _audio.PlayPvs(component.ZapSound, uid);
+
         _electrocution.TryDoElectrocution(target, null, component.ZapDamage, component.WritheDuration, true, ignoreInsulation: true);
 
         var interacters = new HashSet<EntityUid>();
@@ -196,8 +200,11 @@ public sealed class DefibrillatorSystem : EntitySystem
 
         if (!TryComp<UseDelayComponent>(uid, out var useDelay))
             return;
+
         _useDelay.SetLength((uid, useDelay), component.ZapDelay, component.DelayId);
         _useDelay.TryResetDelay((uid, useDelay), id: component.DelayId);
+
+        defibJellid(target);
 
         ICommonSession? session = null;
 
@@ -254,5 +261,21 @@ public sealed class DefibrillatorSystem : EntitySystem
         // TODO clean up this clown show above
         var ev = new TargetDefibrillatedEvent(user, (uid, component));
         RaiseLocalEvent(target, ref ev);
+    }
+
+    private void defibJellid(EntityUid target)
+    {
+                // !! TP14 SPECIFIC !!
+        if (!TryComp<BatteryComponent>(target, out var battery))
+            return;
+
+        // If the target has a battery (Jellids), restores some of their internal energy.
+        // This will heal Jellids and prevent instantly dying again.
+        const float batteryAdd = 150f;
+        var newCharge = battery.CurrentCharge + batteryAdd;
+
+        _battery.SetCharge(target, newCharge);
+        Log.Info($"Added {batteryAdd} charge to {target} battery. New charge: {newCharge}");
+        // !! END OF TP14 SPECIFIC !!
     }
 }

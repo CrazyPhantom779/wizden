@@ -38,6 +38,10 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
+// NullLink Start
+using Content.Shared.NullLink;
+using Content.Client._NullLink;
+// NullLink End
 
 namespace Content.Client.Entry
 {
@@ -76,6 +80,10 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
+        // NullLink Start
+        [Dependency] private readonly INullLinkPlayerRolesManager _nullLinkPlayerRolesManager = default!;
+        [Dependency] private readonly ISharedNullLinkPlayerRolesReqManager _sharedNullLinkPlayer = default!;
+        // NullLink End
 
         public override void PreInit()
         {
@@ -179,6 +187,11 @@ namespace Content.Client.Entry
                                          args.OldLevel == ClientRunLevel.InGame);
                 }
             };
+
+            // NullLink Start
+            _nullLinkPlayerRolesManager.Initialize();
+            _sharedNullLinkPlayer.Initialize();
+            // NullLink End
 
             // Disable engine-default viewport since we use our own custom viewport control.
             _userInterfaceManager.MainViewport.Visible = false;

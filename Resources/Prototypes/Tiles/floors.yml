@@ -730,6 +730,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcrete
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorConcreteMono
@@ -745,6 +747,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteMono
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorConcreteSmooth
@@ -760,6 +764,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteSmooth
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorGrayConcrete
@@ -775,6 +781,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcrete
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorGrayConcreteMono
@@ -790,6 +798,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcreteMono
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorGrayConcreteSmooth
@@ -805,6 +815,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcreteSmooth
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorOldConcrete
@@ -820,6 +832,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcrete
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   id: FloorOldConcreteMono
@@ -835,9 +849,9 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcreteMono
+  heatCapacity: 10000
 
 - type: tile
-  id: FloorOldConcreteSmooth
   parent: BaseStationTile
   name: tiles-old-concrete-smooth
   sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_smooth.png
@@ -850,6 +864,8 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcreteSmooth
+  heatCapacity: 10000
+  weather: true
 
 # Carpets (non smoothing)
 - type: tile

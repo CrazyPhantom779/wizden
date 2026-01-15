@@ -52,9 +52,8 @@
     state: telecrystal
   content:
   - RadioJammer
-  - TraitorCodePaper
   - Emag
-  - AccessBreaker
+  #- AccessBreaker
   - Lighter
   - CigPackSyndicate
   - Telecrystal10 #The thief cannot use them, but it may induce communication with traitors
@@ -81,7 +80,6 @@
     state: old-radio
   content:
   - EncryptionKeyStationMaster
-  - CyberPen
   - BriefcaseThiefBribingBundleFilled
   - VoiceMaskImplanter
   #- todo Chameleon Stamp

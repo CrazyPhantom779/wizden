@@ -224,7 +224,7 @@
     gasMixture:
       volume: 1500
       moles:
-        Oxygen: 2769.36 # oxygen
+        Oxygen: 2769.36
       temperature: 293.15
   - type: Destructible
     thresholds:
@@ -260,7 +260,7 @@
     gasMixture:
       volume: 1500
       moles:
-        Oxygen: 18710.71051 # oxygen
+        Oxygen: 18710.71051
       temperature: 72
   - type: AccessReader
     access: [["Atmospherics"]]

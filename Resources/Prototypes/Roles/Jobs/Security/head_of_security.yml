@@ -15,7 +15,9 @@
       time: 5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10h
+      time: 2h
+    - !type:OverallPlaytimeRequirement
+      time: 3h
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
@@ -47,11 +49,11 @@
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
+    pocket1: WeaponRevolverDeckard
   storage:
     back:
     - Flash
-    - MagazinePistol
+    - SpeedLoaderMagnum
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit

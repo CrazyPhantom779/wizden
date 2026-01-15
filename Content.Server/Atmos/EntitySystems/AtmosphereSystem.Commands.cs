@@ -38,6 +38,46 @@ public sealed partial class AtmosphereSystem
            return;
        }
 
+       var mixtures = new GasMixture[10];
+       for (var i = 0; i < mixtures.Length; i++)
+           mixtures[i] = new GasMixture(Atmospherics.CellVolume) { Temperature = Atmospherics.T20C };
+
+       // 0: Air
+       mixtures[0].AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesStandard);
+       mixtures[0].AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesStandard);
+
+       // 1: Vaccum
+
+       // 2: Oxygen (GM)
+       mixtures[2].AdjustMoles(Gas.Oxygen, Atmospherics.MolesCellGasMiner);
+
+       // 3: Nitrogen (GM)
+       mixtures[3].AdjustMoles(Gas.Nitrogen, Atmospherics.MolesCellGasMiner);
+
+       // 4: Plasma (GM)
+       mixtures[4].AdjustMoles(Gas.Plasma, Atmospherics.MolesCellGasMiner);
+
+       // 5: Instant Plasmafire (r)
+       mixtures[5].AdjustMoles(Gas.Oxygen, Atmospherics.MolesCellGasMiner);
+       mixtures[5].AdjustMoles(Gas.Plasma, Atmospherics.MolesCellGasMiner);
+       mixtures[5].Temperature = 5000f;
+
+       // 6: (Walk-In) Freezer
+       mixtures[6].AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesFreezer);
+       mixtures[6].AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesFreezer);
+       mixtures[6].Temperature = Atmospherics.FreezerTemp; // Little colder than an actual freezer but gives a grace period to get e.g. themomachines set up, should keep warm for a few door openings
+
+       // 7: Water
+       mixtures[7].AdjustMoles(Gas.Water, Atmospherics.WaterMolesStandard);
+       mixtures[7].Temperature = 40f; // god help us all
+
+       // 8: Nitrogen (101kpa) for vox rooms
+       mixtures[8].AdjustMoles(Gas.Nitrogen, Atmospherics.MolesCellStandard);
+
+       // 9: Trench Water (extremely high pressure for bottom of The Trench)
+       mixtures[9].AdjustMoles(Gas.Water, Atmospherics.TrenchMolesStandard);
+       mixtures[9].Temperature = 20f;
+
        foreach (var arg in args)
        {
            if (!NetEntity.TryParse(arg, out var netEntity) || !TryGetEntity(netEntity, out var euid))

@@ -55,6 +55,7 @@ namespace Content.Server.GameTicking
             while (query.MoveNext(out var uid, out _, out _))
             {
                 spawnableStations.Add(uid);
+                Log.Info($"Added {query} to list of spawnable stations");
             }
 
             return spawnableStations;

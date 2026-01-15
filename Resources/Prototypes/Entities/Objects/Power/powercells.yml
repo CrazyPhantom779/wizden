@@ -40,6 +40,9 @@
           Full: {visible: true, state: o2}
           Neither: {visible: true, state: o1}
           Empty: {visible: false}
+  - type: ProjectileBatteryAmmoProvider
+    proto: NtBolt
+    fireCost: 50
 
 - type: entity
   name: potato battery
