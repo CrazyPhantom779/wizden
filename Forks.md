@@ -39,18 +39,18 @@ WizDen
 Trieste Port                    → git merge --no-commit --no-ff trieste/master DONE
 Cosmatic Drift                  → git merge --no-commit --no-ff cosmatic/master DONE
 Harmony                         → git merge --no-commit --no-ff harmony/master DONE
-Nyanotrasen                     → git merge --no-commit --no-ff nyanotrasen/master
-Goob Station                    → git merge --no-commit --no-ff goob/master
-Funky Station                   → git merge --no-commit --no-ff funky/master
-Einstein Engines                → git merge --no-commit --no-ff einstein/master
-Hullrot                         → git merge --no-commit --no-ff hullrot/master
-Delta-V                         → git merge --no-commit --no-ff deltav/master
-Impstation                      → git merge --no-commit --no-ff impstation/master
-Moff Station                    → git merge --no-commit --no-ff moff/master
-Starlight                       → git merge --no-commit --no-ff starlight/master
-Far Horizons                    → git merge --no-commit --no-ff farhorizons/master
-Carpmosia                       → git merge --no-commit --no-ff carpmosia/master
-Crystal Edge                    → git merge --no-commit --no-ff crystal/master
-Frontier                        → git merge --no-commit --no-ff frontier/master
-Monolith                        → git merge --no-commit --no-ff monolith/master
-RMC-14                          → git merge --no-commit --no-ff rmc14/master
+Nyanotrasen                     → git merge --no-commit --no-ff nyanotrasen/master NOT DONE (Fucking 5147 conflicts)
+Goob Station                    → git merge --no-commit --no-ff goob/master 
+Funky Station                   → git merge --no-commit --no-ff funky/master 
+Einstein Engines                → git merge --no-commit --no-ff einstein/master 
+Hullrot                         → git merge --no-commit --no-ff hullrot/master 
+Delta-V                         → git merge --no-commit --no-ff deltav/master 
+Impstation                      → git merge --no-commit --no-ff impstation/master 
+Moff Station                    → git merge --no-commit --no-ff moff/master 
+Starlight                       → git merge --no-commit --no-ff starlight/master 
+Far Horizons                    → git merge --no-commit --no-ff farhorizons/master 
+Carpmosia                       → git merge --no-commit --no-ff carpmosia/master 
+Crystal Edge                    → git merge --no-commit --no-ff crystal/master 
+Frontier                        → git merge --no-commit --no-ff frontier/master 
+Monolith                        → git merge --no-commit --no-ff monolith/master 
+RMC-14                          → git merge --no-commit --no-ff rmc14/master 
