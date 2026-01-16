@@ -1,7 +1,11 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
+<<<<<<<< HEAD:Resources/Textures/_DV/Structures/Machines/syndicate_fax_machine.rsi/meta.json
   "copyright": "Resprited by DangerRevolution from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/tree/23b5c47245804dd24507b75f250de5e87d34e294",
+========
+  "copyright": "Sprites regretfully handcrafted by BeeRobyn on Discord https://github.com/BeeRobynn",
+>>>>>>>> goob/master:Resources/Textures/_Goobstation/Mobs/Animals/syndiroach.rsi/meta.json
   "size": {
     "x": 32,
     "y": 32
@@ -11,6 +15,7 @@
       "name": "icon"
     },
     {
+<<<<<<<< HEAD:Resources/Textures/_DV/Structures/Machines/syndicate_fax_machine.rsi/meta.json
       "name": "idle",
       "delays": [
         [
@@ -23,17 +28,37 @@
     },
     {
       "name": "inserting",
+========
+      "name": "mothroach",
+      "directions": 4
+    },
+    {
+      "name": "mothroach-moving",
+      "directions": 4,
+>>>>>>>> goob/master:Resources/Textures/_Goobstation/Mobs/Animals/syndiroach.rsi/meta.json
       "delays": [
         [
           0.2,
           0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+<<<<<<<< HEAD:Resources/Textures/_DV/Structures/Machines/syndicate_fax_machine.rsi/meta.json
           0.2,
           0.2,
           0.2,
+========
+          0.2
+        ],
+        [
           0.2,
           0.2,
-          0.2,
-          0.2,
+          0.2
+        ],
+        [
+>>>>>>>> goob/master:Resources/Textures/_Goobstation/Mobs/Animals/syndiroach.rsi/meta.json
           0.2,
           0.2,
           0.2
@@ -41,6 +66,7 @@
       ]
     },
     {
+<<<<<<<< HEAD:Resources/Textures/_DV/Structures/Machines/syndicate_fax_machine.rsi/meta.json
       "name": "printing",
       "delays": [
         [
@@ -60,6 +86,30 @@
           0.2
         ]
       ]
+========
+      "name": "mothroach_lazy",
+      "directions": 4
+    },
+    {
+      "name": "mothroach_sleep",
+      "directions": 4
+    },
+    {
+      "name": "mothroach_dead",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "0-equipped-HELMET",
+      "directions": 4
+>>>>>>>> goob/master:Resources/Textures/_Goobstation/Mobs/Animals/syndiroach.rsi/meta.json
     }
   ]
 }

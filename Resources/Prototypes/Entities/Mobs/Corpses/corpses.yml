@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: entity
   parent: SalvageHumanCorpse
   id: MobRandomServiceCorpse
@@ -5,7 +10,7 @@
   components:
   - type: Loadout
     prototypes:
-      # - HoPGear #CD: Why does HoP appear here but no other heads of staff are in their own departments?
+      - HoPGear
       - ClownGear
       - MimeGear
       - JanitorGear
@@ -15,71 +20,6 @@
       - ChefGear
       - ChaplainGear
       - PassengerGear
-      - PrivateInvestigatorGear #CD
-      - PrisonerGear #CD
-      - VisitorClown #CD
-      - VisitorMime #CD
-      - VisitorMimeAlt #CD
-      - VisitorJanitor #CD
-      - VisitorJanitorAlt #CD
-      - VisitorServiceWorker #CD
-      - VisitorServiceWorkerAlt #CD
-      - VisitorMusicianRelaxedAltF #CD
-      - VisitorMusicianMariachi #CD
-      - VisitorBotanist #CD
-      - VisitorBotanistAlt #CD
-      - VisitorChef #CD
-      - VisitorChefAlt #CD
-      - VisitorChaplain #CD
-      - VisitorChaplainAlt #CD
-      - BartenderGear #CD
-      - VisitorBartender #CD
-      - VisitorBartenderAlt #CD
-      - LawyerGear #CD
-      - VisitorLawyerAltD #CD
-      - VisitorLawyerAltE #CD
-      - LibrarianGear #CD
-      - VisitorLibrarian #CD
-      - VisitorLibrarianAlt #CD
-      - BoxerGear #CD
-      - VisitorBoxer #CD
-      - VisitorBoxerAlt #CD
-      - ReporterGear #CD
-      - VisitorReporter #CD
-      - VisitorReporterAlt #CD
-      - ZookeeperGear #CD
-      - VisitorZookeeper #CD
-      - VisitorZookeeperAlt #CD
-# Harmony Change Start
-      # - HoPGear
-      # - ClownGear
-      # - MimeGear
-      # - JanitorGear
-      # - ServiceWorkerGear
-      # - MusicianGear
-      # - BotanistGear
-      # - ChefGear
-      # - ChaplainGear
-      # - PassengerGear
-      - VisitorClown
-      - CorpseMime
-      - CorpseJanitor
-      - VisitorServiceWorker
-      - VisitorServiceWorkerAlt
-      - VisitorMusicianFancyAltF
-      - CorpseBotanist
-      - CorpseChef
-      - CorpseChaplain
-      - LimitedPassengerGear
-      - CorpseRandomJumpsuit
-      - VisitorLibrarian
-      - VisitorLibrarianAlt
-      - VisitorReporter
-      - VisitorReporterAlt
-      - VisitorZookeeper
-      - CorpseBartender
-      - CorpseBoxer
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -91,21 +31,6 @@
     - TechnicalAssistantGear
     - AtmosphericTechnicianGear
     - StationEngineerGear
-    - SeniorEngineerGear #CD
-    - VisitorTechnicalAssistant #CD
-    - VisitorTechnicalAssistantAlt #CD
-    - VisitorAtmosTech #CD
-    - VisitorAtmosTechAlt #CD
-    - VisitorEngineer #CD
-    - VisitorEngineerAlt #CD
-# Harmony Change Start
-    # - TechnicalAssistantGear
-    # - AtmosphericTechnicianGear
-    # - StationEngineerGear
-    - CorpseStationEngineer
-    - CorpseAtmosTech
-    - VisitorAtmosTechAlt
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -116,16 +41,6 @@
     prototypes:
     - CargoTechGear
     - SalvageSpecialistGear
-    - VisitorCargoTech #CD
-    - VisitorCargoTechAlt #CD
-    - VisitorSalvageSpecialist #CD
-    - VisitorSalvageSpecialistAlt #CD
-# Harmony Change Start
-    # - CargoTechGear
-    # - SalvageSpecialistGear
-    - VisitorSalvageSpecialist
-    - VisitorCargoTech
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -138,37 +53,6 @@
     - PsychologistGear
     - ChemistGear
     - DoctorGear
-    - SeniorPhysicianGear #CD
-    - VisitorMedicalIntern #CD
-    - VisitorMedicalInternAlt #CD
-    - VisitorPsychologist #CD
-    - VisitorPsychologistAlt #CD
-    - VisitorChemist #CD
-    - VisitorChemistAlt #CD
-    - VisitorMedicalDoctor #CD
-    - VisitorMedicalDoctorAlt #CD
-    - VisitorScrubsBlue #CD
-    - VisitorScrubsGreen #CD
-    - VisitorScrubsPurple #CD
-    - VisitorVirologist #CD
-    - VisitorVirologistAlt #CD
-    - VisitorGeneticist #CD
-    - VisitorGeneticistAlt #CD
-    - ParamedicGear #CD
-    - VisitorParamedic #CD
-    - VisitorParamedicAlt #CD
-    - VisitorDentist #CD
-# Harmony Change Start
-    # - MedicalInternGear
-    # - PsychologistGear
-    # - ChemistGear
-    # - DoctorGear
-    - CorpseDoctor
-    - VisitorChemist
-    - VisitorChemistAlt
-    - CorpsePsychologist
-    - CorpseParamedic
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -179,17 +63,6 @@
     prototypes:
     - ResearchAssistantGear
     - ScientistGear
-    - SeniorResearcherGear #CD
-    - VisitorResearchAssistant #CD
-    - VisitorResearchAssistantAlt #CD
-    - VisitorScientist #CD
-    - VisitorScientistAlt #CD
-# Harmony Change Start
-    # - ResearchAssistantGear
-    # - ScientistGear
-    - CorpseScientist
-    - CorpseRoboticist
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -202,24 +75,6 @@
     - SecurityOfficerGear
     - DetectiveGear
     - WardenGear
-    - SeniorOfficerGear #CD
-    - VisitorSecurityCadet #CD
-    - VisitorSecurityCadetAlt #CD
-    - VisitorSecurityOfficer #CD
-    - VisitorSecurityOfficerAlt #CD
-    - VisitorDetective #CD
-    - VisitorDetectiveAlt #CD
-    - VisitorWarden #CD
-    - VisitorWardenAlt #CD
-# Harmony Change Start
-    # - SecurityCadetGear
-    # - SecurityOfficerGear
-    # - DetectiveGear
-    # - WardenGear
-    - CorpseSecurityOfficer
-    - CorpseDetective
-    - CorpseWarden
-# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -229,43 +84,10 @@
   - type: Loadout
     prototypes:
     - HoPGear
-    - CentcommGear
+    - MobRandomCommandCorpseCentComm # Goobstation Nerfed CentComm Space Salvage Gear
     - CaptainGear
     - HoSGear
     - ResearchDirectorGear
     - CMOGear
     - ChiefEngineerGear
     - QuartermasterGear
-    - VisitorHOP #CD
-    - VisitorHOPAlt #CD
-    - VisitorLawyerCentcom #CD
-    - VisitorCaptain #CD
-    - VisitorCaptainAlt #CD
-    - VisitorHOS #CD
-    - VisitorHOSAlt #CD
-    - VisitorRD #CD
-    - VisitorRDAlt #CD
-    - VisitorCMO #CD
-    - VisitorCMOAlt #CD
-    - VisitorCE #CD
-    - VisitorCEAlt #CD
-    - VisitorQM #CD
-    - VisitorQMAlt #CD
-# Harmony Change Start
-    # - HoPGear
-    # - CentcomGear
-    # - CaptainGear
-    # - HoSGear
-    # - ResearchDirectorGear
-    # - CMOGear
-    # - ChiefEngineerGear
-    # - QuartermasterGear
-    - CorpseHoP
-    - CorpseCentCommOfficial
-    - CorpseCaptain
-    - CorpseHoS
-    - CorpseRD
-    - CorpseCMO
-    - CorpseCE
-    - CorpseQM
-# Harmony Change End

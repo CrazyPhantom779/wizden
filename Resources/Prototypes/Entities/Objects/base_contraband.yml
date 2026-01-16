@@ -1,11 +1,20 @@
-﻿# generic "highly illegal" contraband; Syndicate/magical contraband are already considered highly illegal under Space Law,
-# so this is mostly for stuff that should be equally illegal but doesn't need its own unique contraband tier added
-- type: entity
-  id: BaseHighlyIllegalContraband
-  abstract: true
-  components:
-  - type: Contraband
-    severity: HighlyIllegal
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2025 John <35928781+sporkyz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 # used by the unique items of xenoborgs (like modules and stuff)
 - type: entity
@@ -13,7 +22,9 @@
   abstract: true
   components:
   - type: Contraband
-    severity: HighlyIllegal
+    severity: Major # placeholder until they make a better severity
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 1 # idk how much points they would cost so whatever
 
 # any type of magical items used by wizards and similiar
 - type: entity
@@ -22,6 +33,8 @@
   components:
   - type: Contraband
     severity: Magical
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 10
 
 # non-stealth syndicate stuff
 - type: entity
@@ -30,6 +43,8 @@
   components:
   - type: Contraband
     severity: Syndicate
+  - type: ScannableForPoints # Goobstation - NTR update
+    points: 5
 
 # minor contraband not departmentally restricted -- improvised weapons etc
 - type: entity
@@ -81,6 +96,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security ]
+    allowedJobs: [ BlueshieldOfficer ] # Goob - effectively almost a sec member
 
 - type: entity
   id: BaseEngineeringContraband
@@ -105,6 +121,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Medical ]
+    allowedJobs: [ Brigmedic, BlueshieldOfficer ] # goob
 
 - type: entity
   id: BaseCivilianContraband
@@ -190,6 +207,15 @@
     allowedJobs: [ Bartender ]
 
 - type: entity
+  id: BaseSecurityBartenderZookeeperContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ Bartender, Zookeeper ]
+
+- type: entity
   id: BaseSecurityLawyerContraband
   parent: BaseRestrictedContraband
   abstract: true
@@ -214,4 +240,12 @@
   - type: Contraband
     severity: GrandTheft
     allowedDepartments: [ Command ]
+    allowedJobs: [ Warden ] # Goob - energy shotgun
 
+- type: entity
+  id: BaseHonkraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Honkraband
+    allowedJobs: [ Clown ]

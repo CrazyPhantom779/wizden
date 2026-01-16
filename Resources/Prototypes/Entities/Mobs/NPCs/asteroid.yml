@@ -1,3 +1,32 @@
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Shaddap1 <106589956+Shaddap1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lanse12 <cloudability.ez@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 August Sun <45527070+august-sun@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ExponentialWizard <38435756+ExponentialWizard@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 august-sun <45527070+august.sun@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BaseMobAsteroid
   parent:
@@ -19,6 +48,9 @@
     group: GenericNumber
   - type: StatusEffects
     allowed:
+    - SlowedDown
+    - Stutter
+    - Stun
     - Electrocution
     - TemporaryBlindness
     - RadiationProtection
@@ -34,6 +66,13 @@
   name: goliath
   description: A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions.
   components:
+  - type: Body # Shitmed Change
+    prototype: Goliath
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Sprite
     sprite: Mobs/Aliens/Asteroid/goliath.rsi
     layers:
@@ -46,33 +85,29 @@
       Dead:
         Base: goliath_dead
   - type: MovementSpeedModifier
-    baseWalkSpeed : 2.00
-    baseSprintSpeed : 2.00
+    baseWalkSpeed : 1.5 # Goob - accounts for decreased range, more likely to catch up to you when stunned by tendrils
+    baseSprintSpeed : 1.5
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 350
+    bloodMaxVolume: 350
+    chemicalMaxVolume: 0
   - type: MobThresholds
     thresholds:
       0: Alive
-      250: Dead # Harmony Chnage - reverts salv mob changes, 150 -> 250
+      350: Dead # Goob - 9 PKA shots, 4 crusher destabilised hits
   - type: MeleeWeapon
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
     angle: 0
-    attackRate: 0.75
+    attackRate: 0.40
     animation: WeaponArcPunch
     damage:
       types:
-        Slash: 10
-        #Harmony Change Start - Pierce --> Blunt
-        #Piercing: 10
-        Blunt: 10
-        #Harmony Change End - Pierce --> Blunt
+        Blunt: 35
+        Slash: 15
+    range: 1.12 # Goob - Allows kinetic crushers to fight them without taking guaranteed damage.
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna
   - type: HTN
     constantlyReplan: false
     rootTask:
@@ -81,7 +116,7 @@
       VisionRadius: !type:Single
         6
       AggroVisionRadius: !type:Single
-        10
+        7
       NavSmash: !type:Bool
         true
   - type: NPCUseActionOnTarget
@@ -97,7 +132,8 @@
     - id: FoodMeatGoliath
       amount: 3
     - id: MaterialGoliathHide1
-      amount: 3
+      amount: 1
+  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: BaseAction
@@ -199,6 +235,7 @@
   name: hivelord
   description: A truly alien creature, it is a mass of unknown organic material, constantly fluctuating. When attacking, pieces of it split off and attack in tandem with the original.
   components:
+  - type: WeatherImmune 
   - type: Sprite
     sprite: Mobs/Aliens/Asteroid/hivelord.rsi
     layers:
@@ -211,8 +248,8 @@
       Dead:
         Base: hivelord_dead
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3.5
-    baseSprintSpeed : 4.0
+    baseWalkSpeed : 2.75
+    baseSprintSpeed : 3.0
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -238,7 +275,7 @@
     count: 1
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna # Goobedit - Lavaland
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
@@ -246,12 +283,13 @@
       VisionRadius: !type:Single
         4
       AggroVisionRadius: !type:Single
-        9
+        7
       NavSmash: !type:Bool
         true
   - type: Butcherable
     spawned:
     - id: FoodHivelordRemains
+  - type: Fauna # Lavaland Change
 
 - type: entity
   id: MobHivelordBrood
@@ -275,11 +313,11 @@
       path: /Audio/Weapons/bladeslice.ogg
     angle: 0
     attackRate: 1.0
-    range: 0.75
+    range: 0.50
     animation: WeaponArcPunch
     damage:
       types:
-        Slash: 7
+        Slash: 6
   - type: Ammo
     muzzleFlash: null
   - type: Destructible
@@ -292,7 +330,7 @@
         acts: [ "Destruction" ]
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -304,7 +342,7 @@
       NavSmash: !type:Bool
         true
   - type: TimedDespawn
-    lifetime: 100
+    lifetime: 45
 
 - type: entity
   id: FoodHivelordRemains
@@ -325,7 +363,7 @@
   - type: Item
     size: Normal
   - type: Perishable
-    rotAfter: 120 # rot after 2 minutes
+    rotAfter: 360 # rot after 6 minutes
     molsPerSecondPerUnitMass: 0
     forceRotProgression: true
   - type: RotInto
@@ -336,8 +374,6 @@
   - type: Tag
     tags:
     - HivelordRemains
-    - Meat
-    - Raw
 
 - type: entity
   id: FoodHivelordRemainsInert
@@ -353,12 +389,11 @@
   - type: Item
     size: Normal
   - type: StaticPrice
-    price: 500
+    price: 1000
   - type: Tag
     tags:
     - HivelordRemains
-    - Meat
-    - Raw
+
 
 - type: entity
   id: MobBasilisk
@@ -383,7 +418,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      75: Dead # Harmony Change, reverts salvage mob health changes, 45 -> 75
+      45: Dead
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -392,10 +427,7 @@
     damage:
       types:
         Slash: 7
-        #Harmony Change Start - Pierce --> Blunt
-        #Piercing: 5
-        Blunt: 5
-        #Harmony Change End - Pierce --> Blunt
+        Piercing: 5
   - type: Gun
     fireRate: 0.75
     projectileSpeed: 10.0 # When we get predicted guns and projectiles this should be raised to like 15, 15 mis-predicts too much right now unfortunately.
@@ -412,10 +444,8 @@
     capacity: 1
     count: 1
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 200
+    bloodMaxVolume: 200
+    chemicalMaxVolume: 0
   - type: NpcFactionMember
     factions:
     - SimpleHostile

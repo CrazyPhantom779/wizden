@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: FloorDrain
   name: drain
@@ -38,6 +44,8 @@
       solutions:
         drainBuffer:
           maxVol: 1000
+    - type: DrainableSolution
+      solution: drainBuffer
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallic
@@ -58,38 +66,3 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalBreak
-
- # Objects/Specific/Janitorial/drainplatform.rsi
- # - state: drainplatform
-- type: entity
-  id: FloorDrainPlatform
-  name: Ocean
-  description: Long way down...
-  placement:
-    mode: SnapgridCenter
-  components:
-    - type: Sprite
-      drawdepth: FloorObjects
-      sprite: Objects/Specific/Janitorial/drain.rsi
-      layers:
-      - state: icon
-      - map: [ "enum.SolutionContainerLayers.Fill" ]
-        state: fill-1
-        visible: false
-    - type: Transform
-      anchored: true
-    - type: Physics
-      bodyType: Static
-      canCollide: false
-    - type: Drain
-    - type: DumpableSolution
-      solution: drainBuffer
-    - type: SolutionContainerManager
-      solutions:
-        drainBuffer:
-          maxVol: 100000
-    - type: DrainableSolution
-      solution: drainBuffer
-    - type: Tag
-      tags:
-      - HideContextMenu

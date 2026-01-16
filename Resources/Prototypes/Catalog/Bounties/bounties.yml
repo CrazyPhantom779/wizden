@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2023 DanSAussieITS <132237845+DanSAussieITS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ivan <69372103+lokachop@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 TheWaffleJesus <106146578+TheWaffleJesus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: cargoBounty
   id: BountyArtifact
   reward: 2500
@@ -13,7 +33,7 @@
   id: BountyBaseballBat
   reward: 4000
   description: bounty-description-baseball-bat
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-baseball-bat
     amount: 5
@@ -50,7 +70,7 @@
   id: BountyCarrot
   reward: 7500
   description: bounty-description-carrot
-  idPrefix: SG
+  idPrefix: SS15-
   entries:
   - name: bounty-item-carrot
     amount: 10
@@ -69,17 +89,17 @@
       tags:
       - CarrotFries
 
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyCarp
-#   reward: 12500
-#   description: bounty-description-carp
-#   idPrefix: SG
-#   entries:
-#   - name: bounty-item-carp
-#     amount: 1
-#     whitelist:
-#       tags:
-#       - Carp
+- type: cargoBounty
+  id: BountyCarp
+  reward: 12500
+  description: bounty-description-carp
+  idPrefix: CC
+  entries:
+  - name: bounty-item-carp
+    amount: 1
+    whitelist:
+      tags:
+      - Carp
 
 - type: cargoBounty
   id: BountyClownCostume
@@ -110,7 +130,7 @@
 
 - type: cargoBounty
   id: BountyCrayon
-  reward: 1500
+  reward: 4000
   description: bounty-description-crayon
   entries:
   - name: bounty-item-crayon
@@ -119,23 +139,23 @@
       tags:
       - Crayon
 
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyCubanCarp
-#   reward: 16000
-#   description: bounty-description-cuban-carp
-#   idPrefix: SG
-#   entries:
-#   - name: bounty-item-cuban-carp
-#     amount: 1
-#     whitelist:
-#       tags:
-#       - CubanCarp
+- type: cargoBounty
+  id: BountyCubanCarp
+  reward: 16000
+  description: bounty-description-cuban-carp
+  idPrefix: CC
+  entries:
+  - name: bounty-item-cuban-carp
+    amount: 1
+    whitelist:
+      tags:
+      - CubanCarp
 
 - type: cargoBounty
   id: BountyDonut
   reward: 6000
   description: bounty-description-donut
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-donut
     amount: 10
@@ -145,7 +165,7 @@
 
 - type: cargoBounty
   id: BountyFigurine
-  reward: 3500
+  reward: 8000
   description: bounty-description-figurine
   entries:
   - name: bounty-item-figurine
@@ -158,7 +178,7 @@
   id: BountyFlower
   reward: 2000
   description: bounty-description-flower
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-flower
     amount: 3
@@ -181,7 +201,7 @@
   id: BountyHandcuffs
   reward: 1000
   description: bounty-description-handcuffs
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-handcuffs
     amount: 5
@@ -202,16 +222,14 @@
 
 - type: cargoBounty
   id: BountyKnife
-  reward: 2000
+  reward: 6000
   description: bounty-description-knife
   entries:
   - name: bounty-item-knife
     amount: 5
     whitelist:
       components:
-      - Sharp
-      tags:
-      - UtilityKnife # required because retracted utility knives are not Sharp
+        - Sharp
 
 - type: cargoBounty
   id: BountyLemon
@@ -228,7 +246,7 @@
   id: BountyLime
   reward: 10000
   description: bounty-description-lime
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-lime
     amount: 7
@@ -251,7 +269,7 @@
   id: BountyMonkeyCube
   reward: 2000
   description: bounty-description-monkey-cube
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-monkey-cube
     amount: 3
@@ -263,7 +281,7 @@
   id: BountyMouse
   reward: 2400
   description: bounty-description-mouse
-  idPrefix: SG
+  idPrefix: SS13-
   entries:
   - name: bounty-item-mouse
     amount: 5
@@ -295,7 +313,7 @@
 
 - type: cargoBounty
   id: BountyPercussion
-  reward: 2500
+  reward: 15000
   description: bounty-description-percussion
   entries:
   - name: bounty-item-percussion
@@ -382,7 +400,6 @@
   id: BountySpear
   reward: 8000
   description: bounty-description-spear
-  idPrefix: GT
   entries:
   - name: bounty-item-spear
     amount: 5
@@ -405,7 +422,7 @@
   id: BountyTechDisk
   reward: 25000
   description: bounty-description-tech-disk
-  idPrefix: SG
+  idPrefix: SS13-
   entries:
   - name: bounty-item-tech-disk
     amount: 5
@@ -417,7 +434,7 @@
   id: BountyToolbox
   reward: 8000
   description: bounty-description-toolbox
-  idPrefix: SG
+  idPrefix: CC
   entries:
   - name: bounty-item-toolbox
     amount: 6
@@ -436,16 +453,16 @@
       tags:
       - Trash
 
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyAnomalyCore
-#   reward: 10000
-#   description: bounty-description-anomaly-core
-#   entries:
-#   - name: bounty-item-anomaly-core
-#     amount: 1
-#     whitelist:
-#       components:
-#       - AnomalyCore
+- type: cargoBounty
+  id: BountyAnomalyCore
+  reward: 10000
+  description: bounty-description-anomaly-core
+  entries:
+  - name: bounty-item-anomaly-core
+    amount: 1
+    whitelist:
+      components:
+      - AnomalyCore
 
 - type: cargoBounty
   id: BountyBorgModule
@@ -523,7 +540,7 @@
 
 - type: cargoBounty
   id: BountyLaserGun
-  reward: 9600
+  reward: 28500
   description: bounty-description-lasergun
   idPrefix: IV
   entries:
@@ -531,7 +548,7 @@
     amount: 6
     whitelist:
       components:
-      - BatteryAmmoProvider
+      - HitscanBatteryAmmoProvider
     blacklist:
       components:
       - PowerCell
@@ -600,10 +617,11 @@
 
 - type: cargoBounty
   id: BountyRollerskates
-  reward: 900
+  reward: 6500
   description: bounty-description-rollerskates
   entries:
   - name: bounty-item-rollerskates
+    amount: 2
     whitelist:
       components:
       - Skates
@@ -645,7 +663,6 @@
   id: BountyBanana
   reward: 6009
   description: bounty-description-banana
-  idPrefix: honk
   entries:
   - name: bounty-item-banana
     amount: 9
@@ -690,7 +707,6 @@
   id: BountyMedkitBox
   reward: 2300
   description: bounty-description-medkit-box
-  idPrefix: TX-221?
   entries:
   - name: bounty-item-medkit-box
     amount: 4
@@ -711,7 +727,7 @@
 
 - type: cargoBounty
   id: BountyWine
-  reward: 1500
+  reward: 3000
   description: bounty-description-wine
   entries:
   - name: bounty-item-wine
@@ -722,8 +738,7 @@
 
 - type: cargoBounty
   id: BountyCottonBoll
-  idPrefix: LGH
-  reward: 4242
+  reward: 8600
   description: bounty-description-cotton-boll
   entries:
   - name: bounty-item-cotton-boll
@@ -736,7 +751,6 @@
   id: BountyMicrowaveMachineBoard
   reward: 4000
   description: bounty-description-microwave-machine-board
-  idPrefix: SG
   entries:
   - name: bounty-item-microwave-machine-board
     amount: 2
@@ -755,57 +769,13 @@
       components:
       - Flash
 
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyTeethSpaceCarp
-#   reward: 7500
-#   description: bounty-description-tooth-space-carp
-#   entries:
-#   - name: bounty-item-tooth-space-carp
-#     amount: 8
-#     whitelist:
-#       tags:
-#       - ToothSpaceCarp
-
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyTeethSharkminnow
-#   reward: 15000
-#   description: bounty-description-tooth-sharkminnow
-#   entries:
-#   - name: bounty-item-tooth-sharkminnow
-#     amount: 5
-#     whitelist:
-#       tags:
-#       - ToothSharkminnow
-
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyPlates
-#   reward: 20000
-#   description: bounty-description-plates
-#   entries:
-#   - name: bounty-item-plates
-#     amount: 4
-#     whitelist:
-#       tags:
-#       - GoliathPlate
-
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyRemains
-#   reward: 15000
-#   description: bounty-description-remains
-#   entries:
-#   - name: bounty-item-remains
-#     amount: 2
-#     whitelist:
-#       tags:
-#       - HivelordRemains
-
-# - type: cargoBounty # Trieste - commented out
-#   id: BountyRing
-#   reward: 12500
-#   description: bounty-description-ring
-#   entries:
-#   - name: bounty-item-ring
-#     amount: 2
-#     whitelist:
-#       tags:
-#       - Ring
+- type: cargoBounty
+  id: BountyRing
+  reward: 12500
+  description: bounty-description-ring
+  entries:
+  - name: bounty-item-ring
+    amount: 2
+    whitelist:
+      tags:
+      - Ring

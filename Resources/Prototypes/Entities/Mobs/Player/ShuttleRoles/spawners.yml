@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## See also ../settings.yml and ../roles.yml
 
 ### Visitors with Visitor ID
@@ -142,7 +147,6 @@
     rarePrototypes:
     - RandomHumanoidVisitorWarden
     - RandomHumanoidVisitorHOS
-    - RandomHumanoidVisitorBrigmedicHarmony # Harmony Change
     rareChance: 0.05
 
 - type: entity
@@ -643,7 +647,7 @@
     - RandomHumanoidVisitorLawyer
 
 - type: entity
-  name: visiting centcomm lawyer spawner
+  name: visiting centcom lawyer spawner
   id: VisitorLawyerCentcomSpawner
   parent: MarkerBase
   components:
@@ -850,7 +854,6 @@
     - RandomHumanoidVisitorSecurityOfficer
     - RandomHumanoidVisitorDetective
     - RandomHumanoidVisitorWarden
-    - RandomHumanoidVisitorBrigmedicHarmony # Harmony Change
     - RandomHumanoidVisitorCargoTechnician
     - RandomHumanoidVisitorSalvageSpecialist
     - RandomHumanoidVisitorAtmosTech
@@ -1045,4 +1048,3 @@
   - type: RandomSpawner
     prototypes:
     - RandomHumanoidCossack
-

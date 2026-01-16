@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Nyxilath <colton.malone@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Speebro <100388782+Speebr0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Speebro <speebro@notreal.com>
+# SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 ## Static
 
 - type: latheRecipePack
@@ -6,7 +16,6 @@
   - Brutepack
   - Ointment
   - Gauze
-  - Bloodpack # Harmony
 
 - type: latheRecipePack
   id: BasicChemistryStatic
@@ -16,8 +25,8 @@
   - Syringe
   - PillCanister
   - HandLabeler
+  - ChemicalPayload
   - BaseChemistryEmptyVial
-  - Dropper
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -26,8 +35,6 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
-  - TP14ChemistryHudEyepatchRecipe # TP14
-  - BaseChemistryEmptyVial # Harmony
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -38,7 +45,6 @@
   - Drill
   - Saw
   - Hemostat
-  - CircularSaw # Harmony
 
 - type: latheRecipePack
   id: MedicalStatic
@@ -49,13 +55,6 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
-  - OffsetCane
-  - OffsetCaneWood
-  - JetInjector
-  - TP14MedicalHudRecipe # TP14
-  - TP14MedicalHudEyepatchRecipe #TP14
-  - ClothingEyesEyepatchHudMedical # Harmony
-  - ClothingEyesHudMedical # Harmony
 
 - type: latheRecipePack
   id: RollerBedsStatic
@@ -82,7 +81,7 @@
   - MedkitBrute
   - MedkitAdvanced
   - MedkitRadiation
-# - MedkitCombat -Harmony
+#  - MedkitCombat #goob - Move combat kit to research
 
 - type: latheRecipePack
   id: MedicalBoardsStatic
@@ -93,8 +92,6 @@
   - ChemMasterMachineCircuitboard
   - CondenserMachineCircuitBoard
   - HotplateMachineCircuitboard
-  - TP14ColdplateMachineCircuitboard # TP14
-  - IncubatorMachineCircuitboard # TP14
 
 ## Dynamic
 
@@ -102,14 +99,12 @@
 - type: latheRecipePack
   id: Chemistry
   recipes:
-  - ChemicalPayload
   - CryostasisBeaker
   - SyringeCryostasis
   - BluespaceBeaker
   - SyringeBluespace
-  - LauncherSyringe
-  - MiniSyringe
-  - AdvancedJetInjector
+  - MedkitCombat #goob - Move combat kit to research
+  - VialBluespace # goob edit - bluespace vials
 
 - type: latheRecipePack
   id: MedicalBoards
@@ -117,3 +112,4 @@
   - StasisBedMachineCircuitboard
   - CryoPodMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
+  - StasisOperatingTableCircuitboard # Corvax-Goob-StasisOperatingTable

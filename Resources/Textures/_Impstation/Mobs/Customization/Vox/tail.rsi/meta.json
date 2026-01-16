@@ -1,11 +1,11 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "sprites by crocodilecarousel (github) for impstation, tweaked by mousesweater",
     "size": {
         "x": 32,
         "y": 32
     },
+    "copyright": "sprites by crocodilecarousel (github) for impstation, tweaked by mousesweater",
+    "license": "CC-BY-SA-3.0",
     "states": [
         {
             "name": "balled",
@@ -72,11 +72,35 @@
             "directions": 4
         },
         {
+            "name": "nub1",
+            "directions": 4
+        },
+        {
+            "name": "nub2",
+            "directions": 4
+        },
+        {
+            "name": "raptor",
+            "directions": 4
+        },
+        {
+            "name": "short",
+            "directions": 4
+        },
+        {
+            "name": "short2",
+            "directions": 4
+        },
+        {
             "name": "smallplume",
             "directions": 4
         },
         {
             "name": "spines",
+            "directions": 4
+        },
+        {
+            "name": "split",
             "directions": 4
         },
         {

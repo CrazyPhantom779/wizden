@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 # Reporting a security vulnerability
 The vast majority of code in this repository is also present in our upstream.
 You should verify if the issue is also present in [space-wizards/space-station-14](https://github.com/space-wizards/space-station-14/)

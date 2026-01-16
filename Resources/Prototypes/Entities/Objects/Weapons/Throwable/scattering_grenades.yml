@@ -1,4 +1,11 @@
-﻿# ScatteringGrenade is intended for grenades that spawn entities, especially those with timers
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# ScatteringGrenade is intended for grenades that spawn entities, especially those with timers
 - type: entity
   abstract: true
   parent: BaseItem
@@ -10,9 +17,15 @@
       cluster-payload: !type:Container
   - type: Damageable
     damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TriggerBehavior
   - type: ScatteringGrenade
-  - type: TriggerOnUse
-  - type: TimerTrigger
+  - type: OnUseTimerTrigger
     delay: 3
   - type: Tag
     tags:
@@ -29,7 +42,7 @@
         friction: 0.2
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase, BaseSecurityContraband]
+  parent: [ScatteringGrenadeBase, BaseSecurityContraband]
   id: ClusterBang
   name: clusterbang
   description: Can be used only with flashbangs. Explodes several times.
@@ -49,7 +62,7 @@
 - type: entity
   parent: ClusterBang
   id: ClusterBangFull
-  name: clusterbang
+  name: ClusterBang
   description: Launches three flashbangs after the timer runs out.
   suffix: Full
   components:
@@ -75,14 +88,11 @@
           Primed: { state: primed }
           Unprimed: { state: icon }
   - type: EmitSoundOnTrigger
-    keysIn:
-    - timer
     sound:
       path: "/Audio/Machines/door_lock_off.ogg"
-    positional: true
 
 - type: entity
-  parent: [VolatileGrenadeBase, ScatteringGrenadeBase, BaseSyndicateContraband]
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
   id: ClusterGrenade
   name: clustergrenade
   description: Why use one grenade when you can use three at once!
@@ -95,7 +105,7 @@
   - type: ScatteringGrenade
     fillPrototype: ExGrenade
     distance: 4
-  - type: TimerTrigger
+  - type: OnUseTimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
       params:
@@ -103,16 +113,13 @@
     initialBeepDelay: 0
     beepInterval: 0.5
   - type: EmitSoundOnTrigger
-    keysIn:
-    - timer
     sound:
       path: "/Audio/Machines/door_lock_off.ogg"
-    positional: true
   - type: StaticPrice
     price: 2500
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase, BaseSyndicateContraband]
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
   id: ClusterBananaPeel
   name: cluster banana peel
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -130,11 +137,8 @@
       types:
         Blunt: 10
   - type: EmitSoundOnTrigger
-    keysIn:
-    - timer
     sound:
       path: "/Audio/Items/bikehorn.ogg"
-    positional: true
 
 - type: entity
   parent: [SoapSyndie, ScatteringGrenadeBase, BaseSyndicateContraband]
@@ -146,7 +150,6 @@
     sprite: Objects/Specific/Janitorial/soap.rsi
     layers:
     - state: syndie-4
-      map: ["enum.SolutionContainerLayers.Fill"]
   - type: ScatteringGrenade
     fillPrototype: SoapletSyndie
     capacity: 30
@@ -159,22 +162,19 @@
       types:
         Blunt: 10
   - type: EmitSoundOnTrigger
-    keysIn:
-    - timer
     sound:
       path: "/Audio/Effects/flash_bang.ogg"
-    positional: true
   - type: StaticPrice
     price: 1000
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase]
+  parent: ScatteringGrenadeBase
   id: GrenadeFoamDart
   name: foam dart grenade
   description: Releases a bothersome spray of foam darts that cause severe welching.
   components:
   - type: Sprite
-    sprite: Objects/Fun/Foam/foam_grenade.rsi
+    sprite: Objects/Weapons/Grenades/foamdart.rsi
     layers:
     - state: icon
       map: ["Base"]
@@ -184,7 +184,7 @@
     fillPrototype: BulletFoam
     capacity: 30
     velocity: 30
-  - type: TimerTrigger
+  - type: OnUseTimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
       params:
@@ -192,8 +192,5 @@
     initialBeepDelay: 0
     beepInterval: 2
   - type: EmitSoundOnTrigger
-    keysIn:
-    - timer
     sound:
       path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
-    positional: true

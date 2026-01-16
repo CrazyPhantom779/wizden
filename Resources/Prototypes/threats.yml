@@ -1,34 +1,29 @@
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 jvne <juneialduncan21@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 # threats called in by ninja hacking comms console
 - type: weightedRandom
   id: NinjaThreats
   weights:
-    Dragon: 0 # IVE FOUND YOU, YOU PIECE OF SHIT
-    Revenant: 1
-    #Begin Harmony Change - expanded pool of spawns.
-    LoneOp: 0.25
-    Wizard: 0.25
-    DerelictBorgEngineering: 0.16
-    DerelictBorgGeneric: 0.16
-    DerelictBorgJanitor: 0.16
-    DerelictBorgMedical: 0.16
-    DerelictBorgSalv: 0.16
-    DerelictBorgSyndi: 0.16
-    ParadoxClone: 1
-    Bingle: 1
-    #End Harmony Change - expanded pool of spawns.
+    Dragon: 1
+    # Revenant: 1 # Goob - Removed in favor of LoneOperative
+    SlaughterDemon: 1 # Goobstation begin
+    # Wraith: 1
+    LoneOperative: 1
+    #TODO When Slasher is ready Slasher: 1
+    # Goobstation end
 
 - type: ninjaHackingThreat
   id: Dragon
-# Start Harmony change - censors dragon spawn to keep threat secret with expanded spawn pool.
-  #announcement: terror-dragon
-  announcement: terror-space
-# End Harmony change
+  announcement: terror-dragon
   rule: DragonSpawn
 
-- type: ninjaHackingThreat
-  id: Revenant
-# Start Harmony change - censors rev spawn to keep threat secret with expanded pool.
-  #announcement: terror-revenant
-  announcement: terror-otherworldly
-# End Harmony change
-  rule: RevenantSpawn
+# Goobstation - Revenant was disabled.
+#- type: ninjaHackingThreat
+#  id: Revenant
+#  announcement: terror-revenant
+#  rule: RevenantSpawn

@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 TytosB <dunlaintytos@yahoo.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: DefaultStationBeacon
@@ -25,6 +48,7 @@
     defaultText: station-beacon-general
     color: "#D4D4D496"
   - type: WarpPoint
+  - type: WizardTeleportWarpPoint # Goobstation
   - type: ActivatableUI
     key: enum.NavMapBeaconUiKey.Key
     singleUser: true
@@ -150,7 +174,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: DefaultStationBeaconCaptainsQuarters
-  suffix: Overseer's Quarters
+  suffix: Captain's Quarters
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-captain
@@ -253,6 +277,46 @@
     defaultText: station-beacon-security-checkpoint
 
 - type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlex
+  suffix: Gorlex Barracks
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexOffice
+  suffix: Gorlex Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-office
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexBreak
+  suffix: Gorlex Breakroom
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-breakroom
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityGorlexHos
+  suffix: Gorlex Command
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-gorlex-hos
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconSecurityCybersunLegal
+  suffix: Cybersun Legal Dept
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cybersun-legal
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconMedical
   suffix: Medical
@@ -326,6 +390,30 @@
     defaultText: station-beacon-clinic
 
 - type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconParamedic
+  suffix: Paramedics
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-paramedic
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconInterdyne
+  suffix: Interdyne Triage
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-interdyne
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconInterdyneFront
+  suffix: Interdyne Reception
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-interdyne-front
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconScience
   suffix: Science
@@ -383,6 +471,14 @@
     defaultText: station-beacon-anomaly-gen
 
 - type: entity
+  parent: DefaultStationBeaconScience
+  id: DefaultStationBeaconCybersunRD
+  suffix: Cybersun R&D
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-cybersun-rd
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSupply
   suffix: Supply
@@ -410,7 +506,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: DefaultStationBeaconQMRoom
-  suffix: HM's Room
+  suffix: QM's Room
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-qm
@@ -422,6 +518,22 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-salvage
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconDonk
+  suffix: DONK Co. Shipping
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-donk
+
+- type: entity
+  parent: DefaultStationBeaconSupply
+  id: DefaultStationBeaconDonkFront
+  suffix: DONK Co. Front
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-donk-front
 
 - type: entity
   parent: DefaultStationBeacon
@@ -455,9 +567,6 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-solars
-  - type: Tag
-    tags:
-    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeaconEngineering
@@ -588,6 +697,14 @@
     defaultText: station-beacon-tech-vault
 
 - type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconShipyard
+  suffix: Shipyard
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-shipyard
+
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconService
   suffix: Service
@@ -676,9 +793,6 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-arrivals
-  - type: Tag
-    tags:
-    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -767,9 +881,6 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-cryosleep
-  - type: Tag
-    tags:
-    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -850,114 +961,3 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-vox
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconTriesteDorms
-  suffix: Trieste Dorms
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-trieste-dorms
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconSweetwaterDorms
-  suffix: Sweetwater Dorms
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-sweetwater-dorms
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconTriesteEngineering
-  suffix: Trieste Engineering
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-trieste-engineering
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconSweetwaterEngineering
-  suffix: Sweetwater Engineering
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-sweetwater-engineering
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconWastes
-  suffix: Wastes
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-wastes
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconTrieste
-  suffix: Trieste Platform
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-trieste
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconSweetwater
-  suffix: Sweetwater
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-sweetwater
-
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconSettlers
-  suffix: Settlers
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-settlers
-
-# Ghost Only Beacons
-- type: entity
-  parent: DefaultStationBeacon
-  id: DefaultStationBeaconGhost
-  suffix: Boo
-  components:
-  - type: Tag
-    tags:
-    - GhostOnlyWarp
-  - type: WarpPoint
-    blacklist:
-      tags:
-      - GhostOnlyWarp
-
-# CentComm Beacons
-- type: entity
-  parent: DefaultStationBeaconGhost
-  id: DefaultStationBeaconCentComm
-  suffix: CentComm
-  components:
-  - type: NavMapBeacon
-    text: CentComm
-
-- type: entity
-  parent: DefaultStationBeaconGhost
-  id: DefaultStationBeaconCentCommAfterhours
-  suffix: CentComm Afterhours
-  components:
-  - type: NavMapBeacon
-    text: Afterhours
-
-- type: entity
-  parent: DefaultStationBeaconGhost
-  id: DefaultStationBeaconCentCommThunderdome
-  suffix: CentComm Thunder Dome
-  components:
-  - type: NavMapBeacon
-    text: Thunderdome
-
-- type: entity
-  parent: DefaultStationBeaconGhost
-  id: DefaultStationBeaconCentCommERT
-  suffix: CentComm ERT
-  components:
-  - type: NavMapBeacon
-    text: ERT
