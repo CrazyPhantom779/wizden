@@ -1,8 +1,13 @@
-using Content.Client.Trigger.Systems;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Client.Animations;
 using Robust.Shared.Audio;
 
-namespace Content.Client.Trigger.Components;
+namespace Content.Client.Trigger;
 
 [RegisterComponent]
 [Access(typeof(TimerTriggerVisualizerSystem))]
@@ -17,27 +22,28 @@ public sealed partial class TimerTriggerVisualsComponent : Component
     /// <summary>
     /// The RSI state used while the device has not been primed.
     /// </summary>
-    [DataField]
+    [DataField("unprimedSprite")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public string UnprimedSprite = "icon";
 
     /// <summary>
     /// The RSI state used when the device is primed.
     /// Not VVWrite-able because it's only used at component init to construct the priming animation.
     /// </summary>
-    [DataField]
+    [DataField("primingSprite")]
     public string PrimingSprite = "primed";
 
     /// <summary>
     /// The sound played when the device is primed.
     /// Not VVWrite-able because it's only used at component init to construct the priming animation.
     /// </summary>
-    [DataField, ViewVariables]
+    [DataField("primingSound")]
     public SoundSpecifier? PrimingSound;
 
     /// <summary>
     /// The actual priming animation.
     /// Constructed at component init from the sprite and sound.
     /// </summary>
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Animation PrimingAnimation = default!;
 }

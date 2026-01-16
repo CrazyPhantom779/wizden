@@ -1,10 +1,18 @@
-using Content.Client.Trigger.Components;
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Trigger;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Client.Trigger.Systems;
+namespace Content.Client.Trigger;
 
 public sealed class TimerTriggerVisualizerSystem : VisualizerSystem<TimerTriggerVisualsComponent>
 {
@@ -16,26 +24,25 @@ public sealed class TimerTriggerVisualizerSystem : VisualizerSystem<TimerTrigger
         SubscribeLocalEvent<TimerTriggerVisualsComponent, ComponentInit>(OnComponentInit);
     }
 
-    private void OnComponentInit(Entity<TimerTriggerVisualsComponent> ent, ref ComponentInit args)
+    private void OnComponentInit(EntityUid uid, TimerTriggerVisualsComponent comp, ComponentInit args)
     {
-        ent.Comp.PrimingAnimation = new Animation
+        comp.PrimingAnimation = new Animation
         {
             Length = TimeSpan.MaxValue,
             AnimationTracks = {
-                new AnimationTrackSpriteFlick()
-                {
+                new AnimationTrackSpriteFlick() {
                     LayerKey = TriggerVisualLayers.Base,
-                    KeyFrames = { new AnimationTrackSpriteFlick.KeyFrame(ent.Comp.PrimingSprite, 0f) }
+                    KeyFrames = { new AnimationTrackSpriteFlick.KeyFrame(comp.PrimingSprite, 0f) }
                 }
             },
         };
 
-        if (ent.Comp.PrimingSound != null)
+        if (comp.PrimingSound != null)
         {
-            ent.Comp.PrimingAnimation.AnimationTracks.Add(
+            comp.PrimingAnimation.AnimationTracks.Add(
                 new AnimationTrackPlaySound()
                 {
-                    KeyFrames = { new AnimationTrackPlaySound.KeyFrame(_audioSystem.ResolveSound(ent.Comp.PrimingSound), 0) }
+                    KeyFrames = { new AnimationTrackPlaySound.KeyFrame(_audioSystem.ResolveSound(comp.PrimingSound), 0) }
                 }
             );
         }

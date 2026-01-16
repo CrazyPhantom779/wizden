@@ -1,109 +1,47 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg" /></p>
+<!--
+SPDX-FileCopyrightText: 2017 PJB3005 <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2018 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2019 Ivan <silvertorch5@gmail.com>
+SPDX-FileCopyrightText: 2019 Silver <silvertorch5@gmail.com>
+SPDX-FileCopyrightText: 2020 Injazz <43905364+Injazz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2020 RedlineTriad <39059512+RedlineTriad@users.noreply.github.com>
+SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 iglov <iglov@avalon.land>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Rares Popa <2606875+rarepops@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 router <messagebus@vk.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 
-Cosmatic Drift is a HRP fork of Station 14 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), their homegrown engine written in C#.
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 
-This is the primary repo for Cosmatic Drift. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
-If you want to host or create content for SS14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+This is a fork from the primary repo for Space Station 14 called Goob Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server this is the content pack for Goob Station.
+
+If you want to host or create content for SS14, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14) as it contains both RobustToolbox and the content pack for development of new content packs and is the base for your fork.
 
 ## Links
 
-[Our Discord](https://discord.gg/QVSsG9XS7c) | [Upstream's Website](https://spacestation14.com/) | [Launcher Download](https://spacestation14.io/about/nightlies/)
+[Goob Station Discord Server](https://discord.gg/goobstation) | [Goob Station Development Discord Server](https://discord.gg/zXk2cyhzPN) | [Goob Station Forum](https://forums.goobstation.com/) | [Goob Station Website](https://goobstation.com)
 
 ## Documentation/Wiki
 
-Upstream's [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more. They also have lots of resources for new contributors to the project. CD specific information is listed in CONTRIBUTING.md
+The Goob Station [docs site](https://docs.goobstation.com/) has documentation on GS14's content, engine, game design, and more. It also has lots of resources for new contributors to the project.
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/cosmatic-drift-14/cosmatic-drift/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
-Just make sure your changes and pull requests are in accordance with the guidelines in CONTRIBUTING.md
+We are happy to accept contributions from anybody. Get in [Development Discord Server](https://discord.gg/zXk2cyhzPN) if you want to help. Feel free to check the [list of issues](https://github.com/Goob-Station/Goob-Station/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
+While following the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Goob Station, we recommend reviewing them for best practices.
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
-<div class="header" align="center">
-<img alt="Harmony Station" src="https://raw.githubusercontent.com/ss14-harmony/ss14-harmony/refs/heads/master/Resources/Textures/Logo/logo.png">
-</div>
-
-Harmony is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14). We aim to stay as close to vanilla SS14 as possible, while adding cosmetic changes that make Harmony our home, and features that enable MRP (medium roleplay) playstyle.
-
-Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
-
-## Links
-
-<div class="header" align="center">
-
-[Harmony Wiki](http://wiki.harmony14.com/) | [Website (SS14)](https://spacestation14.io/) | [Steam (SS14)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download (SS14)](https://spacestation14.io/about/nightlies/) | [Builds (Harmony)](http://cdn.harmony14.com/fork/harmony/)
-
-</div>
-
-## Documentation/Wiki
-
-SS14 [docs site](https://docs.spacestation14.com/) has documentation on SS14's content, engine, game design, and more.
-Additionally, see these resources for license and attribution information:
-- [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)
-- [Robust Station Image](https://docs.spacestation14.com/en/specifications/robust-station-image.html)
-
-It also has lots of resources for new contributors to the project.
-
-## Contributing
-
-We are happy to accept contributions from anybody. Get in Discord if you want to help and don't be afraid to ask for help either.
-
-Make sure to read our contributing guidelines in [CONTRIBUTING.md](/CONTRIBUTING.md) if you are new to Harmony!
-
-## AI-generated contributions disclaimer
-This project does not accept low-effort or wholesale AI-generated contributions. Examples include, but are not limited to:
-
-- Any code (including yaml) generated by tools like GitHub Copilot, ChatGPT, or similar.
-- AI-created artwork, sound files, or other assets.
-- Auto-generated documentation, issue reports or pull request descriptions.
-
-Exceptions to this are simple tools like Rider's single-line completion feature.
-
-## Building
-
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
-1. Clone this repo:
-```shell
-git clone https://github.com/space-wizards/space-station-14.git
-```
-2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
-```shell
-cd space-station-14
-python RUN_THIS.py
-```
-3. Compile the solution:
-
-Build the server using `dotnet build`.
-
-[More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
-
-## License
-
-Almost code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT). Some code is instead under the [MPL v2.0](https://www.mozilla.org/en-US/MPL/) and must remain open source and must be dual-licensed if mixed with the GPL. All files under the MPL are clearly marked with a file header.
-
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
-Read [LEGAL.md](/LEGAL.md) for legal information regarding the code licensing.
-
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/ss14-harmony/ss14-harmony/blob/master/Resources/Textures/_Harmony/Clothing/Uniforms/Jumpsuit/hop_turtle.rsi/meta.json).
-
-> [!NOTE]
-> Some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
-
-
-
-## Trieste Port
-
-Trieste Port is a fork of Space Station 14, taking place on a ex-nanotrasen oil rig repurposed into a corporate-free safe haven on an outer-rim frontier ocean planet. It focuses on the daily lives of the citizens of Trieste, both above and beneath the waves. Citizens face dangers such as Nanotrasen infiltrators, pirates, horrific deep-sea fauna, and the crushing depths of the abyss. Enjoy the chaos and adventure as you carve your story across the rusted hull of the platform.
-
-Our community discord where we announce events and playtests: https://discord.gg/Y8jM7fkxe3
-- If there are any issues with the link, ping Pixeltheaertist on the main SS14 discord
-
-TRIESTE PORT is also open-source, so anyone is free to contribute to the project! If you have questions or need help, don't hesitate to ask in the discord!
-
-I also absolutely don't mind if other forks wish to use our code for their own projects. After all, SS14 is all about collaboration! As long as it's not code ported over from another fork, of course. See attributions about that.
 
 ## Building
 
@@ -111,84 +49,12 @@ I also absolutely don't mind if other forks wish to use our code for their own p
 2. Run `RUN_THIS.py` to init submodules and download the engine.
 3. Compile the solution.
 
-[More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
+[More detailed instructions on building the project.](https://docs.goobstation.com/en/general-development/setup.html)
 
 ## License
 
-All code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT) unless stated otherwise in Attributions.
+All code in this codebase is released under the AGPL-3.0-or-later license. Each file includes REUSE Specification headers or separate .license files that specify a dual license option. This dual licensing is provided to simplify the process for projects that are not using AGPL, allowing them to adopt the relevant portions of the code under an alternative license. You can review the complete texts of these licenses in the LICENSES/ directory.
 
-Code ported over from other forks is not owned by Trieste Port-14 and any modifications made to it must comply with the original license. For more information, see the Attributions section.
-
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+Most media assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
 Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
-
-## Attributions
-
-| Fork Name | Fork Repository | Code Used | Licence |
-| ------------- | ------------- | ------- | ------- |
-| Emberfall-14 | https://github.com/emberfall-14/emberfall.git | All folders and files in Content.Server, Content.Shared and Content.Client labeled "Bell". Space Elevator code. | MPL2 Exhibit B |
-
-
-## Contributors
-
-TRIESTE PORT wouldn't be possible without all these wonderful people helping to make this project come to life.
-Making a project like this has been a dream of mine forever, thank you all so much for helping to make it come true. <3
-
-Pixeltheaertist - Project Lead
-
-Nolius - Programming, Debugging
-
-Verslebas - Programming, Debugging
-
-Lyroth - Programming
-
-Lupino - Debugging
-
-McJak - Music
-
-Målingen - Spriting
-
-Quri1q - Spriting
-
-Legally Aquired Monvi Plushie - Foraging Design
-
-Puce - Programming
-
-Orks - Debugging, Refactoring
-
-TaoNewt - Bugfixing
-
-Moomoobeef - Mapping
-
-Ermucat - Programming
-
-Slckstr - Bugfixing
-
-FatherCheese - Programming, Debugging, Mapping
-
-Powsu - Programming, Spriting
-
-IamSidzilla - Mapping, Spriting
-
-Lev - Spriting, Programming
-
-T4D2 - Programming, Mapping, Spriting
-
-CheesePlated - Programming
-
-Nighty - Music
-
-Toast - Music
-
-Cofee - Lobby Art
-
-Dorragon - Programming
-
-Felix - Mapping
-
-zangothedino - Spriting
-
-worstdragonhere - Spriting
-
-Pharaz4 - Mapping

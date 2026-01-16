@@ -1,4 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyoth25f <kyoth25f@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Speech;
+using Content.Shared.StatusIcon; // Goobstation
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.VoiceMask;
@@ -27,12 +42,6 @@ public sealed partial class VoiceMaskComponent : Component
     public ProtoId<SpeechVerbPrototype>? VoiceMaskSpeechVerb;
 
     /// <summary>
-    ///     If true will override the users identity with whatever <see cref="VoiceMaskName"/> is.
-    /// </summary>
-    [DataField]
-    public bool OverrideIdentity;
-
-    /// <summary>
     ///     The action that gets displayed when the voice mask is equipped.
     /// </summary>
     [DataField]
@@ -43,17 +52,23 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? ActionEntity;
-
     /// <summary>
-    ///     If user's voice is getting changed when they speak.
+    ///     if UI Action shud be added on equipt
     /// </summary>
     [DataField]
-    public bool Active = true;
+    public bool EnableAction = true; //Goobstation
 
+    #region GabyStation
     /// <summary>
-    ///     If user's accent is getting hidden when they speak.
+    ///     The job icon to be displayed next to their name when speaking on radio
     /// </summary>
     [DataField]
-    public bool AccentHide = true;
+    public ProtoId<JobIconPrototype>? JobIconProtoId; // GabyStation -> Radio icons
+
+    /// <summary>
+    ///     The name of the job that should show up when a mouse overs over the job icon on the radio
+    /// </summary>
+    [DataField]
+    public string? JobName; // GabyStation -> Radio icons
+    #endregion
 }
-

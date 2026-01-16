@@ -1,16 +1,18 @@
 ﻿using Content.Shared.Atmos;
+using Content.Shared.Explosion.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Trigger.Components.Effects;
+namespace Content.Shared.Explosion.Components.OnTrigger;
 
 /// <summary>
 /// Contains a GasMixture that will release its contents to the atmosphere when triggered.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[AutoGenerateComponentState, AutoGenerateComponentPause]
-public sealed partial class ReleaseGasOnTriggerComponent : BaseXOnTriggerComponent
+[AutoGenerateComponentPause]
+[Access(typeof(SharedReleaseGasOnTriggerSystem))]
+public sealed partial class ReleaseGasOnTriggerComponent : Component
 {
     /// <summary>
     /// Whether this grenade is active and releasing gas.

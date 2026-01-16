@@ -1,24 +1,42 @@
-﻿#nullable enable
-using System.Linq;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+#nullable enable
+using Content.Goobstation.Maths.FixedPoint;
+using Content.Server.Database;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Mind;
+using Content.Server.Mind.Commands;
+using Content.Server.Roles;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Part;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Players;
 using Content.Shared.Roles;
-using Content.Shared.Roles.Components;
+using Content.Shared.Roles.Jobs;
 using Robust.Server.Console;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using System.Linq;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
@@ -125,6 +143,7 @@ public sealed partial class MindTests
         EntityUid mindId = default!;
         var mindSystem = entMan.EntitySysManager.GetEntitySystem<SharedMindSystem>();
         var damageableSystem = entMan.EntitySysManager.GetEntitySystem<DamageableSystem>();
+        var woundSystem = entMan.EntitySysManager.GetEntitySystem<WoundSystem>();
 
         await server.WaitAssertion(() =>
         {
@@ -147,9 +166,27 @@ public sealed partial class MindTests
         await server.WaitAssertion(() =>
         {
             var damageable = entMan.GetComponent<DamageableComponent>(entity);
-            var prototype = protoMan.Index(BluntDamageType);
+            if (!protoMan.TryIndex(BluntDamageType, out var prototype))
+            {
+                return;
+            }
 
-            damageableSystem.SetDamage((entity, damageable), new DamageSpecifier(prototype, FixedPoint2.New(401)));
+            if (entMan.TryGetComponent(entity, out BodyComponent? body) &&
+                body.BodyType == BodyType.Complex &&
+                body.RootContainer?.ContainedEntity is EntityUid rootPart)
+            {
+                foreach (var (woundable, _) in woundSystem.GetAllWoundableChildren(rootPart))
+                {
+                    if (!entMan.TryGetComponent(woundable, out DamageableComponent? wdc) ||
+                        !entMan.TryGetComponent(woundable, out BodyPartComponent? bpc))
+                    {
+                        continue;
+                    }
+
+                    damageableSystem.SetDamage(woundable, wdc, new DamageSpecifier(prototype, FixedPoint2.New(100)));
+                }
+            }
+            damageableSystem.SetDamage(entity, damageable, new DamageSpecifier(prototype, FixedPoint2.New(401)));
             Assert.That(mindSystem.GetMind(entity, mindContainerComp), Is.EqualTo(mindId));
         });
 
@@ -337,7 +374,7 @@ public sealed partial class MindTests
         var entMan = server.ResolveDependency<IServerEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
 
-        var mindSystem = entMan.EntitySysManager.GetEntitySystem<MindSystem>();
+        var mindSystem = entMan.EntitySysManager.GetEntitySystem<SharedMindSystem>();
 
         EntityUid entity = default!;
         EntityUid mindId = default!;
@@ -377,7 +414,7 @@ public sealed partial class MindTests
 
             mob = entMan.SpawnEntity(null, new MapCoordinates());
 
-            mindSystem.MakeSentient(mob);
+            MakeSentientCommand.MakeSentient(mob, entMan);
             mobMindId = mindSystem.CreateMind(player.UserId, "Mindy McThinker the Second");
             mobMind = entMan.GetComponent<MindComponent>(mobMindId);
 

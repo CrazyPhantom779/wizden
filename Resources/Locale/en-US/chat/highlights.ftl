@@ -1,11 +1,18 @@
+#Goob start
+#Central Command
+highlights-nanotrasen-representative = Nanotrasen Representative, "Central Command", "NTR", "NT", "CC", Bridge, "Command"
+highlights-blueshield-officer = Blueshield Officer, "Central Command", "BSO", "CC", Bridge, "Command"
+
+
 # Command
-highlights-captain = Overseer, Bridge, Command
-highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, Command
-highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, Command
-highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, Command
-highlights-head-of-security = Marshal, Security, "Sec", Bridge, Command
-highlights-quartermaster = Harbormaster, "HM", Cargo, Bridge, Command
-highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, Command
+highlights-captain = Captain, "Cap", Bridge, "Command"
+highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, "Command"
+highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, "Command"
+highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, "Command"
+highlights-head-of-security = Head of Security, "HoS", Security, "Sec", Bridge, "Command"
+highlights-quartermaster = Quartermaster, "QM", Cargo, Bridge, "Command"
+highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, "Command"
+#Goob end
 
 # Security
 highlights-detective = Detective, "Det", Security, "Sec"
@@ -15,7 +22,7 @@ highlights-warden = Warden, "Ward", Security, "Sec"
 
 # Cargo
 highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
-highlights-salvage-specialist = Salvage Specialist, Salvager, Expeditionary, "Exped", Miner
+highlights-salvage-specialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Miner
 
 # Engineering
 highlights-atmospheric-technician = Atmospheric Technician, Atmos tech, Atmospheric, Engineering, "Atmos", "Engi"
@@ -46,7 +53,9 @@ highlights-passenger = Passenger, Greytider, "Tider"
 highlights-service-worker = Service Worker
 
 # Station-specific
+highlights-boxer = Boxer
 highlights-reporter = Reporter, Journalist
+highlights-zookeeper = Zookeeper
 highlights-psychologist = Psychologist, Psychology
 
 # Silicon

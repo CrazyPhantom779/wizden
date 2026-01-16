@@ -1,11 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.DeviceNetwork;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.SurveillanceCamera.Components;
+namespace Content.Server.SurveillanceCamera;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedSurveillanceCameraSystem))]
+[RegisterComponent]
+[Access(typeof(SurveillanceCameraSystem))]
 public sealed partial class SurveillanceCameraComponent : Component
 {
     // List of active viewers. This is for bookkeeping purposes,
@@ -25,28 +33,28 @@ public sealed partial class SurveillanceCameraComponent : Component
 
     // If this camera is active or not. Deactivating a camera
     // will not allow it to obtain any new viewers.
-    [DataField]
-    public bool Active = true;
+    [ViewVariables]
+    public bool Active { get; set; } = true;
 
     // This one isn't easy to deal with. Will require a UI
     // to change/set this so mapping these in isn't
     // the most terrible thing possible.
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField("id")]
-    public string CameraId = "camera";
+    public string CameraId { get; set;  } = "camera";
 
-    /// <summary>
-    /// If true, instead of showing the camera id it will show the entity name
-    /// </summary>
-    [DataField]
-    public bool UseEntityNameAsCameraId = false;
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("nameSet")]
+    public bool NameSet { get; set; }
 
-    [DataField, AutoNetworkedField]
-    public bool NameSet;
-
-    [DataField, AutoNetworkedField]
-    public bool NetworkSet;
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("networkSet")]
+    public bool NetworkSet { get; set; }
 
     // This has to be device network frequency prototypes.
     [DataField("setupAvailableNetworks")]
     public List<ProtoId<DeviceFrequencyPrototype>> AvailableNetworks { get; private set; } = new();
+
+    [DataField]
+    public bool Mobile { get; set; } = false; // Goobstation - a value to differentiate stationary cameras from mobile like bodycams
 }

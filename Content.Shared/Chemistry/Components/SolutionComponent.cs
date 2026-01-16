@@ -1,9 +1,13 @@
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Materials;
 using Robust.Shared.GameStates;
-using Content.Shared.Chemistry.Reagent;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Chemistry.Components;
 
@@ -22,7 +26,4 @@ public sealed partial class SolutionComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Solution Solution = new();
-
-   [DataField("floodReagent", customTypeSerializer:typeof(PrototypeIdSerializer<ReagentPrototype>))]
-   public string FloodReagent = "SeaWater";
 }

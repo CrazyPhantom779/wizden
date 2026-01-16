@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
@@ -103,14 +114,13 @@ public abstract class SharedVirtualItemSystem : EntitySystem
     /// <param name="blockingEnt">The entity we will make a virtual entity copy of</param>
     /// <param name="user">The entity that we want to insert the virtual entity</param>
     /// <param name="dropOthers">Whether or not to try and drop other items to make space</param>
-    /// <param name="silent">If true this won't show a popup when dropping other items</param>
-    public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, bool dropOthers = false, bool silent = false)
+    public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, bool dropOthers = false)
     {
-        return TrySpawnVirtualItemInHand(blockingEnt, user, out _, dropOthers, silent: silent);
+        return TrySpawnVirtualItemInHand(blockingEnt, user, out _, dropOthers);
     }
 
     /// <inheritdoc cref="TrySpawnVirtualItemInHand(Robust.Shared.GameObjects.EntityUid,Robust.Shared.GameObjects.EntityUid,bool)"/>
-    public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, [NotNullWhen(true)] out EntityUid? virtualItem, bool dropOthers = false, string? empty = null, bool silent = false)
+    public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, [NotNullWhen(true)] out EntityUid? virtualItem, bool dropOthers = false, string? empty = null)
     {
         virtualItem = null;
         if (empty == null && !_handsSystem.TryGetEmptyHand(user, out empty))
@@ -129,7 +139,7 @@ public abstract class SharedVirtualItemSystem : EntitySystem
                 if (!_handsSystem.TryDrop(user, hand))
                     continue;
 
-                if (!silent && !TerminatingOrDeleted(held))
+                if (!TerminatingOrDeleted(held))
                     _popup.PopupClient(Loc.GetString("virtual-item-dropped-other", ("dropped", held)), user, user);
 
                 empty = hand;
@@ -151,13 +161,13 @@ public abstract class SharedVirtualItemSystem : EntitySystem
     /// Scan the user's hands until we find the virtual entity, if the
     /// virtual entity is a copy of the matching entity, delete it
     /// </summary>
-    public void DeleteInHandsMatching(EntityUid user, EntityUid matching)
+    public void DeleteInHandsMatching(EntityUid user, EntityUid matching, bool queueDel = true) // Goob edit
     {
         foreach (var held in _handsSystem.EnumerateHeld(user))
         {
             if (TryComp(held, out VirtualItemComponent? virt) && virt.BlockingEntity == matching)
             {
-                DeleteVirtualItem((held, virt), user);
+                DeleteVirtualItem((held, virt), user, queueDel); // Goob edit
             }
         }
     }
@@ -232,7 +242,7 @@ public abstract class SharedVirtualItemSystem : EntitySystem
     {
         var pos = Transform(user).Coordinates;
         virtualItem = PredictedSpawnAttachedTo(VirtualItem, pos);
-        var virtualItemComp = Comp<VirtualItemComponent>(virtualItem.Value);
+        var virtualItemComp = EnsureComp<VirtualItemComponent>(virtualItem.Value);
         virtualItemComp.BlockingEntity = blockingEnt;
         Dirty(virtualItem.Value, virtualItemComp);
         return true;
@@ -241,17 +251,22 @@ public abstract class SharedVirtualItemSystem : EntitySystem
     /// <summary>
     /// Queues a deletion for a virtual item and notifies the blocking entity and user.
     /// </summary>
-    public void DeleteVirtualItem(Entity<VirtualItemComponent> item, EntityUid user)
+    public void DeleteVirtualItem(Entity<VirtualItemComponent> item, EntityUid user, bool queueDel = true) // Goob edit
     {
-        var userEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user);
+        var userEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user, item.Owner); // Goobstation
         RaiseLocalEvent(user, userEv);
 
-        var targEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user);
+        var targEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user, item.Owner); // Goobstation
         RaiseLocalEvent(item.Comp.BlockingEntity, targEv);
 
         if (TerminatingOrDeleted(item))
             return;
 
-        PredictedQueueDel(item.Owner);
+        // Goob edit start
+        if (queueDel)
+            PredictedQueueDel(item.Owner);
+        else
+            PredictedDel(item.Owner);
+        // Goob edit end
     }
 }

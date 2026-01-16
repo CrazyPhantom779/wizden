@@ -40,7 +40,7 @@ Trieste Port                    → git merge --no-commit --no-ff trieste/master
 Cosmatic Drift                  → git merge --no-commit --no-ff cosmatic/master DONE
 Harmony                         → git merge --no-commit --no-ff harmony/master DONE
 Nyanotrasen                     → git merge --no-commit --no-ff nyanotrasen/master NOT DONE (Fucking 5147 conflicts)
-Goob Station                    → git merge --no-commit --no-ff goob/master 
+Goob Station                    → git merge --no-commit --no-ff goob/master DONE
 Funky Station                   → git merge --no-commit --no-ff funky/master 
 Einstein Engines                → git merge --no-commit --no-ff einstein/master 
 Hullrot                         → git merge --no-commit --no-ff hullrot/master 

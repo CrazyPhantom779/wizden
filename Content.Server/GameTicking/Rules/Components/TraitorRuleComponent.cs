@@ -1,6 +1,34 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vyacheslav Titov <rincew1nd@ya.ru>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Титов Вячеслав Витальевич <rincew1nd@yandex.ru>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Codewords;
 using Content.Shared.Dataset;
-using Content.Shared.FixedPoint;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
@@ -24,28 +52,22 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> CodewordstarSystems = "starSystems";
-
-    [DataField]
-    public ProtoId<NpcFactionPrototype> NanoTrasenTraitorFaction = "NanoTrasenTraitor";
-
-    [DataField]
     public ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> ObjectiveIssuers = "TraitorCorporations";
+    public ProtoId<LocalizedDatasetPrototype> CodewordAdjectives = "Adjectives";
+
+    [DataField]
+    public ProtoId<LocalizedDatasetPrototype> CodewordVerbs = "Verbs";
+
+    [DataField]
+    public ProtoId<LocalizedDatasetPrototype> ObjectiveIssuers = "TraitorCorporationsFlavor"; // Goobstation Change
 
     /// <summary>
     /// Give this traitor an Uplink on spawn.
     /// </summary>
     [DataField]
     public bool GiveUplink = true;
-
-    /// <summary>
-    /// Give the NT traitors an Uplink on spawn.
-    /// </summary>
-    [DataField]
-    public bool GiveUplinkNT = true;
 
     /// <summary>
     /// Give this traitor the codewords.
@@ -59,17 +81,8 @@ public sealed partial class TraitorRuleComponent : Component
     [DataField]
     public bool GiveBriefing = true;
 
-    // Codeword arrays
-    public string[] SyndicateCodewords = new string[3];
-    public string[] NanoTrasenCodewords = new string[3];
-
-    // Total traitors
     public int TotalTraitors => TraitorMinds.Count;
 
-    // Array of Codewords
-    public string[] Codewords = new string[3];
-
-    // Enum for traitor selection states
     public enum SelectionState
     {
         WaitingForSpawn = 0,
@@ -94,16 +107,9 @@ public sealed partial class TraitorRuleComponent : Component
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
 
-    [DataField]
-    public SoundSpecifier GreetSoundNotificationNT = new SoundPathSpecifier("/Audio/Ambience/Antag/NT_start.ogg");
-
-    // The amount of codewords selected for traitors
-    [DataField]
-    public int CodewordCount = 4;
-
     /// <summary>
     /// The amount of TC traitors start with.
     /// </summary>
     [DataField]
-    public FixedPoint2 StartingBalance = 20;
+    public int StartingBalance = 100;
 }

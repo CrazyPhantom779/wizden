@@ -43,13 +43,13 @@ public sealed partial class HealingComponent : Component
     /// How long it takes to apply the damage.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan Delay = TimeSpan.FromSeconds(3f);
+    public TimeSpan Delay = TimeSpan.FromSeconds(2f); //Was 3f, changed due to Surgery Changes (Goobstation)
 
     /// <summary>
     /// Delay multiplier when healing yourself.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float SelfHealPenaltyMultiplier = 3f;
+    public float SelfHealPenaltyMultiplier = 2f; //Was 3f, changed due to Surgery Changes (Goobstation)
 
     /// <summary>
     /// Sound played on healing begin.

@@ -1,7 +1,13 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Numerics;
+using Content.Goobstation.Common.Footprints;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Item;
@@ -339,7 +345,9 @@ public abstract class SharedAbsorbentSystem : EntitySystem
 
         SolutionContainer.AddSolution(absorberSoln, puddleSplit);
 
-        _audio.PlayPredicted(absorber.PickupSound, isRemoved ? absorbEnt : target, user);
+        // Goobstation fix mopping sounds
+        // Always play the sound at the puddle's coordinates to prevent cutoff when entity is deleted
+        _audio.PlayPredicted(absorber.PickupSound, Transform(target).Coordinates, user);
 
         if (useDelay != null)
             _useDelay.TryResetDelay((absorbEnt, useDelay));
@@ -349,7 +357,9 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         var localPos = Vector2.Transform(targetPos, _transform.GetInvWorldMatrix(userXform));
         localPos = userXform.LocalRotation.RotateVec(localPos);
 
-        _melee.DoLunge(user, absorbEnt, Angle.Zero, localPos, null);
+        _melee.DoLunge(user, absorbEnt, Angle.Zero, localPos, null, Angle.Zero, false);
+
+        RaiseLocalEvent(target, new FootprintCleanEvent()); // Corvax-Next-Footprints
 
         return true;
     }

@@ -72,5 +72,12 @@ public sealed partial class MimePowersComponent : Component
     [DataField]
     public LocId FailWriteMessage = "paper-component-illiterate-mime";
 
+    /// <summary>
+    /// Goobstation
+    /// Whether this mime is able to break vow
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool CanBreakVow = true;
+
     public override bool SendOnlyToOwner => true;
 }

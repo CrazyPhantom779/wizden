@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.StationAi;
 using Robust.Shared.Map.Components;
@@ -73,11 +95,8 @@ public sealed class StationAiVisionSystem : EntitySystem
         var localBounds = _lookup.GetLocalBounds(tile, grid.Comp2.TileSize);
         var expandedBounds = localBounds.Enlarged(expansionSize);
 
-        var worldMatrix = _xforms.GetWorldMatrix(grid.Owner);
-        var worldBounds = worldMatrix.TransformBox(expandedBounds);
-
         _seedJob.Grid = (grid.Owner, grid.Comp2);
-        _seedJob.ExpandedBounds = worldBounds; // Now passing world bounds
+        _seedJob.ExpandedBounds = expandedBounds;
         _parallel.ProcessNow(_seedJob);
         _job.Data.Clear();
         FastPath = fastPath;
@@ -164,9 +183,7 @@ public sealed class StationAiVisionSystem : EntitySystem
         var invMatrix = _xforms.GetInvWorldMatrix(grid);
         var localAabb = invMatrix.TransformBox(worldBounds);
         var enlargedLocalAabb = invMatrix.TransformBox(worldBounds.Enlarged(expansionSize));
-
-        // Don't transform to local - keep as world
-        _seedJob.ExpandedBounds = worldBounds.Enlarged(expansionSize).CalcBoundingBox();
+        _seedJob.ExpandedBounds = enlargedLocalAabb;
         _parallel.ProcessNow(_seedJob);
         _job.Data.Clear();
         FastPath = false;
@@ -304,27 +321,7 @@ public sealed class StationAiVisionSystem : EntitySystem
 
         public void Execute()
         {
-            var xform = System.EntityManager.GetComponent<TransformComponent>(Grid.Owner);
-            var mapId = xform.MapID;
-
-            var query = System.EntityManager.AllEntityQueryEnumerator<MapGridComponent, TransformComponent>();
-            var gridsChecked = 0;
-
-            while (query.MoveNext(out var gridUid, out var gridComp, out var gridXform))
-            {
-                gridsChecked++;
-
-                if (gridXform.MapID != mapId)
-                    continue;
-
-                var invMatrix = System._xforms.GetInvWorldMatrix(gridUid);
-                var localBounds = invMatrix.TransformBox(ExpandedBounds);
-
-                System._lookup.GetLocalEntitiesIntersecting(gridUid,
-                    localBounds,
-                    System._seeds,
-                    flags: LookupFlags.All | LookupFlags.Approximate);
-            }
+            System._lookup.GetLocalEntitiesIntersecting(Grid.Owner, ExpandedBounds, System._seeds, flags: LookupFlags.All | LookupFlags.Approximate);
         }
     }
 

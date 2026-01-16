@@ -1,6 +1,15 @@
-﻿using Content.Shared.Administration;
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Administration;
 using Content.Shared.CCVar.CVarAccess;
 using Robust.Shared.Configuration;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Shared.CCVar;
 
@@ -24,9 +33,8 @@ public sealed partial class CCVars
     /// <summary>
     ///     Whether the arrivals terminal should be on a planet map.
     /// </summary>
-    // CD: Our arrivals map does not support planets. Set to false
     public static readonly CVarDef<bool> ArrivalsPlanet =
-        CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether the arrivals shuttle is enabled.
@@ -50,7 +58,7 @@ public sealed partial class CCVars
     ///     Are players allowed to return on the arrivals shuttle.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsReturns =
-        CVarDef.Create("shuttle.arrivals_returns", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Should all players who spawn at arrivals have godmode until they leave the map?
@@ -93,20 +101,13 @@ public sealed partial class CCVars
     ///     How long the final stage of FTL before arrival should be.
     /// </summary>
     public static readonly CVarDef<float> FTLArrivalTime =
-        CVarDef.Create("shuttle.arrival_time", 5f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrival_time", 10f, CVar.SERVERONLY); // Frontier edit: 5 -> 10
 
     /// <summary>
-    ///     How much time in seconds that needs to pass before a non-arrivals shuttle can FTL again.
+    ///     How much time needs to pass before a shuttle can FTL again.
     /// </summary>
     public static readonly CVarDef<float> FTLCooldown =
-        CVarDef.Create("shuttle.cooldown", 60f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     How much time in seconds that needs to pass before the arrivals shuttle can FTL again.
-    ///     If this is adjusted, ensure that shuttle.arrivals_cooldown is longer than this value.
-    /// </summary>
-    public static readonly CVarDef<float> ArrivalsFTLCooldown =
-        CVarDef.Create("shuttle.arrivals_ftl_cooldown", 10f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.cooldown", 90f, CVar.SERVERONLY); // Frontier edit: 10 -> 90
 
     /// <summary>
     ///     The maximum <see cref="PhysicsComponent.Mass"/> a grid can have before it becomes unable to FTL.
@@ -125,7 +126,7 @@ public sealed partial class CCVars
     ///     Is the emergency shuttle allowed to be early launched.
     /// </summary>
     public static readonly CVarDef<bool> EmergencyEarlyLaunchAllowed =
-        CVarDef.Create("shuttle.emergency_early_launch_allowed", false, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("shuttle.emergency_early_launch_allowed", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     How long the emergency shuttle remains docked with the station, in seconds.
@@ -182,7 +183,7 @@ public sealed partial class CCVars
     /// </summary>
     [CVarControl(AdminFlags.Server | AdminFlags.Mapping, min: 0, max: int.MaxValue)]
     public static readonly CVarDef<int> EmergencyShuttleAutoCallTime =
-        CVarDef.Create("shuttle.auto_call_time", 70, CVar.SERVERONLY); // CD: Lowered to 70 from 90
+        CVarDef.Create("shuttle.auto_call_time", 90, CVar.SERVERONLY);
 
     /// <summary>
     ///     Time in minutes after the round was extended (by recalling the shuttle) to call

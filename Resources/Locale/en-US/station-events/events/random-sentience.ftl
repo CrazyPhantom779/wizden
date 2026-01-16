@@ -1,19 +1,30 @@
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## Phrases used for where central command got this information.
-random-sentience-event-data-1 = scans from my long-range sensors
-random-sentience-event-data-2 = my sophisticated probabilistic models
-random-sentience-event-data-3 = my omnipotence
-random-sentience-event-data-4 = a signal from Sweetwater
-random-sentience-event-data-5 = energy emissions I have detected
+random-sentience-event-data-1 = scans from our long-range sensors
+random-sentience-event-data-2 = our sophisticated probabilistic models
+random-sentience-event-data-3 = our omnipotence
+random-sentience-event-data-4 = the communications traffic on your station
+random-sentience-event-data-5 = energy emissions we detected
 random-sentience-event-data-6 = [REDACTED]
 
 ## Phrases used to describe the level of intelligence, though it doesn't actually affect anything.
 random-sentience-event-strength-1 = human
-random-sentience-event-strength-2 = NanoTrasen
+random-sentience-event-strength-2 = primate
 random-sentience-event-strength-3 = moderate
 random-sentience-event-strength-4 = security
 random-sentience-event-strength-5 = command
 random-sentience-event-strength-6 = clown
-random-sentience-event-strength-7 = corporate
+random-sentience-event-strength-7 = low
 random-sentience-event-strength-8 = AI
 
 ## Announcement text
@@ -32,8 +43,8 @@ station-event-random-sentience-role-description = You are a sentient { $name }, 
 # Flavors
 station-event-random-sentience-flavor-mechanical = mechanical
 station-event-random-sentience-flavor-organic = organic
+station-event-random-sentience-flavor-corgi = corgi
 station-event-random-sentience-flavor-primate = primate
 station-event-random-sentience-flavor-kobold = kobold
+station-event-random-sentience-flavor-slime = slime
 station-event-random-sentience-flavor-inanimate = inanimate
-
-station-event-random-sentience-flavor-scurret = scurret

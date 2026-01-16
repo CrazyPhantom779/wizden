@@ -1,4 +1,12 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -27,7 +35,7 @@ public sealed partial class CCVars
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxVelocity =
-        CVarDef.Create("atmos.space_wind_max_velocity", 25f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_velocity", 30f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
@@ -40,7 +48,7 @@ public sealed partial class CCVars
     ///     Whether monstermos tile equalization is enabled.
     /// </summary>
     public static readonly CVarDef<bool> MonstermosEqualization =
-        CVarDef.Create("atmos.monstermos_equalization", false, CVar.SERVERONLY);
+        CVarDef.Create("atmos.monstermos_equalization", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos explosive depressurization is enabled.
@@ -99,7 +107,7 @@ public sealed partial class CCVars
     ///     Heat loss per tile due to radiation at 20 degC, in W.
     /// </summary>
     public static readonly CVarDef<float> SuperconductionTileLoss =
-        CVarDef.Create("atmos.superconduction_tile_loss", 20f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.superconduction_tile_loss", 30f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether excited groups will be processed and created.
@@ -120,13 +128,13 @@ public sealed partial class CCVars
     ///     Maximum time in milliseconds that atmos can take processing.
     /// </summary>
     public static readonly CVarDef<float> AtmosMaxProcessTime =
-        CVarDef.Create("atmos.max_process_time", 8f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.max_process_time", 3f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Atmos tickrate in TPS. Atmos processing will happen every 1/TPS seconds.
     /// </summary>
     public static readonly CVarDef<float> AtmosTickRate =
-        CVarDef.Create("atmos.tickrate", 34f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.tickrate", 15f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Scale factor for how fast things happen in our atmosphere
@@ -135,14 +143,14 @@ public sealed partial class CCVars
     ///     in-game.
     /// </summary>
     public static readonly CVarDef<float> AtmosSpeedup =
-        CVarDef.Create("atmos.speedup", 40f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.speedup", 8f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Like atmos.speedup, but only for gas and reaction heat values. 64x means
     ///     gases heat up and cool down 64x faster than real life.
     /// </summary>
     public static readonly CVarDef<float> AtmosHeatScale =
-        CVarDef.Create("atmos.heat_scale", 6f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.heat_scale", 8f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Maximum explosion radius for explosions caused by bursting a gas tank ("max caps").
@@ -150,31 +158,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> AtmosTankFragment =
         CVarDef.Create("atmos.max_explosion_range", 26f, CVar.SERVERONLY);
-
-    /// <summary>
-    /// Whether atmospherics will process delta-pressure damage on entities with a DeltaPressureComponent.
-    /// Entities with this component will take damage if they are exposed to a pressure difference
-    /// above the minimum pressure threshold defined in the component.
-    /// </summary>
-    // TODO: Needs CVARs for global configuration, like min pressure, max damage, etc.
-    public static readonly CVarDef<bool> DeltaPressureDamage =
-        CVarDef.Create("atmos.delta_pressure_damage", true, CVar.SERVERONLY);
-
-    /// <summary>
-    /// Number of entities to submit for parallel processing per processing run.
-    /// Low numbers may suffer from thinning out the work per job and leading to threads waiting,
-    /// or seeing a lot of threading overhead.
-    /// High numbers may cause Atmospherics to exceed its time budget per tick, as it will not
-    /// check its time often enough to know if it's exceeding it.
-    /// </summary>
-    public static readonly CVarDef<int> DeltaPressureParallelToProcessPerIteration =
-        CVarDef.Create("atmos.delta_pressure_parallel_process_per_iteration", 1000, CVar.SERVERONLY);
-
-    /// <summary>
-    /// Number of entities to process per processing job.
-    /// Low numbers may cause Atmospherics to see high threading overhead,
-    /// high numbers may cause Atmospherics to distribute the work unevenly.
-    /// </summary>
-    public static readonly CVarDef<int> DeltaPressureParallelBatchSize =
-        CVarDef.Create("atmos.delta_pressure_parallel_batch_size", 10, CVar.SERVERONLY);
 }

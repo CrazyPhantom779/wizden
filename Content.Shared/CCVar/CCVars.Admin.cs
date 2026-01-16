@@ -1,4 +1,15 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -20,7 +31,7 @@ public sealed partial class CCVars
     ///     Should users be able to see their own notes? Admins will be able to see and set notes regardless
     /// </summary>
     public static readonly CVarDef<bool> SeeOwnNotes =
-        CVarDef.Create("admin.see_own_notes", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("admin.see_own_notes", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Should the server play a quick sound to the active admins whenever a new player joins?
@@ -102,7 +113,7 @@ public sealed partial class CCVars
     ///     If you set this to 0 or 1 then it will alert on every connection, so probably don't do that.
     /// </remarks>
     public static readonly CVarDef<int> AdminAlertMinPlayersSharingConnection =
-        CVarDef.Create("admin.alert.min_players_sharing_connection", 2, CVar.SERVERONLY);
+        CVarDef.Create("admin.alert.min_players_sharing_connection", -1, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum explosion intensity to create an admin alert message. -1 to disable the alert.
@@ -195,10 +206,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AdminAllowMultiServerPlay =
         CVarDef.Create("admin.allow_multi_server_play", true, CVar.SERVERONLY);
-
-    /// <summary>
-    /// Whether admins should gain role playtime even when playing while not de-adminned.
-    /// </summary>
-    public static readonly CVarDef<bool> GameAdminJobTracking =
-        CVarDef.Create("game.admin_job_tracking", false, CVar.SERVERONLY);
 }

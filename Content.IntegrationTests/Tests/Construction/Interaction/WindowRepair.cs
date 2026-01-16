@@ -1,9 +1,15 @@
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Construction.Interaction;
@@ -23,7 +29,7 @@ public sealed class WindowRepair : InteractionTest
         var damageType = Server.ProtoMan.Index(BluntDamageType);
         var damage = new DamageSpecifier(damageType, FixedPoint2.New(10));
         Assert.That(comp.Damage.GetTotal(), Is.EqualTo(FixedPoint2.Zero));
-        await Server.WaitPost(() => sys.TryChangeDamage(SEntMan.GetEntity(Target).Value, damage, ignoreResistances: true));
+        await Server.WaitPost(() => sys.TryChangeDamage(SEntMan.GetEntity(Target), damage, ignoreResistances: true));
         await RunTicks(5);
         Assert.That(comp.Damage.GetTotal(), Is.GreaterThan(FixedPoint2.Zero));
 
@@ -43,4 +49,3 @@ public sealed class WindowRepair : InteractionTest
         await AssertEntityLookup((RGlass, 2));
     }
 }
-

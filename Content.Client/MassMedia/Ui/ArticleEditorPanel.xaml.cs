@@ -1,5 +1,12 @@
-﻿using Content.Client.Message;
-using Content.Client.RichText;
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.RichText;
 using Content.Shared.MassMedia.Systems;
@@ -13,6 +20,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.MassMedia.Ui;
 
+// Goobstation ported Wizden PR
+// https://github.com/space-wizards/space-station-14/pull/41799
+// Fix news console formatting and pda news formating #41799
 [GenerateTypedNameReferences]
 public sealed partial class ArticleEditorPanel : Control
 {
@@ -21,12 +31,23 @@ public sealed partial class ArticleEditorPanel : Control
 
     private bool _preview;
 
+    private Type[] AllowedTags =
+    [
+        typeof(BoldItalicTag),
+        typeof(BoldTag),
+        typeof(BulletTag),
+        typeof(ColorTag),
+        typeof(HeadingTag),
+        typeof(ItalicTag),
+        typeof(MonoTag),
+    ];
+
     public ArticleEditorPanel()
     {
         RobustXamlLoader.Load(this);
 
-        ButtonPublish.StyleClasses.Add(StyleClass.ButtonOpenLeft);
-        ButtonPublish.StyleClasses.Add(StyleClass.Positive);
+        ButtonPublish.StyleClasses.Add(StyleBase.ButtonOpenLeft);
+        ButtonPublish.StyleClasses.Add(StyleNano.StyleClassButtonColorGreen);
 
         ContentField.GetChild(0).Margin = new Thickness(9, 3);
         // Customize scrollbar width and margin. This is not possible in xaml
@@ -86,7 +107,7 @@ public sealed partial class ArticleEditorPanel : Control
         PreviewPanel.Visible = _preview;
 
         var articleBody = Rope.Collapse(ContentField.TextRope);
-        PreviewLabel.SetMessage(FormattedMessage.FromMarkupPermissive(articleBody), UserFormattableTags.BaseAllowedTags);
+        PreviewLabel.SetMessage(FormattedMessage.FromMarkupPermissive(articleBody), AllowedTags);
     }
 
     private void OnCancel(BaseButton.ButtonEventArgs eventArgs)

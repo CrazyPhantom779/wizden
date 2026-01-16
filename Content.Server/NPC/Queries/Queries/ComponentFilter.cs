@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.NPC.Queries.Queries;
@@ -10,10 +16,7 @@ public sealed partial class ComponentFilter : UtilityQueryFilter
     [DataField("components", required: true)]
     public ComponentRegistry Components = new();
 
-    /// <summary>
-    /// If true, this filter retains entities with ALL of the specified components. If false, this filter removes
-    /// entities with ANY of the specified components.
-    /// </summary>
+    // Goobstation
     [DataField]
-    public bool RetainWithComp = true;
+    public bool Invert;
 }

@@ -31,7 +31,7 @@ public static class MidiParser
         stream.Skip(2); // time div
 
         // We now skip ahead if we still have any header length left
-        stream.Skip((int)(headerLength - 6));
+        stream.Skip((int) (headerLength - 6));
 
         var parsedTracks = new List<MidiTrack>();
 

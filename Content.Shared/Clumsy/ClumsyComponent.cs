@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2024 beck <163376292+widgetbeck@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -51,7 +59,13 @@ public sealed partial class ClumsyComponent : Component
     ///     Damage taken after failing to shoot a gun.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public DamageSpecifier? GunShootFailDamage;
+    public DamageSpecifier? GunShootFailDamage = new() {DamageDict = new Dictionary<string, FixedPoint2> {{"Brute", 12}}}; // Goob edit - add a default value (evil)
+
+    /// <summary>
+    ///     Damage taken after failing to catch an item.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier? CatchingFailDamage;
 
     /// <summary>
     ///     Damage taken after failing to catch an item.

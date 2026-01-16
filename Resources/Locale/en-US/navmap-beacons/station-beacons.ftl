@@ -1,10 +1,24 @@
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 station-beacon-general = General
 
 station-beacon-command = Command
 station-beacon-bridge = Bridge
 station-beacon-vault = Vault
-station-beacon-captain = Overseer
 station-beacon-gateway = Gateway
+station-beacon-captain = Captain
 station-beacon-hop = HOP
 
 station-beacon-security = Security
@@ -28,6 +42,7 @@ station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
 station-beacon-psychology = Psychology
 station-beacon-clinic = Clinic
+station-beacon-paramedic = Paramedics
 
 station-beacon-science = Science
 station-beacon-research-and-development = Research
@@ -99,13 +114,14 @@ station-beacon-escape-pod-W = Escape Pod W
 station-beacon-escape-pod-NW = Escape Pod NW
 station-beacon-vox = Vox Break Room
 
-station-beacon-trieste-dorms = Trieste Dorms
-station-beacon-sweetwater-dorms = Sweetwater Dorms
-
-station-beacon-trieste-engineering = Trieste Engineering
-station-beacon-sweetwater-engineering = Sweetwater Engineering
-
-station-beacon-wastes = Waste Area
-station-beacon-trieste = Trieste Platform
-station-beacon-sweetwater = Sweetwater
-station-beacon-settlers = Settler's Outpost
+station-beacon-gorlex = Gorlex Barracks
+station-beacon-gorlex-office = Gorlex Office
+station-beacon-gorlex-breakroom = Gorlex Breakroom
+station-beacon-gorlex-hos = Gorlex Command
+station-beacon-cybersun-legal = Cybersun Legal Dept
+station-beacon-interdyne = Interdyne Triage
+station-beacon-interdyne-front = Interdyne Reception
+station-beacon-cybersun-rd = Cybersun R&D
+station-beacon-donk = DONK Co. Shipping
+station-beacon-donk-front = DONK Co. front
+station-beacon-shipyard = Shipyard

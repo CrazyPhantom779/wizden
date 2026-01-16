@@ -1,18 +1,28 @@
-﻿using Content.Shared.Database;
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Velken <8467292+Velken@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Database;
+using Content.Shared.EntityEffects;
 using Content.Shared.Explosion;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Timing;
+using System.Text.Json.Serialization;
 
-namespace Content.Shared.EntityEffects.Effects.Transform;
+namespace Content.Server.EntityEffects.Effects;
 
-/// <inheritdoc cref="EntityEffect"/>
-/// <seealso cref="Explode"/>
-public sealed partial class Explosion : EntityEffectBase<Explosion>
+[DataDefinition]
+public sealed partial class ExplosionReactionEffect : EntityEffect
 {
     /// <summary>
     ///     The type of explosion. Determines damage types and tile break chance scaling.
     /// </summary>
-    [DataField(required: true)]
-    public ProtoId<ExplosionPrototype> ExplosionType;
+    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<ExplosionPrototype>))]
+    public string ExplosionType = default!;
 
     /// <summary>
     ///     The max intensity the explosion can have at a given tile. Places an upper limit of damage and tile break
@@ -50,8 +60,26 @@ public sealed partial class Explosion : EntityEffectBase<Explosion>
     [DataField]
     public float TileBreakScale = 1f;
 
-    public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-explosion", ("chance", Probability));
+    public override bool ShouldLog => true;
 
-    public override LogImpact? Impact => LogImpact.High;
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Loc.GetString("reagent-effect-guidebook-explosion-reaction-effect", ("chance", Probability));
+    public override LogImpact LogImpact => LogImpact.High;
+
+    public override void Effect(EntityEffectBaseArgs args)
+    {
+        var intensity = IntensityPerUnit;
+
+        if (args is EntityEffectReagentArgs reagentArgs)
+            intensity = MathF.Min((float) reagentArgs.Quantity * IntensityPerUnit, MaxTotalIntensity);
+
+        args.EntityManager.System<ExplosionSystem>()
+            .QueueExplosion(
+            args.TargetEntity,
+            ExplosionType,
+            intensity,
+            IntensitySlope,
+            MaxIntensity,
+            TileBreakScale);
+    }
 }

@@ -9,6 +9,7 @@
 # YML files
 /Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
 /Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
+/Resources/Prototypes/Maps/**                       @Emisse @ArtisticRoomba
 
 # FTL files
 /Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13

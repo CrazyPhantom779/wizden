@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Centronias <me@centronias.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
 using Content.Shared.Cloning.Events;
 using Content.Shared.DoAfter;
@@ -38,7 +47,7 @@ public abstract partial class SharedSericultureSystem : EntitySystem
 
     private void OnClone(Entity<SericultureComponent> ent, ref CloningEvent args)
     {
-        if (!args.Settings.EventComponents.Contains(Factory.GetRegistration(ent.Comp.GetType()).Name))
+        if(!args.Settings.EventComponents.Contains(Factory.GetRegistration(ent.Comp.GetType()).Name))
             return;
 
         var comp = EnsureComp<SericultureComponent>(args.CloneUid);
@@ -68,8 +77,8 @@ public abstract partial class SharedSericultureSystem : EntitySystem
 
     private void OnSericultureStart(EntityUid uid, SericultureComponent comp, SericultureActionEvent args)
     {
-        if (!TryComp<HungerComponent>(uid, out var hungerComp)
-            || _hungerSystem.IsHungerBelowState(uid,
+        if (TryComp<HungerComponent>(uid, out var hungerComp)
+            && _hungerSystem.IsHungerBelowState(uid,
                 comp.MinHungerThreshold,
                 _hungerSystem.GetHunger(hungerComp) - comp.HungerCost,
                 hungerComp))
@@ -84,6 +93,7 @@ public abstract partial class SharedSericultureSystem : EntitySystem
             BlockDuplicate = true,
             BreakOnDamage = true,
             CancelDuplicate = true,
+            MultiplyDelay = false, // Goobstation
         };
 
         _doAfterSystem.TryStartDoAfter(doAfter);
@@ -95,9 +105,9 @@ public abstract partial class SharedSericultureSystem : EntitySystem
         if (args.Cancelled || args.Handled || comp.Deleted)
             return;
 
-        if (!TryComp<HungerComponent>(uid,
+        if (TryComp<HungerComponent>(uid,
                 out var hungerComp) // A check, just incase the doafter is somehow performed when the entity is not in the right hunger state.
-            || _hungerSystem.IsHungerBelowState(uid,
+            && _hungerSystem.IsHungerBelowState(uid,
                 comp.MinHungerThreshold,
                 _hungerSystem.GetHunger(hungerComp) - comp.HungerCost,
                 hungerComp))
@@ -106,7 +116,7 @@ public abstract partial class SharedSericultureSystem : EntitySystem
             return;
         }
 
-        _hungerSystem.ModifyHunger(uid, -comp.HungerCost, hungerComp);
+        _hungerSystem.ModifyHunger(uid, -comp.HungerCost);
 
         if (!_netManager.IsClient) // Have to do this because spawning stuff in shared is CBT.
         {
@@ -129,4 +139,3 @@ public sealed partial class SericultureActionEvent : InstantActionEvent { }
 /// </summary>
 [Serializable, NetSerializable]
 public sealed partial class SericultureDoAfterEvent : SimpleDoAfterEvent { }
-

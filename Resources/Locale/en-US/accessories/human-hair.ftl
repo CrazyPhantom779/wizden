@@ -1,8 +1,28 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Bloody2372 <146976013+Bloody2372@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Илья Стокалюк <darkelement237@mail.ru>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Futuristic-OK <141568243+Futuristic-OK@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RenQ <164364533+ImRenQ@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 UnicornOnLSD <149102472+UnicornOnLSD@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nao fujiwara <awkwarddryad@gmail.com>
+# SPDX-FileCopyrightText: 2024 ~DreamlyJack~ <148849095+DreamlyJack@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 marking-HumanHairAfro = Afro
 marking-HumanHairAfro2 = Afro 2
 marking-HumanHairBigafro = Afro (Large)
 marking-HumanHairAntenna = Ahoge
-marking-HumanHairBaby = Baby
 marking-HumanHairBalding = Balding Hair
 marking-HumanHairBedhead = Bedhead
 marking-HumanHairBedheadv2 = Bedhead 2
@@ -60,7 +80,6 @@ marking-HumanHairCornrowbraid = Cornrow Braid
 marking-HumanHairCornrowtail = Cornrow Tail
 marking-HumanHairCrewcut = Crewcut
 marking-HumanHairCrewcut2 = Crewcut 2
-marking-HumanHairCube = Cube
 marking-HumanHairCurls = Curls
 marking-HumanHairC = Cut Hair
 marking-HumanHairDandypompadour = Dandy Pompadour
@@ -79,6 +98,7 @@ marking-HumanHairLowfade = Fade (Low)
 marking-HumanHairBaldfade = Fade (Bald)
 marking-HumanHairFeather = Feather
 marking-HumanHairFather = Father
+marking-HumanHairNiko = Niko
 marking-HumanHairSargeant = Flat Top
 marking-HumanHairFlair = Flair
 marking-HumanHairBigflattop = Flat Top (Big)
@@ -199,4 +219,3 @@ marking-HumanHairVlongfringe = Very Long with Fringe
 marking-HumanHairVolaju = Volaju
 marking-HumanHairWisp = Wisp
 marking-HumanHairLongWithBangs = Long With Bangs
-marking-HumanHairOverEyePigtail = Pigtail (Over Eye)

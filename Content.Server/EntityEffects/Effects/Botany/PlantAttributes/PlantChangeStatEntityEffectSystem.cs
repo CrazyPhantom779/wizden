@@ -1,54 +1,68 @@
+// SPDX-FileCopyrightText: 2024 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Botany;
 using Content.Server.Botany.Components;
 using Content.Shared.EntityEffects;
-using Content.Shared.EntityEffects.Effects.Botany.PlantAttributes;
+using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.EntityEffects.Effects.Botany.PlantAttributes;
+namespace Content.Server.EntityEffects.Effects.PlantMetabolism;
 
-/// <summary>
-/// This system mutates an inputted stat for a PlantHolder, only works for floats, integers, and bools.
-/// </summary>
-/// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
-public sealed partial class PlantChangeStatEntityEffectSystem : EntityEffectSystem<PlantHolderComponent, PlantChangeStat>
+[UsedImplicitly]
+public sealed partial class PlantChangeStat : EntityEffect
 {
-    // TODO: This is awful. I do not have the strength to refactor this. I want it gone.
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [DataField]
+    public string TargetValue;
 
-    protected override void Effect(Entity<PlantHolderComponent> entity, ref EntityEffectEvent<PlantChangeStat> args)
+    [DataField]
+    public float MinValue;
+
+    [DataField]
+    public float MaxValue;
+
+    [DataField]
+    public int Steps;
+
+    public override void Effect(EntityEffectBaseArgs args)
     {
-        if (entity.Comp.Seed == null || entity.Comp.Dead)
+        var plantHolder = args.EntityManager.GetComponent<PlantHolderComponent>(args.TargetEntity);
+        if (plantHolder == null || plantHolder.Seed == null)
             return;
 
-        var effect = args.Effect;
-        var member = entity.Comp.Seed.GetType().GetField(args.Effect.TargetValue);
+        var member = plantHolder.Seed.GetType().GetField(TargetValue);
+        var mutationSys = args.EntityManager.System<MutationSystem>();
 
         if (member == null)
         {
-            Log.Error($"{ effect.GetType().Name } Error: Member { args.Effect.TargetValue} not found on { entity.Comp.Seed.GetType().Name }. Did you misspell it?");
+            mutationSys.Log.Error(this.GetType().Name + " Error: Member " + TargetValue + " not found on " + plantHolder.GetType().Name + ". Did you misspell it?");
             return;
         }
 
-        var currentValObj = member.GetValue(entity.Comp.Seed);
+        var currentValObj = member.GetValue(plantHolder.Seed);
         if (currentValObj == null)
             return;
 
         if (member.FieldType == typeof(float))
         {
             var floatVal = (float)currentValObj;
-            MutateFloat(ref floatVal, args.Effect.MinValue, args.Effect.MaxValue, args.Effect.Steps);
-            member.SetValue(entity.Comp.Seed, floatVal);
+            MutateFloat(ref floatVal, MinValue, MaxValue, Steps);
+            member.SetValue(plantHolder.Seed, floatVal);
         }
         else if (member.FieldType == typeof(int))
         {
             var intVal = (int)currentValObj;
-            MutateInt(ref intVal, (int)args.Effect.MinValue, (int)args.Effect.MaxValue, args.Effect.Steps);
-            member.SetValue(entity.Comp.Seed, intVal);
+            MutateInt(ref intVal, (int)MinValue, (int)MaxValue, Steps);
+            member.SetValue(plantHolder.Seed, intVal);
         }
         else if (member.FieldType == typeof(bool))
         {
             var boolVal = (bool)currentValObj;
             boolVal = !boolVal;
-            member.SetValue(entity.Comp.Seed, boolVal);
+            member.SetValue(plantHolder.Seed, boolVal);
         }
     }
 
@@ -74,7 +88,7 @@ public sealed partial class PlantChangeStatEntityEffectSystem : EntityEffectSyst
         // In other words, it tends to go to the middle.
         float probIncrease = 1 - (float)valInt / bits;
         int valIntMutated;
-        if (_random.Prob(probIncrease))
+        if (Random(probIncrease))
         {
             valIntMutated = valInt + 1;
         }
@@ -107,7 +121,7 @@ public sealed partial class PlantChangeStatEntityEffectSystem : EntityEffectSyst
         // In other words, it tends to go to the middle.
         float probIncrease = 1 - (float)valInt / bits;
         int valMutated;
-        if (_random.Prob(probIncrease))
+        if (Random(probIncrease))
         {
             valMutated = val + 1;
         }
@@ -118,5 +132,16 @@ public sealed partial class PlantChangeStatEntityEffectSystem : EntityEffectSyst
 
         valMutated = Math.Clamp(valMutated, min, max);
         val = valMutated;
+    }
+
+    private bool Random(float odds)
+    {
+        var random = IoCManager.Resolve<IRobustRandom>();
+        return random.Prob(odds);
+    }
+
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+    {
+        throw new NotImplementedException();
     }
 }

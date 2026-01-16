@@ -1,7 +1,10 @@
-/// Original Code by Day-OS and VictorJob from Estacao Pirata at commit 4cc2257
-/// Available at https://github.com/estacao-pirata/estacao-pirata/blob/4cc22579c59061d09c0b8b6b79c7dfd192540374/Content.Client/_EstacaoPirata/Cards/Card/CardSystem.cs
-/// Various fixes and improvements by RadsammyT, VMSolidus, whatston3 and dvir001 from GoobStation, Einstien Engines, and Frontier
-/// Ported over by DoggowithaKeyboard with the help of the Harmony and Wizden Server
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Robust.Client.GameObjects;
@@ -14,6 +17,8 @@ namespace Content.Client._EstacaoPirata.Cards.Card;
 /// </summary>
 public sealed class CardSystem : EntitySystem
 {
+    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -55,6 +60,8 @@ public sealed class CardSystem : EntitySystem
     private void UpdateSprite(EntityUid uid, CardComponent comp)
     {
         var newSprite = comp.Flipped ? comp.BackSprite : comp.FrontSprite;
+        //if (newSprite == null)
+        //    return;
 
         if (!TryComp(uid, out SpriteComponent? spriteComponent))
             return;
@@ -62,12 +69,20 @@ public sealed class CardSystem : EntitySystem
 
         //inserts Missing Layers
         if (spriteComponent.AllLayers.Count() < layerCount)
+        {
             for (var i = spriteComponent.AllLayers.Count(); i < layerCount; i++)
+            {
                 spriteComponent.AddBlankLayer(i);
+            }
+        }
         //Removes extra layers
         else if (spriteComponent.AllLayers.Count() > layerCount)
+        {
             for (var i = spriteComponent.AllLayers.Count() - 1; i >= layerCount; i--)
+            {
                 spriteComponent.RemoveLayer(i);
+            }
+        }
 
         for (var i = 0; i < newSprite.Count(); i++)
         {

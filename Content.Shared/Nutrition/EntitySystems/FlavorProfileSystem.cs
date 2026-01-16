@@ -1,11 +1,24 @@
-using System.Linq;
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.Nutrition.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using System.Linq;
 
-namespace Content.Shared.Nutrition.EntitySystems;
+namespace Content.Server.Nutrition.EntitySystems;
 
 /// <summary>
 ///     Deals with flavor profiles when you eat something.
@@ -19,29 +32,21 @@ public sealed class FlavorProfileSystem : EntitySystem
 
     private int FlavorLimit => _configManager.GetCVar(CCVars.FlavorLimit);
 
-    public string GetLocalizedFlavorsMessage(Entity<FlavorProfileComponent?> entity, EntityUid user, Solution? solution)
+    public string GetLocalizedFlavorsMessage(EntityUid uid, EntityUid user, Solution solution,
+        FlavorProfileComponent? flavorProfile = null)
     {
-        HashSet<string> flavors = new();
-        HashSet<string>? ignore = null;
-
-        if (Resolve(entity, ref entity.Comp, false))
+        if (!Resolve(uid, ref flavorProfile, false))
         {
-            flavors = entity.Comp.Flavors;
-            ignore = entity.Comp.IgnoreReagents;
+            return Loc.GetString(BackupFlavorMessage);
         }
 
-
-        if (solution != null)
-            flavors.UnionWith(GetFlavorsFromReagents(solution, FlavorLimit - flavors.Count, ignore));
+        var flavors = new HashSet<string>(flavorProfile.Flavors);
+        flavors.UnionWith(GetFlavorsFromReagents(solution, FlavorLimit - flavors.Count, flavorProfile.IgnoreReagents));
 
         var ev = new FlavorProfileModificationEvent(user, flavors);
-
         RaiseLocalEvent(ev);
-        RaiseLocalEvent(entity, ev);
+        RaiseLocalEvent(uid, ev);
         RaiseLocalEvent(user, ev);
-
-        if (flavors.Count == 0)
-            return Loc.GetString(BackupFlavorMessage);
 
         return FlavorsToFlavorMessage(flavors);
     }

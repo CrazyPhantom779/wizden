@@ -1,3 +1,24 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 paige404 <59348003+paige404@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Numerics;
 using Content.Client.DisplacementMap;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
@@ -9,9 +30,6 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-
-// CD imports
-using System.Numerics;
 
 namespace Content.Client.Humanoid;
 
@@ -28,8 +46,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         base.Initialize();
 
         SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
-        Subs.CVar(_configurationManager, CCVars.AccessibilityClientCensorNudity, OnCvarChanged, true);
-        Subs.CVar(_configurationManager, CCVars.AccessibilityServerCensorNudity, OnCvarChanged, true);
     }
 
     private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
@@ -46,7 +62,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         }
     }
 
-    private void UpdateSprite(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
+    public void UpdateSprite(Entity<HumanoidAppearanceComponent, SpriteComponent> entity) // Goob edit - made public
     {
         UpdateLayers(entity);
         ApplyMarkingSet(entity);
@@ -54,12 +70,16 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var humanoidAppearance = entity.Comp1;
         var sprite = entity.Comp2;
 
-        // BEGIN CD
-        var speciesPrototype = _prototypeManager.Index(humanoidAppearance.Species);
-        var height = Math.Clamp(MathF.Round(humanoidAppearance.Height, 1), speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // should NOT be locked, at all
+        // begin Goobstation: port EE height/width sliders
+        var speciesPrototype = _prototypeManager.Index<SpeciesPrototype>(humanoidAppearance.Species);
 
-        _sprite.SetScale((entity.Owner, sprite), new Vector2(speciesPrototype.ScaleHeight ? height : 1f, height));
-        // END CD
+        var height = Math.Clamp(humanoidAppearance.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+        var width = Math.Clamp(humanoidAppearance.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        humanoidAppearance.Height = height;
+        humanoidAppearance.Width = width;
+
+        _sprite.SetScale((entity, sprite), new Vector2(width, height));
+        // end Goobstation: port EE height/width sliders
 
         sprite[_sprite.LayerMapReserve((entity.Owner, sprite), HumanoidVisualLayers.Eyes)].Color = humanoidAppearance.EyeColor;
     }
@@ -89,7 +109,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            SetLayerData(entity, key, info.Id, sexMorph: false, color: info.Color);
+            SetLayerData(entity, key, info.Id, sexMorph: false, color: info.Color, overrideSkin: true, shader: info.Shader);
         }
 
         // hide old layers
@@ -106,7 +126,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidVisualLayers key,
         string? protoId,
         bool sexMorph = false,
-        Color? color = null)
+        Color? color = null,
+        bool overrideSkin = false,
+        string? shader = null) // Shitmed Change // Goob edit
     {
         var component = entity.Comp1;
         var sprite = entity.Comp2;
@@ -118,6 +140,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         if (color != null)
             layer.Color = color.Value;
 
+        if (shader != null) // Goobstation
+            sprite.LayerSetShader(layerIndex, shader);
+        else
+            sprite.LayerSetShader(layerIndex, null, null);
+
         if (protoId == null)
             return;
 
@@ -127,7 +154,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var proto = _prototypeManager.Index<HumanoidSpeciesSpriteLayer>(protoId);
         component.BaseLayers[key] = proto;
 
-        if (proto.MatchSkin)
+        if (proto.MatchSkin && !overrideSkin) // Shitmed Change
             layer.Color = component.SkinColor.WithAlpha(proto.LayerAlpha);
 
         if (proto.BaseSprite != null)
@@ -233,7 +260,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
-        humanoid.Height = profile.CDHeight; // CD
+        humanoid.Height = profile.Height; // Goobstation: port EE height/width sliders
+        humanoid.Width = profile.Width; // Goobstation: port EE height/width sliders
 
         UpdateSprite((uid, humanoid, Comp<SpriteComponent>(uid)));
     }
@@ -247,12 +275,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // Really, markings should probably be a separate component altogether.
         ClearAllMarkings(entity);
 
-        var censorNudity = _configurationManager.GetCVar(CCVars.AccessibilityClientCensorNudity) ||
-                           _configurationManager.GetCVar(CCVars.AccessibilityServerCensorNudity);
-        // The reason we're splitting this up is in case the character already has undergarment equipped in that slot.
-        var applyUndergarmentTop = censorNudity;
-        var applyUndergarmentBottom = censorNudity;
-
         foreach (var markingList in humanoid.MarkingSet.Markings.Values)
         {
             foreach (var marking in markingList)
@@ -260,17 +282,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
                 {
                     ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, entity);
-                    if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
-                        applyUndergarmentTop = false;
-                    else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
-                        applyUndergarmentBottom = false;
                 }
             }
         }
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
-
-        AddUndergarments(entity, applyUndergarmentTop, applyUndergarmentBottom);
     }
 
     private void ClearAllMarkings(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
@@ -300,55 +316,27 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     private void RemoveMarking(Marking marking, Entity<SpriteComponent> spriteEnt)
     {
         if (!_markingManager.TryGetMarking(marking, out var prototype))
+        {
             return;
+        }
 
         foreach (var sprite in prototype.Sprites)
         {
             if (sprite is not SpriteSpecifier.Rsi rsi)
+            {
                 continue;
+            }
 
             var layerId = $"{marking.MarkingId}-{rsi.RsiState}";
             if (!_sprite.LayerMapTryGet(spriteEnt.AsNullable(), layerId, out var index, false))
+            {
                 continue;
+            }
 
             _sprite.LayerMapRemove(spriteEnt.AsNullable(), layerId);
             _sprite.RemoveLayer(spriteEnt.AsNullable(), index);
-
-            // If this marking is one that can be displaced, we need to remove the displacement as well; otherwise
-            // altering a marking at runtime can lead to the renderer falling over.
-            // The Vulps must be shaved.
-            // (https://github.com/space-wizards/space-station-14/issues/40135).
-            if (prototype.CanBeDisplaced)
-                _displacement.EnsureDisplacementIsNotOnSprite(spriteEnt, layerId);
         }
     }
-
-    private void AddUndergarments(Entity<HumanoidAppearanceComponent, SpriteComponent> entity, bool undergarmentTop, bool undergarmentBottom)
-    {
-        var humanoid = entity.Comp1;
-
-        if (undergarmentTop && humanoid.UndergarmentTop != null)
-        {
-            var marking = new Marking(humanoid.UndergarmentTop, new List<Color> { new Color() });
-            if (_markingManager.TryGetMarking(marking, out var prototype))
-            {
-                // Markings are added to ClientOldMarkings because otherwise it causes issues when toggling the feature on/off.
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentTop, new List<Marking> { marking });
-                ApplyMarking(prototype, null, true, entity);
-            }
-        }
-
-        if (undergarmentBottom && humanoid.UndergarmentBottom != null)
-        {
-            var marking = new Marking(humanoid.UndergarmentBottom, new List<Color> { new Color() });
-            if (_markingManager.TryGetMarking(marking, out var prototype))
-            {
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentBottom, new List<Marking> { marking });
-                ApplyMarking(prototype, null, true, entity);
-            }
-        }
-    }
-
     private void ApplyMarking(MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,
@@ -358,7 +346,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var sprite = entity.Comp2;
 
         if (!_sprite.LayerMapTryGet((entity.Owner, sprite), markingPrototype.BodyPart, out var targetLayer, false))
+        {
             return;
+        }
 
         visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
         visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
@@ -369,32 +359,68 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var markingSprite = markingPrototype.Sprites[j];
 
             if (markingSprite is not SpriteSpecifier.Rsi rsi)
-                return;
+            {
+                continue;
+            }
 
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
-            if (!_sprite.LayerMapTryGet((entity.Owner, sprite), layerId, out _, false))
+            if (!_sprite.LayerMapTryGet((entity.Owner, sprite), layerId, out var layer, false)) // Goob edit
             {
-                var layer = _sprite.AddLayer((entity.Owner, sprite), markingSprite, targetLayer + j + 1);
+                layer = _sprite.AddLayer((entity.Owner, sprite), markingSprite, targetLayer + j + 1); // Goob edit
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
             }
 
+            var hasInfo = humanoid.CustomBaseLayers.TryGetValue(markingPrototype.BodyPart, out var info); // Goobstation
+            // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+			if (markingPrototype.Shader != null)
+			{
+			// use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
+				sprite.LayerSetShader(layer, markingPrototype.Shader); // Goob edit
+			}
+            else // Goobstation
+            {
+                if (hasInfo && info.Shader != null)
+                    sprite.LayerSetShader(layer, info.Shader);
+                else
+                    sprite.LayerSetShader(layer, null, null);
+            }
+			// impstation edit end
+
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
 
             if (!visible || setting == null) // this is kinda implied
+            {
                 continue;
+            }
 
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
             if (colors != null && j < colors.Count)
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, colors[j]);
+            {
+                // Goob edit start
+                var color = colors[j];
+                if (hasInfo && info.Color != null)
+                    color = Color.InterpolateBetween(color, info.Color.Value, 0.5f);
+                _sprite.LayerSetColor((entity.Owner, sprite), layerId, color);
+                // Goob edit end
+            }
             else
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, Color.White);
+            {
+                // Goob edit start
+                var color = Color.White;
+                if (hasInfo && info.Color != null)
+                    color = info.Color.Value;
+                _sprite.LayerSetColor((entity.Owner, sprite), layerId, color);
+                // Goob edit end
+            }
 
             if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
+            {
                 _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + j + 1, layerId, out _);
+            }
         }
     }
 

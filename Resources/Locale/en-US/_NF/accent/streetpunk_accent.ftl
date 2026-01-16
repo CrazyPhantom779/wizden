@@ -4,7 +4,7 @@
 # https://www.reddit.com/r/cyberpunkgame/comments/l0avwd/slang_megathread/
 # https://www.englishclub.com/vocabulary/contractions-informal.php
 # https://7esl.com/informal-contractions/
- 
+
 accent-streetpunk-replaced-1 = a bit
 accent-streetpunk-replaced-2 = a lot of
 accent-streetpunk-replaced-3 = about
@@ -213,10 +213,10 @@ accent-streetpunk-replaced-205 = natural
 accent-streetpunk-replaced-206 = need to
 accent-streetpunk-replaced-207 = news
 accent-streetpunk-replaced-208 = newspaper
-accent-streetpunk-replaced-209 = nfsd
+accent-streetpunk-replaced-209 = sec
 accent-streetpunk-replaced-210 = nickname
 accent-streetpunk-replaced-211 = nothing
-accent-streetpunk-replaced-212 = nsfd
+accent-streetpunk-replaced-212 = security
 accent-streetpunk-replaced-213 = of
 accent-streetpunk-replaced-214 = officer
 accent-streetpunk-replaced-215 = old
@@ -345,8 +345,8 @@ accent-streetpunk-replaced-337 = you
 accent-streetpunk-replaced-338 = you all
 accent-streetpunk-replaced-339 = you are
 accent-streetpunk-replaced-340 = you know
-accent-streetpunk-replaced-341 = you would have 
-accent-streetpunk-replaced-342 = you would’ve 
+accent-streetpunk-replaced-341 = you would have
+accent-streetpunk-replaced-342 = you would’ve
 accent-streetpunk-replaced-343 = you’re
 
 accent-streetpunk-replacement-1 = a lick

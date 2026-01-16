@@ -1,38 +1,35 @@
-﻿cm-ui-rmc14 = RMC14
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-# HARMONY CHANGE START - Voielines > Speech Sounds, species changes
-rmc-ui-voicelines = Speech Sounds
-rmc-ui-options-tab-voicelines = Speech Sounds
-rmc-ui-audio-voicelines-yourself = Play speech sounds from yourself
-rmc-ui-audio-voicelines-arachnid = Play speech sounds for arachnids
-rmc-ui-audio-voicelines-diona = Play speech sounds for dionae
-rmc-ui-audio-voicelines-dwarf = Play speech sounds for dwarves
-# rmc-ui-audio-voicelines-felinid = Play speech sounds for felinids
-rmc-ui-audio-voicelines-human = Play speech sounds for humans
-rmc-ui-audio-voicelines-moth = Play speech sounds for moths
-rmc-ui-audio-voicelines-reptilian = Play speech sounds for reptilians
-rmc-ui-audio-voicelines-slime = Play speech sounds for slimes
-rmc-ui-audio-voicelines-avali = Play speech sounds for avalis
-rmc-ui-audio-voicelines-vulpkanin = Play speech sounds for vulpkanins
-# rmc-ui-audio-voicelines-rodentia = Play speech sounds for rodentias
-# rmc-ui-audio-voicelines-feroxi = Play speech sounds for feroxis
-# rmc-ui-audio-voicelines-skrell = Play speech sounds for skrells
-rmc-ui-audio-voicelines-vox = Play speech sounds for vox
+rmc-ui-link-discord-account = Link Discord Account
+rmc-ui-link-discord-account-text = Click the button below to copy your code.
+  Then go to the #account-linking channel to link your accounts.
+rmc-ui-link-discord-account-copy = Copy code
+rmc-ui-link-discord-account-copied = Copied!
+rmc-ui-link-discord-account-already-linked = [bold]Your account is already linked![/bold]
+rmc-ui-link-discord-account-open-channel = Open channel
 
-rmc-ui-emotes = Emotes
-rmc-ui-audio-emotes-yourself = Play emotes from yourself
-rmc-ui-audio-emotes-arachnid = Play emotes for arachnids
-rmc-ui-audio-emotes-diona = Play emotes for dionae
-rmc-ui-audio-emotes-dwarf = Play emotes for dwarves
-# rmc-ui-audio-emotes-felinid = Play emotes for felinids
-rmc-ui-audio-emotes-human = Play emotes for humans
-rmc-ui-audio-emotes-moth = Play emotes for moths
-rmc-ui-audio-emotes-reptilian = Play emotes for reptilians
-rmc-ui-audio-emotes-slime = Play emotes for slimes
-rmc-ui-audio-emotes-avali = Play emotes for avalis
-rmc-ui-audio-emotes-vulpkanin = Play emotes for vulpkanins
-# rmc-ui-audio-emotes-rodentia = Play emotes for rodentias
-# rmc-ui-audio-emotes-feroxi = Play emotes for feroxis
-# rmc-ui-audio-emotes-skrell = Play emotes for skrells
-rmc-ui-audio-emotes-vox = Play emotes for vox
-# HARMONY CHANGE END
+rmc-ui-patron-perks = Patron Perks
+rmc-ui-lobby-message = Lobby Message
+rmc-ui-lobby-message-description = Displayed to players before the game starts.
+  One is randomly chosen between all the Patrons of this tier.
+  Make sure the message you choose doesn't break the rules.
+  If you aren't sure, ask in AHelp! (F1)
+rmc-ui-shoutout = Round-end shoutout
+rmc-ui-shoutout-nt-title = Name to use for the round-end Nanotrasen shoutout.
+rmc-ui-shoutout-nt-description = Displayed at round end as "Nanotrasen funded by: " then your name.
+rmc-ui-shoutout-example = Example:
+rmc-ui-shoutout-info = Each name is randomly chosen between all the Patrons of this tier.
+  Make sure the names you choose are in-character and don't break the rules.
+  If you aren't sure, ask in AHelp! (F1)
+rmc-ui-save = Save
+
+rmc-ui-ghost-color = Ghost Color
+rmc-ui-ghost-color-clear = Clear
+
+rmc-ui-shoutout-nt = [bold]Nanotrasen funded by: [color=green]{$name}[/color]![/bold]
+
+rmc-ui-discord = Discord
+rmc-ui-patreon = Patreon

@@ -1,12 +1,34 @@
-using Content.Shared.Chat;
-using Content.Shared.Speech;
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 hubismal <47284081+hubismal@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Goobstation.Common.Speech;
 using Robust.Shared.Audio;
+using Content.Server.Chat.Systems;
+using Content.Shared.Speech;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared._RMC14.Voicelines;
-using Robust.Shared.Player; // Harmony - Use RMC14 to mute speechsounds
+using Robust.Shared.Random;
+
+// Goob Station
+ using Content.Goobstation.Common.Barks;
+using Content.Goobstation.Common.CCVar;
+using Robust.Shared.Configuration;
+
 
 namespace Content.Server.Speech
 {
@@ -16,8 +38,9 @@ namespace Content.Server.Speech
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
-        // Harmony - Use RMC14 system to give the option to mute speechsounds
-        [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
+
+        // Goobs tation
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         public override void Initialize()
         {
@@ -28,12 +51,21 @@ namespace Content.Server.Speech
 
         public SoundSpecifier? GetSpeechSound(Entity<SpeechComponent> ent, string message)
         {
-            if (ent.Comp.SpeechSounds == null)
-                return null;
+            // Goobstation start
+            var getSpeechSoundEv = new GetSpeechSoundEvent();
+            RaiseLocalEvent(ent, ref getSpeechSoundEv);
+            if (getSpeechSoundEv.SpeechSoundProtoId == null ||
+                !_protoManager.TryIndex<SpeechSoundsPrototype>(getSpeechSoundEv.SpeechSoundProtoId, out var prototype))
+            {
+                if (ent.Comp.SpeechSounds == null)
+                    return null;
+
+                prototype = _protoManager.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
+            }
+            // Goobstation end
 
             // Play speech sound
             SoundSpecifier? contextSound;
-            var prototype = _protoManager.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
 
             // Different sounds for ask/exclaim based on last character
             contextSound = message[^1] switch
@@ -62,8 +94,13 @@ namespace Content.Server.Speech
 
         private void OnEntitySpoke(EntityUid uid, SpeechComponent component, EntitySpokeEvent args)
         {
-            if (component.SpeechSounds == null)
+            // Goob station - Barks
+            if (component.SpeechSounds == null
+                || !args.Language.SpeechOverride.RequireSpeech
+                || _cfg.GetCVar(GoobCVars.BarksEnabled) // Goob Station - Barks
+                && HasComp<SpeechSynthesisComponent>(uid))
                 return;
+            // END
 
             var currentTime = _gameTiming.CurTime;
             var cooldown = TimeSpan.FromSeconds(component.SoundCooldownTime);
@@ -74,13 +111,7 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            // Harmony Change Start - option to toggle off speech sounds
-            //_audio.PlayPvs(sound, uid);
-            var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayVoicelines(uid, s));
-            if (filter.Count == 0)
-                return;
-            _audio.PlayEntity(sound, filter, uid, true);
-            // Harmony Change End
+            _audio.PlayPvs(sound, uid);
         }
     }
 }

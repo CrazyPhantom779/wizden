@@ -1,4 +1,9 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -34,6 +39,18 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<int> MaxFlavorTextLength =
         CVarDef.Create("ic.flavor_text_length", 1024, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Sets the maximum character length of a job on an ID.
+    /// </summary>
+    public static readonly CVarDef<int> MaxIdJobLength =
+        CVarDef.Create("ic.id_job_length", 30, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Sets the maximum length for flavor text (character descriptions).
+    /// </summary>
+    public static readonly CVarDef<int> MaxFlavorTextLength =
+        CVarDef.Create("ic.flavor_text_length", 512, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Sets the maximum character length of a job on an ID.

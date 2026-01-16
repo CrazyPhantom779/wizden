@@ -67,7 +67,7 @@ public sealed class MimePowersSystem : EntitySystem
             Dirty(ent, illiterateComponent);
         }
 
-        _alertsSystem.ShowAlert(ent.Owner, ent.Comp.VowAlert);
+        _alertsSystem.ShowAlert(ent, ent.Comp.VowAlert);
         _actionsSystem.AddAction(ent, ref ent.Comp.InvisibleWallActionEntity, ent.Comp.InvisibleWallAction);
     }
 
@@ -139,6 +139,9 @@ public sealed class MimePowersSystem : EntitySystem
             return;
 
         if (mimePowers.VowBroken)
+            return;
+
+        if (!mimePowers.CanBreakVow) // Goobstation
             return;
 
         mimePowers.Enabled = false;

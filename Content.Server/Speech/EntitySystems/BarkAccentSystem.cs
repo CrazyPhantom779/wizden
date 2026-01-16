@@ -1,4 +1,17 @@
-using Content.Shared.StatusEffectNew;
+// SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
+// SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2020 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Speech.Components;
 using Content.Shared.Speech;
 using Robust.Shared.Random;
@@ -24,7 +37,6 @@ namespace Content.Server.Speech.EntitySystems
         public override void Initialize()
         {
             SubscribeLocalEvent<BarkAccentComponent, AccentGetEvent>(OnAccent);
-            SubscribeLocalEvent<BarkAccentComponent, StatusEffectRelayedEvent<AccentGetEvent>>(OnAccentRelayed);
         }
 
         public string Accentuate(string message)
@@ -38,14 +50,9 @@ namespace Content.Server.Speech.EntitySystems
                 .Replace("l", "r").Replace("L", "R");
         }
 
-        private void OnAccent(Entity<BarkAccentComponent> entity, ref AccentGetEvent args)
+        private void OnAccent(EntityUid uid, BarkAccentComponent component, AccentGetEvent args)
         {
             args.Message = Accentuate(args.Message);
-        }
-
-        private void OnAccentRelayed(Entity<BarkAccentComponent> entity, ref StatusEffectRelayedEvent<AccentGetEvent> args)
-        {
-            args.Args.Message = Accentuate(args.Args.Message);
         }
     }
 }
